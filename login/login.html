@@ -3,13 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trang đăng nhập cho hệ thống quản lý e-commerce">
   <title>Trang Đăng Nhập</title>
   <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Đăng Nhập</h2>
+    <form onsubmit="event.preventDefault(); checkLogin();">
+      <div class="input-group">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" required placeholder="Nhập tên đăng nhập">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" required placeholder="Nhập mật khẩu">
+      </div>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <div class="options">
+      <p>Chưa có tài khoản? <a href="signup.html">Đăng ký ngay!</a></p>
+      <p><a href="forgot-password.html">Quên mật khẩu?</a></p>
+    </div>
+  </div>
 
   <script>
     function checkLogin() {
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
+
+      // Kiểm tra thông tin đăng nhập
+      if (username === "" || password === "") {
+        alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
+        return;
+      }
 
       if (username === "admin" && password === "1234") {
         alert("Đăng nhập thành công!");
@@ -19,19 +49,5 @@
       }
     }
   </script>
-</head>
-<body>
-  <h2>Trang Đăng Nhập</h2>
-  <form onsubmit="event.preventDefault(); checkLogin();">
-    <label for="username">Tên đăng nhập:</label><br>
-    <input type="text" id="username" required><br><br>
-
-    <label for="password">Mật khẩu:</label><br>
-    <input type="password" id="password" required><br><br>
-
-    <button type="submit">Đăng nhập</button>
-  </form>
-
-  <p>Chưa có tài khoản? <a href="signup.html">Đăng ký ngay!</a></p>
 </body>
 </html>
