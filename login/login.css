@@ -1,67 +1,43 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
     background-color: #f4f4f4;
+    height: 100vh;
   }
-  
   .login-container {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
   }
-  
   h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
+  .form-group label {
     font-weight: bold;
-    display: block;
   }
-  
-  input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
+  .btn-custom {
     background-color: #4CAF50;
     color: white;
     border: none;
+    width: 100%;
+    padding: 10px;
     border-radius: 4px;
-    cursor: pointer;
   }
-  
-  button:hover {
+  .btn-custom:hover {
     background-color: #45a049;
   }
-  
   .options {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
   }
-  
   .options a {
     color: #007BFF;
     text-decoration: none;
   }
-  
   .options a:hover {
     text-decoration: underline;
   }
-  
