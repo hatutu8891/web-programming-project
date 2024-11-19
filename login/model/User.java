@@ -1,30 +1,19 @@
-package vn.edu.hcmuaf.fit.signup.model;
-
 public class User {
 
-    private int id; // ID của người dùng
-    private String username; // Tên đăng nhập
-    private String password; // Mật khẩu
+    private String username;
+    private String password;
     private String role; // Vai trò (user hoặc admin)
+    private String email; // Thêm trường email
 
-    // Constructor
-    public User(int id, String username, String password, String role) {
-        this.id = id;
+    // Constructor với email
+    public User(String username, String password, String role, String email) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.email = email;
     }
 
     public User() {}
-
-    // Getter and Setter Methods
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -50,8 +39,16 @@ public class User {
         this.role = role;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + "]";
+        return "User [username=" + username + ", password=" + password + ", role=" + role + ", email=" + email + "]";
     }
 }

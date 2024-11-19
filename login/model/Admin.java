@@ -1,15 +1,28 @@
 
 
+// Admin kế thừa từ lớp User
 public class Admin extends User {
+    private String role = "admin";  // Vai trò cố định là admin
 
-    // Constructor
-    public Admin(int id, String username, String password) {
-        super(id, username, password, "admin"); // Gọi constructor của User và set role = "admin"
+
+    public Admin() {
     }
 
-    // Bạn có thể thêm các phương thức hoặc thuộc tính khác cho Admin ở đây nếu cần
+    public Admin(String username, String password, String email) {
+        super(username, password, "admin", email);
+    }
+
+
+    public String getRole() {
+        return role;
+    }
+
     @Override
     public String toString() {
-        return "Admin [id=" + getId() + ", username=" + getUsername() + ", password=" + getPassword() + ", role=" + getRole() + "]";
+        return "Admin{" +
+                "role='" + role + '\'' +
+                ", username='" + getUsername() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                '}';
     }
 }
