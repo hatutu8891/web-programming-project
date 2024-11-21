@@ -38,6 +38,10 @@ h1, h4 {
     justify-content: center;
 }
 
+#header .logo:hover {
+    cursor: pointer;
+}
+
 #header .logo .logo-img {
     float: left;
 
@@ -72,6 +76,10 @@ h1, h4 {
 
 }
 
+#header .frame-left-header a:hover {
+    color: #2b2825;
+}
+
 #header .frame-right-header {
     width: 355px;
     height: 60px;
@@ -99,6 +107,95 @@ h1, h4 {
 
 }
 
+
+#header .frame-right-header i:hover {
+    color: #2b2825;
+    cursor: pointer;
+}
+
+#header .frame-right-header ul li:first-child {
+    position: relative;
+}
+
+#header .frame-right-header .search-box {
+    width: 350px;
+    height: 60px;
+    margin-left: -120px;
+    margin-top: 30px;
+    background-color: white;
+    position: absolute;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    display: none;
+
+}
+
+
+#header .frame-right-header li:first-child:active .search-box {
+    display: block;
+}
+
+/*#header .frame-right-header li:first-child:focus-within .search-box {*/
+/*    display: block;*/
+/*}*/
+#header .frame-right-header .search-box input {
+    margin: 12px auto auto 10px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#header .frame-right-header .search-box i {
+    color: #2b2825;
+    margin: 18px 30px auto auto;
+    float: right;
+}
+
+#header .frame-right-header .search-box i:hover {
+    color: #e88f2a;
+
+}
+
+#header .frame-right-header ul li:last-child {
+    position: relative;
+}
+
+#header .frame-right-header .login-signin {
+    width: 210px;
+    height: 150px;
+    margin-left: -120px;
+    margin-top: 35px;
+    position: absolute;
+    background-color: #e88f2a;
+    display: none;
+
+}
+
+#header .frame-right-header button.setbutton {
+    width: 180px;
+    height: 60px;
+    margin-left: 15px;
+    margin-top: 10px;
+
+
+}
+
+#header .frame-right-header button span {
+    font-size: 20px;
+
+}
+
+#header .frame-right-header button:hover {
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+#header .frame-right-header ul li:last-child:active .login-signin {
+    display: block;
+}
+
 /*For class*/
 .container {
     width: 1200px;
@@ -106,6 +203,7 @@ h1, h4 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .social-net-name {
     float: left;
     margin: 0 15px;
