@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+  }
+  .login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .form-group label {
+    font-weight: bold;
+  }
+  .btn-custom {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .btn-custom:hover {
+    background-color: #45a049;
+  }
+  .options {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .options a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  .options a:hover {
+    text-decoration: underline;
+  }
