@@ -27,64 +27,14 @@
     </form>
 
     <div class="options">
-        <p>Chưa có tài khoản? <a href="signup.html">Đăng ký ngay!</a></p>
-        <p><a href="forgot-password.html">Quên mật khẩu?</a></p>
+        <p>Chưa có tài khoản? <a href="signUp.html">Đăng ký ngay!</a></p>
+        <p><a href="forgotPassword.html">Quên mật khẩu?</a></p>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', async function (event) {
-        event.preventDefault(); // Ngừng gửi form theo cách mặc định
-
-        // Hiển thị loading message
-        document.getElementById('loadingMessage').style.display = 'block';
-        document.getElementById('loginButton').disabled = true;
-
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-
-        // Kiểm tra nếu tên đăng nhập hoặc mật khẩu trống
-        if (username === "" || password === "") {
-            alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
-            document.getElementById('loadingMessage').style.display = 'none';
-            document.getElementById('loginButton').disabled = false;
-            return;
-        }
-
-        try {
-            // Gửi yêu cầu đăng nhập tới backend
-            const response = await fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({username, password})
-            });
-
-            // Kiểm tra phản hồi từ API
-            const result = await response.json();
-
-            // Kiểm tra nếu đăng nhập thành công
-            if (response.ok && result.success) {
-                alert("Đăng nhập thành công!");
-                window.location.href = "index.html"; // Chuyển hướng nếu đăng nhập thành công
-            } else {
-                alert("Thông tin đăng nhập không chính xác.");
-            }
-        } catch (error) {
-            alert("Có lỗi xảy ra khi xử lý dữ liệu. Vui lòng thử lại.");
-            console.error('Error:', error);
-        } finally {
-            // Ẩn loading message và kích hoạt lại nút đăng nhập
-            document.getElementById('loadingMessage').style.display = 'none';
-            document.getElementById('loginButton').disabled = false;
-        }
-    });
-</script>
 
 </body>
 </html>
