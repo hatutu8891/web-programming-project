@@ -12,7 +12,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap"
+          rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -26,355 +27,383 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <!-- Header -->
-    <div id = "header">
-    </div>
+<!-- Header -->
+<div id="header">
+</div>
 
-    <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-start">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="font-secondary text-primary mb-4">Siêu hấp dẫn</h1>
-                    <h1 class="display-1 text-uppercase text-white mb-4">SlowlyCake</h1>
-                    <h1 class="text-uppercase text-white">Top 1 server Thủ Đức</h1>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="about.html" class="btn btn-primary border-inner py-3 px-5 me-5">Xem Thêm</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
+<div id="nav"></div>
+
+<!-- Hero Start -->
+<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row justify-content-start">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h1 class="font-secondary text-primary mb-4">Siêu hấp dẫn</h1>
+                <h1 class="display-1 text-uppercase text-white mb-4">SlowlyCake</h1>
+                <h1 class="text-uppercase text-white">Top 1 server Thủ Đức</h1>
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                    <a href="about.html" class="btn btn-primary border-inner py-3 px-5 me-5">Xem Thêm</a>
+                    <button type="button" class="btn-play" data-bs-toggle="modal"
                             data-src="https://www.youtube.com/embed/HTXB6flODww" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Xem Video</h5>
-                    </div>
+                        <span></span>
+                    </button>
+                    <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Xem Video</h5>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Hero End -->
+</div>
+<!-- Hero End -->
 
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Video Youtube</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+<!-- Video Modal Start -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Video Youtube</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
                             allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Modal End -->
+
+<!-- About Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Về Chúng tôi</h2>
+            <h1 class="display-4 text-uppercase">Chào mừng đến với SlowlyCake</h1>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" src="/src/main/assets/images/about.jpg"
+                         style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 pb-5">
+                <h4 class="mb-4">Chúng tôi chuyên tạo ra những chiếc bánh kem ngon nhất và đẹp mắt nhất ở TP. HCM.</h4>
+                <p class="mb-5">Đội ngũ thợ làm bánh và trang trí chuyên nghiệp của chúng tôi sẽ giúp những dịp đặc biệt
+                    của bạn trở nên đáng nhớ hơn với những chiếc bánh được thiết kế riêng.</p>
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                             style="width: 90px; height: 90px;">
+                            <i class="fa fa-heartbeat fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">100% Lành mạnh</h4>
+                        <p class="mb-0">Bánh của chúng tôi được làm từ nguyên liệu lành mạnh, đảm bảo bạn có thể thưởng
+                            thức mà không phải quan tâm đến vấn đề sức khỏe. </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                             style="width: 90px; height: 90px;">
+                            <i class="fa fa-award fa-2x text-white"></i>
+                        </div>
+                        <h4 class="text-uppercase">Chứng nhận</h4>
+                        <p class="mb-0">Chúng tôi tự hào là tiệm bánh từng đoạt giải thưởng, được công nhận về chất
+                            lượng và sự sáng tạo đặc biệt của chúng tôi</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Video Modal End -->
+</div>
+<!-- About End -->
 
-    <!-- About Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Về Chúng tôi</h2>
-                <h1 class="display-4 text-uppercase">Chào mừng đến với SlowlyCake</h1>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="/src/main/assets/images/about.jpg" style="object-fit: cover;">
-                    </div>
+<!-- Offer Start -->
+<div class="container-fluid bg-offer my-5 py-5">
+    <div class="container py-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title position-relative text-center mx-auto mb-4 pb-3" style="max-width: 600px;">
+                    <h2 class="text-primary font-secondary">Món mới ra mắt</h2>
+                    <h1 class="display-4 text-uppercase text-white">Bánh muffin chocolate</h1>
                 </div>
-                <div class="col-lg-6 pb-5">
-                    <h4 class="mb-4">Chúng tôi chuyên tạo ra những chiếc bánh kem ngon nhất và đẹp mắt nhất ở TP. HCM.</h4>
-                    <p class="mb-5">Đội ngũ thợ làm bánh và trang trí chuyên nghiệp của chúng tôi sẽ giúp những dịp đặc biệt của bạn trở nên đáng nhớ hơn với những chiếc bánh được thiết kế riêng.</p>
-                    <div class="row g-5">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
-                                <i class="fa fa-heartbeat fa-2x text-white"></i>
-                            </div>
-                            <h4 class="text-uppercase">100% Lành mạnh</h4>
-                            <p class="mb-0">Bánh của chúng tôi được làm từ nguyên liệu lành mạnh, đảm bảo bạn có thể thưởng thức mà không phải quan tâm đến vấn đề sức khỏe. </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
-                                <i class="fa fa-award fa-2x text-white"></i>
-                            </div>
-                            <h4 class="text-uppercase">Chứng nhận</h4>
-                            <p class="mb-0">Chúng tôi tự hào là tiệm bánh từng đoạt giải thưởng, được công nhận về chất lượng và sự sáng tạo đặc biệt của chúng tôi</p>
-                        </div>
-                    </div>
-                </div>
+                <p class="text-white mb-4">Được làm với Chocolate cao cấp, những chiếc bánh muffin này sẽ thỏa mãn vị
+                    giác của bạn, kể cả người khó tính nhất.</p>
+                <a href="" class="btn btn-primary border-inner py-3 px-5 me-3">Mua Ngay</a>
+                <a href="" class="btn btn-dark border-inner py-3 px-5">Đọc Thêm</a>
             </div>
         </div>
     </div>
-    <!-- About End -->
+</div>
+<!-- Offer End -->
 
-     <!-- Offer Start -->
-     <div class="container-fluid bg-offer my-5 py-5">
-        <div class="container py-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-7 text-center">
-                    <div class="section-title position-relative text-center mx-auto mb-4 pb-3" style="max-width: 600px;">
-                        <h2 class="text-primary font-secondary">Món mới ra mắt</h2>
-                        <h1 class="display-4 text-uppercase text-white">Bánh muffin chocolate</h1>
-                    </div>
-                    <p class="text-white mb-4">Được làm với Chocolate cao cấp, những chiếc bánh muffin này sẽ thỏa mãn vị giác của bạn, kể cả người khó tính nhất.</p>
-                    <a href="" class="btn btn-primary border-inner py-3 px-5 me-3">Mua Ngay</a>
-                    <a href="" class="btn btn-dark border-inner py-3 px-5">Đọc Thêm</a>
-                </div>
-            </div>
+<!-- Products Start -->
+<div class="container-fluid about py-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Sản Phẩm</h2>
+            <h1 class="display-4 text-uppercase">Khám phá các loại bánh khác nhau</h1>
         </div>
-    </div>
-    <!-- Offer End -->
-
-    <!-- Products Start -->
-    <div class="container-fluid about py-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Sản Phẩm</h2>
-                <h1 class="display-4 text-uppercase">Khám phá các loại bánh khác nhau</h1>
-            </div>
-            <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
-                    <li class="nav-item">
-                        <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Bánh sinh nhật</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Bánh Cưới</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Bánh đặt riêng</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake1.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">120k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem 15cm</h5>
-                                        <span>Hoàn hảo cho một buổi họp mặt thân mật từ 2 - 3 người.</span>
-                                    </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+                <li class="nav-item">
+                    <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Bánh sinh nhật</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Bánh Cưới</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Bánh đặt riêng</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake1.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">120k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem 15cm</h5>
+                                    <span>Hoàn hảo cho một buổi họp mặt thân mật từ 2 - 3 người.</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake2.png" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">200k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem 18cm</h5>
-                                        <span>Lý tưởng cho một bữa tiệc ấm cúng với bạn bè thân thiết từ 3 - 4 người.</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake2.png" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">200k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem 18cm</h5>
+                                    <span>Lý tưởng cho một bữa tiệc ấm cúng với bạn bè thân thiết từ 3 - 4 người.</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake3.png" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">300k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem 20cm</h5>
-                                        <span>Được thiết kế cho một bữa tiệc nhỏ cùng người thân từ 4 - 6 người thưởng thức.</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake3.png" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">300k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem 20cm</h5>
+                                    <span>Được thiết kế cho một bữa tiệc nhỏ cùng người thân từ 4 - 6 người thưởng thức.</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake4.png" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">500k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem 25cm</h5>
-                                        <span>Hoàn hảo cho buổi tiệc lớn, có thể dễ dàng phục vụ từ 8 - 10 người.</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake4.png" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">500k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem 25cm</h5>
+                                    <span>Hoàn hảo cho buổi tiệc lớn, có thể dễ dàng phục vụ từ 8 - 10 người.</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake5.png" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">600k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem 30cm</h5>
-                                        <span>Phù hợp cho buổi tiệc lớn từ 10 đến 12 người, ai cũng có phần.</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake5.png" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">600k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem 30cm</h5>
+                                    <span>Phù hợp cho buổi tiệc lớn từ 10 đến 12 người, ai cũng có phần.</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="/src/main/assets/images/cake6.png" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">1200k</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Bánh kem hai tầng</h5>
-                                        <span>Dành cho tiệc liên hoan từ 12 - 20 người, hoàn hảo để cho buổi lễ thật đáng nhớ. </span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="/src/main/assets/images/cake6.png" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">1200k</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Bánh kem hai tầng</h5>
+                                    <span>Dành cho tiệc liên hoan từ 12 - 20 người, hoàn hảo để cho buổi lễ thật đáng nhớ. </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane fade show p-0">
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-2.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Wedding Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                </div>
+                <div id="tab-3" class="tab-pane fade show p-0">
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
-                                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100">
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="img/cake-3.jpg" alt=""
+                                         style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                    <h5 class="text-uppercase">Custom Cake</h5>
+                                    <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo</span>
                                 </div>
                             </div>
                         </div>
@@ -383,119 +412,128 @@
             </div>
         </div>
     </div>
-    <!-- Products End -->
+</div>
+<!-- Products End -->
 
 
-    <!-- Service Start -->
-    <div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Bánh sinh nhật</h4>
-                        <p>Lựa chọn tuyệt vời để kỷ niệm ngày đặc biệt của bạn.</p>
-                        <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
-                    </div>
+<!-- Service Start -->
+<div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <h4 class="text-uppercase mb-3">Bánh sinh nhật</h4>
+                    <p>Lựa chọn tuyệt vời để kỷ niệm ngày đặc biệt của bạn.</p>
+                    <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Bánh cưới</h4>
-                        <p>Những chiếc bánh thanh lịch và đẹp mắt cho ngày trọng đại của bạn</p>
-                        <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <h4 class="text-uppercase mb-3">Bánh cưới</h4>
+                    <p>Những chiếc bánh thanh lịch và đẹp mắt cho ngày trọng đại của bạn</p>
+                    <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Bánh đặt riêng</h4>
-                        <p>Tùy chỉnh theo đúng yêu cầu và sở thích cụ thể của bạn.</p>
-                        <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
-                    </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="bg-primary border-inner text-center text-white p-5">
+                    <h4 class="text-uppercase mb-3">Bánh đặt riêng</h4>
+                    <p>Tùy chỉnh theo đúng yêu cầu và sở thích cụ thể của bạn.</p>
+                    <a class="text-uppercase text-dark" href="">Đặt ngay <i class="bi bi-arrow-right"></i></a>
                 </div>
-                <div class="col-lg-12 col-md-6 text-center">
-                    <h1 class="text-uppercase text-light mb-4">Giảm giá 30% cho lễ giáng sinh này</h1>
-                    <a href="" class="btn btn-primary border-inner py-3 px-5">ĐẶT HÀNG NGAY</a>
-                </div>
+            </div>
+            <div class="col-lg-12 col-md-6 text-center">
+                <h1 class="text-uppercase text-light mb-4">Giảm giá 30% cho lễ giáng sinh này</h1>
+                <a href="" class="btn btn-primary border-inner py-3 px-5">ĐẶT HÀNG NGAY</a>
             </div>
         </div>
     </div>
-    <!-- Service end -->
+</div>
+<!-- Service end -->
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Đánh giá</h2>
-                <h1 class="display-4 text-uppercase">Khách hàng của chúng tôi nói gì!!!</h1>
+<!-- Testimonial Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Đánh giá</h2>
+            <h1 class="display-4 text-uppercase">Khách hàng của chúng tôi nói gì!!!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item bg-dark text-white border-inner p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review1.jpg"
+                         style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">hatutu8891</h4>
+                        <span>Nhà phê bình ẩm thực</span>
+                    </div>
+                </div>
+                <p class="mb-0">Bánh ở đây thực sự tuyệt vời! Cách trình bày cũng rất đẹp mắt. Mọi người nên thử bánh
+                    muffin chocolate mới ra mắt
+                </p>
             </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review1.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">hatutu8891</h4>
-                            <span>Nhà phê bình ẩm thực</span>
-                        </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review2.png"
+                         style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">aigoo404</h4>
+                        <span>Streamer</span>
                     </div>
-                    <p class="mb-0">Bánh ở đây thực sự tuyệt vời! Cách trình bày cũng rất đẹp mắt. Mọi người nên thử bánh muffin chocolate mới ra mắt
-                    </p>
                 </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review2.png" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">aigoo404</h4>
-                            <span>Streamer</span>
-                        </div>
+                <p class="mb-0">Tôi đã đặt 1 bánh cho sinh nhật của bạn gái và nó vượt ngoài mong đợi của tôi. Thiết kế
+                    đỉnh của chóp và hương vị rất ảo ma!
+                </p>
+            </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review3.png"
+                         style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">TranThanhHai104</h4>
+                        <span>Nhiếp ảnh gia</span>
                     </div>
-                    <p class="mb-0">Tôi đã đặt 1 bánh cho sinh nhật của bạn gái và nó vượt ngoài mong đợi của tôi. Thiết kế đỉnh của chóp và hương vị rất ảo ma!
-                    </p>
                 </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review3.png" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">TranThanhHai104</h4>
-                            <span>Nhiếp ảnh gia</span>
-                        </div>
+                <p class="mb-0">Bánh của họ chưa bao giờ làm tôi thất vọng. Nhân viên rất thân thiện và hiếu khách
+                </p>
+            </div>
+            <div class="testimonial-item bg-dark text-white border-inner p-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review4.jpg"
+                         style="width: 60px; height: 60px;">
+                    <div class="ps-3">
+                        <h4 class="text-primary text-uppercase mb-1">Th4iTh00ng</h4>
+                        <span>Editor</span>
                     </div>
-                    <p class="mb-0">Bánh của họ chưa bao giờ làm tôi thất vọng. Nhân viên rất thân thiện và hiếu khách
-                    </p>
                 </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="/src/main/assets/images/review4.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Th4iTh00ng</h4>
-                            <span>Editor</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Cả tôi và bạn gái tôi đều thích chỗ này. Bánh rất ngon và không gian quán cũng rất đẹp. Rất phù hợp cho các buổi hẹn hò
-                    </p>
-                </div>
+                <p class="mb-0">Cả tôi và bạn gái tôi đều thích chỗ này. Bánh rất ngon và không gian quán cũng rất đẹp.
+                    Rất phù hợp cho các buổi hẹn hò
+                </p>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
-    
-    <div id = "footer">
-    </div>
+</div>
+<!-- Testimonial End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+<div id="footer">
+</div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/loadHeader.js"></script>
-    <script src="js/loadFooter.js"></script>
-    <script src="js/main.js"></script>
+<!-- Template Javascript -->
+<script src="js/loadNav.js"></script>
+<script src="js/loadHeader.js"></script>
+<script src="js/loadFooter.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
