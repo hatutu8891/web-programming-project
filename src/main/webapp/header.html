@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--    <link rel="stylesheet" href="../scss/bootstrap.scss">-->
 
 </head>
@@ -32,60 +33,48 @@
             </div>
         </div>
 
+
         <div class="frame-right-header">
             <ul class="icon-function-frame">
-                <li class="icon-item"><i class="fa-solid fa-magnifying-glass"></i>
-                    <div class="search-box">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                <!-- Icon for Search -->
+                <li class="icon-item dropdown">
+                    <i class="fa-solid fa-magnifying-glass" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <div class="dropdown-menu search-box">
+                        <input type="text" class="dropdown-item" placeholder="Tìm kiếm sản phẩm...">
                         <i class="fa-solid fa-magnifying-glass"></i>
-
                     </div>
                 </li>
-                <li class="icon-item"><i class="fa-solid fa-basket-shopping"></i></li>
-                <li class="icon-item"><i class="fa-solid fa-bars"></i>
-                    <div class="login-signin">
-                        <button class="setbutton signin">
-                            <span class="btn-content">Đăng ký</span>
-                        </button>
-                        <button class="setbutton login">
-                            <span class="btn-content">Đăng nhập</span>
-                        </button>
 
+                <!-- Icon for Cart -->
+                <li class="icon-item">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </li>
+
+                <!-- Icon for User Login/Register -->
+                <li class="icon-item dropdown">
+                    <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <div class="dropdown-menu login-signin">
+                        <a href="signUp.html">
+                            <button class="setbutton signin">
+                                <i class="fa-solid fa-person"></i>
+                                <span class="btn-content">Đăng ký </span>
+                            </button>
+                        </a>
+                        <a href="login.html">
+                            <button class="setbutton login">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span class="btn-content">Đăng nhập</span>
+                            </button>
+                        </a>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-
-<!--    <div class="nav-bar"-->
-<!--        <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">-->
-<!--            <a href="index.html" class="navbar-brand d-block d-lg-none">-->
-<!--                <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone-->
-<!--                </h1>-->
-<!--            </a>-->
-<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse" id="navbarCollapse">-->
-<!--                <div class="navbar-nav ms-auto mx-lg-auto py-0">-->
-<!--                    <a href="index.html" class="nav-item nav-link active">Trang Chủ</a>-->
-<!--                    <a href="about.html" class="nav-item nav-link">Về SlowlyCake</a>-->
-<!--                    <a href="menu.html" class="nav-item nav-link">Sản Phẩm</a>-->
-<!--                    <a href="service.html" class="nav-item nav-link">Dịch vụ</a>-->
-<!--                    <div class="nav-item dropdown">-->
-<!--                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>-->
-<!--                        <div class="dropdown-menu m-0">-->
-<!--                            <a href="team.html" class="dropdown-item">Thành viên</a>-->
-<!--                            <a href="testimonial.html" class="dropdown-item">Đánh giá của khách hàng</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
-<!--    </div>-->
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
