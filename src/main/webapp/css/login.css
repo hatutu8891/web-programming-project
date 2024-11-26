@@ -41,3 +41,9 @@ body {
   .options a:hover {
     text-decoration: underline;
   }
+  .logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+    height: auto;
+}
