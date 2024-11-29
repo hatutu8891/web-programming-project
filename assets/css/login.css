@@ -20,7 +20,7 @@ body {
     font-weight: bold;
   }
   .btn-custom {
-    background-color: #4CAF50;
+    background-color: #e88f2a;
     color: white;
     border: none;
     width: 100%;
@@ -28,7 +28,7 @@ body {
     border-radius: 4px;
   }
   .btn-custom:hover {
-    background-color: #45a049;
+    background-color: #e88f2a;
   }
   .options {
     text-align: center;

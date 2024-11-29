@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang quản lý người dùng">
+    <title>Quản Lý Người Dùng</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/templateAdmin.css">
+</head>
+<body style="background-color: #f4f4f4;">
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="list-group">
+               <a href="templateAdmin.html" class="list-group-item list-group-item-action">Quản Lý Người Dùng</a>
+                <a href="index.html" class="list-group-item list-group-item-action">Đăng Xuất</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Quản Lý Người Dùng</h3>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Thêm Người Dùng</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên Người Dùng</th>
+                                <th>Email</th>
+                                <th>Vai Trò</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>a@example.com</td>
+                                <td>Quản Trị Viên</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Chỉnh Sửa</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Trần Thị B</td>
+                                <td>b@example.com</td>
+                                <td>Người Dùng</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Chỉnh Sửa</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Lê Bá Khánh C</td>
+                                <td>c@example.com</td>
+                                <td>Quản trị viên</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Chỉnh Sửa</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Từ Chí D</td>
+                                <td>d@example.com</td>
+                                <td>Người Dùng</td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Chỉnh Sửa</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Thêm Người Dùng -->
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">Thêm Người Dùng Mới</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Tên Người Dùng</label>
+                        <input type="text" class="form-control" id="username" placeholder="Nhập tên người dùng">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Vai Trò</label>
+                        <select class="form-control" id="role">
+                            <option>Người Dùng</option>
+                            <option>Quản Trị Viên</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu Người Dùng</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
