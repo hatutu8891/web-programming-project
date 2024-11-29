@@ -8,6 +8,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
   }
   h2 {
     text-align: center;
@@ -24,3 +27,29 @@ body {
   .btn-custom:hover {
     background-color: #e88f2a;
   }
+  .back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .back-arrow:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.1);
+  }
+  
+  .back-arrow img {
+    width: 20px;
+    height: 20px;
+  }
+  
