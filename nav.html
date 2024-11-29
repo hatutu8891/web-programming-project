@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Slowly Cake</title>
+  <style>
+    #nav{
+      position: sticky;
+      top: 0;  /* Giữ thanh điều hướng ở trên cùng */
+      z-index: 99; /* Đảm bảo thanh điều hướng luôn nổi lên trên các phần tử khác */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
 </head>
 <body>
 <div id="nav">
