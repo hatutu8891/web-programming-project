@@ -1,0 +1,64 @@
+/* Định dạng flex cho sản phẩm */
+.product-detail {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Căn trên cùng */
+    margin: 20px 0;
+}
+
+/* Kích thước hình ảnh sản phẩm */
+.product-images {
+    flex: 1; /* Chiếm 1 phần không gian */
+    max-width: 50%; /* Giới hạn chiều rộng */
+}
+
+.product-images img {
+    width: 100%; /* Hình ảnh chính full chiều rộng */
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.thumbnail-images img {
+    width: 70px; /* Hình ảnh nhỏ */
+    margin: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Phần thông tin sản phẩm */
+.product-info {
+    flex: 1.5; /* Chiếm 1.5 lần không gian so với hình ảnh */
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.product-price {
+    font-size: 22px;
+    color: #ff5722;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    font-size: 16px;
+    color: #999;
+    margin-left: 10px;
+}
+
+.voucher {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
