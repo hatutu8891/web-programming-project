@@ -97,7 +97,7 @@ h6,
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--light);
+    color: white;
     outline: none;
     transition: .5s;
 }
