@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin người dùng</title>
+    <link rel="stylesheet" href="assets/css/userInfo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thông tin tài khoản</h1>
+        <a href="index.html">
+            <button id="logout-btn" style="background-color: green; color: white;">Đến trang chủ</button>
+
+        </a>
+        <div class="user-info">
+            <div class="avatar">
+                <img src="assets/images/cake5.png" alt="Avatar" id="user-avatar">
+                <button id="change-avatar-btn">Thay đổi ảnh đại diện</button>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="username">Tên tài khoản:</label>
+                    <input type="text" id="username" value="username123" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="user@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="name">Tên người dùng:</label>
+                    <input type="text" id="name" value="Nguyễn Văn A">
+                </div>
+                <button type="submit" id="save-changes-btn">Lưu thay đổi</button>
+         
+                <a href="changePasswd.html">
+                    <button id="change-password-btn">Thay đổi mật khẩu</button>
+                </a>
+                <a href="index.html">
+                    <button id="logout-btn">Đăng xuất</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
