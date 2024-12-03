@@ -1,11 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f1e9;
     height: 100vh;
   }
   .login-container {
     background-color: white;
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+    .signup-container {
+    background-color: white;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -44,6 +53,31 @@ body {
   .logo {
     display: block;
     margin: 0 auto 20px;
-    width: 150px;
+    width: 100px;
     height: auto;
+}
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.back-arrow:hover {
+  background-color: #e2e6ea;
+  transform: scale(1.1);
+}
+
+.back-arrow img {
+  width: 20px;
+  height: 20px;
 }
