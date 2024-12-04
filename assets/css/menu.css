@@ -66,27 +66,17 @@
 .product-grid .product-card{
     width: 220px;
     background-color: #f8f1e9;
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+    justify-content: space-between; /* Phân bổ không gian giữa các phần tử */
+    height: 100%;
 }
 .product-grid .product-card img{
     width: 100%;
     margin-bottom: 20px;
 }
-.nav {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+.product-grid .product-card h4{
+     flex-grow: 1;
 }
 
-.nav-btn {
-    padding: 10px 20px;
-    border: 1px solid #ddd;
-    background-color: #e88f2a;
-    cursor: pointer;
-    font-size: 14px;
-}
 
-.nav-btn.active {
-    background-color: #ec5b00;
-    color: #fff;
-    border-color: #ff5722;
-}
