@@ -10,7 +10,9 @@ body {
     transition: opacity 1s;
     -webkit-transition: opacity 1s;
 }
-
+.row{
+    padding: 20px 0px;
+}
 .bg-loaded {
     opacity: 1;
 }
