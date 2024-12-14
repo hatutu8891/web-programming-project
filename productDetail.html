@@ -10,11 +10,21 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/productDetail.css">
 	
+	<link rel="stylesheet" href="assets/css/productDetail.css">
+<style>body{
+	background-color: aqua;
+}
+
+	</style>
 </head>
 
 <body>
+	    <!-- Header -->
+		 <div id="header"></div>
+
+		<div id="nav"></div> 
+	
 	<div class="container mt-5">
 		<div class="page-title py-3">
 			<nav aria-label="breadcrumb">
@@ -26,7 +36,7 @@
 			</nav>
 		</div>
 
-		<div class="row">
+		<div class="row img">
 			<div class="col-md-5">
 				<div class="product-gallery">
 					<div class="main-image">
@@ -44,8 +54,7 @@
 						</p>
 					</div>
 
-					<form class="variations_form cart" action="/mua/thoi-trang-tre-em/" method="post"
-						enctype="multipart/form-data">
+					<div class="variations_form cart">
 						<div class="single_variation_wrap">
 							<div class="sticky-add-to-cart d-flex align-items-center">
 								<img src="assets/images/cake1.jpg" alt="Bánh kem" class="sticky-add-to-cart-img mr-3">
@@ -53,143 +62,170 @@
 									<strong>Bánh Gato Socola Trái Cây</strong>
 								</div>
 							</div>
-							<div class="select-swap">  
+							<div class="select-swap">
 								<div data-value="14cm" class="n-sd swatch-element 14cm ">
-									<input class="variant-0" id="swatch-0-14cm" type="radio" name="option1" value="14cm" checked="" data-gtm-form-interact-field-id="2">
-									
+									<input class="variant-0" id="swatch-0-14cm" type="radio" name="option1" value="14cm"
+										checked="" data-gtm-form-interact-field-id="2">
+
 									<label for="swatch-0-14cm">
 										14cm
 									</label>
-									
+
 								</div>
 								<div data-value="18cm" class="n-sd swatch-element 18cm ">
-									<input class="variant-0" id="swatch-0-18cm" type="radio" name="option1" value="18cm" data-gtm-form-interact-field-id="1">
-									
+									<input class="variant-0" id="swatch-0-18cm" type="radio" name="option1" value="18cm"
+										data-gtm-form-interact-field-id="1">
+
 									<label for="swatch-0-18cm">
 										18cm
 									</label>
-									
+
 								</div>
 								<div data-value="23cm" class="n-sd swatch-element 23cm ">
-									<input class="variant-0" id="swatch-0-23cm" type="radio" name="option1" value="23cm" data-gtm-form-interact-field-id="0">
-									
+									<input class="variant-0" id="swatch-0-23cm" type="radio" name="option1" value="23cm"
+										data-gtm-form-interact-field-id="0">
+
 									<label for="swatch-0-23cm">
 										23cm
 									</label>
-									
+
 								</div>
 							</div>
 
 							<div class="quantity buttons_added d-flex align-items-center mt-3">
 								<button type="button" class="minus button btn btn-outline-secondary">-</button>
-								<input type="number" class="input-text qty text mx-2" step="1" min="1" max="9999" name="quantity" value="1" title="Số lượng">
+								<input type="number" class="input-text qty text mx-2" step="1" min="1" max="9999"
+									name="quantity" value="1" title="Số lượng">
 								<button type="button" class="plus button btn btn-outline-secondary">+</button>
 							</div>
-	
-							<button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Mua hàng</button>
-							<button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ hàng</button>
+
+							<button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Mua
+								hàng</button>
+							<button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ
+								hàng</button>
 						</div>
 
 						<input type="hidden" name="add-to-cart" value="339">
 						<input type="hidden" name="product_id" value="339">
 						<input type="hidden" name="variation_id" class="variation_id" value="0">
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="product-description py-5 bg-light mt-5">
+		<div class="product-details-tabs py-5 bg-light mt-5">
 			<div class="container">
-				<h5 class="text-uppercase">Mô tả</h5>
-				<div class="border p-3">
-					<p>
-						● **Thông tin sản phẩm - Bánh Sinh Nhật Vị Socola**<br>
-						Bánh sinh nhật vị socola mang đến hương vị thơm ngon, ngọt ngào với lớp bánh mềm mịn, kết hợp
-						cùng lớp kem socola béo ngậy, tạo nên một món quà hoàn hảo cho mọi dịp sinh nhật. Bánh được
-						trang trí tinh tế với socola, hoa quả tươi, hoặc các họa tiết yêu thích, làm cho chiếc bánh trở
-						thành điểm nhấn đặc biệt trong bữa tiệc. Với hương vị socola đặc trưng, bánh sinh nhật này chắc
-						chắn sẽ làm hài lòng cả người lớn và trẻ em.<br><br>
-						● **Thành phần chính:**<br>
-						- Bánh: Bột mì, trứng, sữa tươi, đường, bột nở, bơ.<br>
-						- Kem: Socola, kem tươi, đường, vani.<br>
-						- Trang trí: Socola, hoa quả tươi (tùy theo yêu cầu), đường.<br><br>
-						● **Kích thước:**<br>
-						- Đường kính: 20cm, 25cm, 30cm (Có thể tùy chỉnh theo yêu cầu khách hàng)<br><br>
-						● **Giá bán:**<br>
-						- Đường kính 20cm: 350,000 VNĐ<br>
-						- Đường kính 25cm: 450,000 VNĐ<br>
-						- Đường kính 30cm: 550,000 VNĐ<br><br>
-						● **Hướng dẫn bảo quản:**<br>
-						- Bảo quản trong ngăn mát tủ lạnh.<br>
-						- Sử dụng trong vòng 2-3 ngày để giữ được hương vị tươi ngon nhất.<br><br>
-						● **Lưu ý:**<br>
-						- Có thể thêm các yêu cầu đặc biệt về trang trí, tên, hoặc hình ảnh lên bánh.<br>
-						- Đơn đặt hàng trước ít nhất 2 ngày.<br><br>
-						● **Màu sắc:**<br>
-						- Màu của kem socola có thể thay đổi tùy theo yêu cầu (chocolate đen, chocolate trắng).<br><br>
-						● **Dành cho:**<br>
-						- Mọi lứa tuổi, đặc biệt là các tín đồ yêu thích vị socola.
-					</p>
+				<ul class="nav nav-tabs" id="product-details-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
+							aria-controls="description" aria-selected="true">Mô tả</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab"
+							aria-controls="reviews" aria-selected="false">Đánh giá</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="product-details-tabs-content">
+					<!-- Mô tả sản phẩm -->
+					<div class="tab-pane fade show active" id="description" role="tabpanel"
+						aria-labelledby="description-tab">
+						<div class="border p-3 mt-3" >
+							<h5 class="text-uppercase">Thông tin sản phẩm</h5>
+							<p>
+								● **Thông tin sản phẩm - Bánh Sinh Nhật Vị Socola**<br>
+								Bánh sinh nhật vị socola mang đến hương vị thơm ngon, ngọt ngào với lớp bánh mềm mịn,
+								kết hợp
+								cùng lớp kem socola béo ngậy, tạo nên một món quà hoàn hảo cho mọi dịp sinh nhật. Bánh
+								được
+								trang trí tinh tế với socola, hoa quả tươi, hoặc các họa tiết yêu thích, làm cho chiếc
+								bánh trở
+								thành điểm nhấn đặc biệt trong bữa tiệc. Với hương vị socola đặc trưng, bánh sinh nhật
+								này chắc
+								chắn sẽ làm hài lòng cả người lớn và trẻ em.<br><br>
+								● **Thành phần chính:**<br>
+								- Bánh: Bột mì, trứng, sữa tươi, đường, bột nở, bơ.<br>
+								- Kem: Socola, kem tươi, đường, vani.<br>
+								- Trang trí: Socola, hoa quả tươi (tùy theo yêu cầu), đường.<br><br>
+								● **Kích thước:**<br>
+								- Đường kính: 20cm, 25cm, 30cm (Có thể tùy chỉnh theo yêu cầu khách hàng)<br><br>
+								● **Giá bán:**<br>
+								- Đường kính 20cm: 350,000 VNĐ<br>
+								- Đường kính 25cm: 450,000 VNĐ<br>
+								- Đường kính 30cm: 550,000 VNĐ<br><br>
+								● **Hướng dẫn bảo quản:**<br>
+								- Bảo quản trong ngăn mát tủ lạnh.<br>
+								- Sử dụng trong vòng 2-3 ngày để giữ được hương vị tươi ngon nhất.<br><br>
+								● **Lưu ý:**<br>
+								- Có thể thêm các yêu cầu đặc biệt về trang trí, tên, hoặc hình ảnh lên bánh.<br>
+								- Đơn đặt hàng trước ít nhất 2 ngày.<br><br>
+								● **Màu sắc:**<br>
+								- Màu của kem socola có thể thay đổi tùy theo yêu cầu (chocolate đen, chocolate
+								trắng).<br><br>
+								● **Dành cho:**<br>
+								- Mọi lứa tuổi, đặc biệt là các tín đồ yêu thích vị socola.
+							</p>
+						</div>
+					</div>
+					<!-- Đánh giá sản phẩm -->
+					<div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+						<div class="border p-3 mt-3">
+							<h5 class="text-uppercase">Đánh giá sản phẩm
+								<div class="rating ml-3">
+									<span class="fa fa-star checked"></span>
+									<span>4.9/5 | Đã bán 520</span>
+								</div>
+							</h5>
+							<div class="add-comment mt-4">
+								<h6 class="text-uppercase">Gửi bình luận của bạn</h6>
+								<form action="#" method="post">
+									<div class="form-group">
+										<label for="reviewer-name">Tên của bạn:</label>
+										<input type="text" class="form-control" id="reviewer-name" name="reviewer-name"
+											required>
+									</div>
+									<div class="form-group">
+										<label for="review-content">Bình luận của bạn:</label>
+										<textarea class="form-control" id="review-content" name="review-content"
+											rows="4" required></textarea>
+									</div>
+									<button type="submit" class="single_add_to_cart_button btn btn-primary">Gửi bình luận</button>
+								</form>
+							</div>
+							<div class="review">
+								<div class="reviewer">minhtrang_123</div>
+								<div class="review-date">2023-12-01 18:45 | Phân loại hàng: Bánh sinh nhật socola</div>
+								<div class="review-content">Bánh rất ngon, socola đậm đà, lớp kem mềm mịn. Mình thích
+									nhất là
+									trang trí rất đẹp mắt, đúng theo yêu cầu. Bánh có kích thước vừa phải, phù hợp với
+									bữa tiệc
+									nhỏ. Mọi người đều khen ngon!</div>
+								<div class="review-time">1:12</div>
+							</div>
+
+							<div class="review">
+								<div class="reviewer">linhchi_88</div>
+								<div class="review-date">2023-11-29 20:30 | Phân loại hàng: Bánh sinh nhật socola</div>
+								<div class="review-meta">Giao hàng nhanh chóng. Bánh thơm và rất hợp khẩu vị. Mua cho
+									sinh nhật
+									mẹ, bà rất hài lòng. Mình sẽ đặt thêm lần sau!</div>
+								<div class="review-time">0:45</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<!-- footer -->
+	<div id="footer"></div>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-		<div class="product-reviews py-5 bg-light mt-5">
-			<div class="container">
-				<h5 class="text-uppercase d-flex align-items-center">
-					Đánh giá sản phẩm
-					<div class="rating ml-3">
-						<span class="fa fa-star checked"></span>
-						<span>4.9/5 | Đã bán 520</span>
-					</div>
-				</h5>
-				<div class="border p-3">
-					<div class="review">
-						<div class="reviewer">minhtrang_123</div>
-						<div class="review-date">2023-12-01 18:45 | Phân loại hàng: Bánh sinh nhật socola</div>
-						<div class="review-meta">Chất liệu: Bánh mềm | Màu sắc: Socola đen, Socola trắng | Đúng với mô
-							tả: đúng</div>
-						<div class="review-content">Bánh rất ngon, socola đậm đà, lớp kem mềm mịn. Mình thích nhất là
-							trang trí rất đẹp mắt, đúng theo yêu cầu. Bánh có kích thước vừa phải, phù hợp với bữa tiệc
-							nhỏ. Mọi người đều khen ngon!</div>
-						<div class="review-time">1:12</div>
-						<div class="review-likes">145</div>
-					</div>
+	<script src="assets/js/loadHeader.js"></script>
+    <script src="assets/js/loadFooter.js"></script>
+    <script src="assets/js/loadNav.js"></script>
 
-					<div class="review">
-						<div class="reviewer">linhchi_88</div>
-						<div class="review-date">2023-11-29 20:30 | Phân loại hàng: Bánh sinh nhật socola</div>
-						<div class="review-meta">Giao hàng nhanh chóng. Bánh thơm và rất hợp khẩu vị. Mua cho sinh nhật
-							mẹ, bà rất hài lòng. Mình sẽ đặt thêm lần sau!</div>
-						<div class="review-time">0:45</div>
-						<div class="review-likes">120</div>
-					</div>
-					<div class="add-comment mt-4">
-						<h6 class="text-uppercase">Gửi bình luận của bạn</h6>
-						<form action="#" method="post">
-							<div class="form-group">
-								<label for="reviewer-name">Tên của bạn:</label>
-								<input type="text" class="form-control" id="reviewer-name" name="reviewer-name"
-									required>
-							</div>
-							<div class="form-group">
-								<label for="review-content">Bình luận của bạn:</label>
-								<textarea class="form-control" id="review-content" name="review-content" rows="4"
-									required></textarea>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="single_add_to_cart_button btn btn-primary">Gửi bình
-									luận</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
