@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Tải nội dung của nav.html vào phần tử #nav trong trang HTML hiện tại
-    fetch('nav.html')
+    fetch('../../pages/dynamic/shared/nav.html')
         .then(response => response.text())  // Chuyển dữ liệu thành chuỗi văn bản
         .then(data => {
             // Chèn nội dung vào phần tử #nav
