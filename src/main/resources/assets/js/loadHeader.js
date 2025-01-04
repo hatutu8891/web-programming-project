@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../../pages/dynamic/shared/header.html')
+    fetch('../../pages/dynamic/shared/header.jsp')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
