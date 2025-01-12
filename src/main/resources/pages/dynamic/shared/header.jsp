@@ -61,7 +61,7 @@
                                 <span class="btn-content">Đăng ký </span>
                             </button>
                         </a>
-                        <a href="/pages/dynamic/auth/login.html">
+                        <a href="/pages/dynamic/auth/login.jsp">
                             <button class="setbutton login">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 <span class="btn-content">Đăng nhập</span>
