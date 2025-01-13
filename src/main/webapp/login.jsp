@@ -15,7 +15,6 @@
     <img src="<%= request.getContextPath() %>/assets/images/logo_bánh.png" alt="Logo" class="logo">
     <h2>Đăng Nhập</h2>
     <div id="loginForm">
-        <!-- Hiển thị thông báo lỗi nếu có -->
         <% if(request.getAttribute("error") != null) { %>
         <div class="alert alert-danger" role="alert">
             <%= request.getAttribute("error") %>

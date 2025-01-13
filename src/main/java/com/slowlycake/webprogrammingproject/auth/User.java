@@ -3,26 +3,27 @@ package com.slowlycake.webprogrammingproject.auth;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private Long id;
+    private int id;
     private String username;
     private String password;
     private int role;
-
+    private String email;
 
     public User() {
     }
 
-    public User(Long id, String username, String password) {
-        this.id = id;
+    public User(String username, String email, String password) {
         this.username = username;
+        this.email = email;
         this.password = password;
     }
 
-    public Long getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -50,4 +51,12 @@ public class User implements Serializable {
         this.role = role;
     }
 
+    // Getter và setter cho email
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
