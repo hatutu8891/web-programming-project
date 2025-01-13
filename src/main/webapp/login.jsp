@@ -15,10 +15,17 @@
     <img src="<%= request.getContextPath() %>/assets/images/logo_bánh.png" alt="Logo" class="logo">
     <h2>Đăng Nhập</h2>
     <div id="loginForm">
+        <!-- Hiển thị thông báo lỗi nếu có -->
+        <% if(request.getAttribute("error") != null) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= request.getAttribute("error") %>
+        </div>
+        <% } %>
+
         <form action="<%= request.getContextPath() %>/login" method="post">
             <div class="form-group">
                 <label for="username">Tên đăng nhập:</label>
-                <input type="text" name="username" id="username" class="form-control" required placeholder="Nhập tên đăng nhập">
+                <input type="text" name="username" id="username" class="form-control" required placeholder="Nhập tên đăng nhập" autofocus>
             </div>
 
             <div class="form-group">
@@ -45,9 +52,10 @@
     </a>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -11,7 +12,7 @@
 <div class="signup-container">
   <img src="../assets/images/logo_bánh.png" alt="Logo" class="logo">
   <h2>Trang Đăng Ký</h2>
-  <div id="signupForm">
+  <form action="register" method="POST" id="signupForm">
     <div class="form-group">
       <label for="username">Tên đăng nhập:</label>
       <input type="text" name="username" class="form-control" id="username" required placeholder="Nhập tên">
@@ -29,7 +30,7 @@
       <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required placeholder="Nhập lại mật khẩu">
     </div>
     <button type="submit" class="btn btn-custom btn-block">Đăng ký</button>
-  </div>
+  </form>
   <div id="errorMessage" class="alert alert-danger mt-3" style="display: none;"></div>
   <div class="text-center mt-3">
     <p>Đã có tài khoản? <a href="login.jsp">Đăng nhập</a></p>

@@ -55,7 +55,7 @@
                 <li class="icon-item dropdown">
                     <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <div class="dropdown-menu login-signin">
-                        <a href="/pages/dynamic/auth/signUp.html">
+                        <a href="/pages/dynamic/auth/signUp.jsp">
                             <button class="setbutton signin">
                                 <i class="fa-solid fa-person"></i>
                                 <span class="btn-content">Đăng ký </span>

@@ -13,16 +13,15 @@ import java.io.IOException;
 public class LoginController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String uname = req.getParameter("uname");
-        String pass = req.getParameter("pass");
+        String uname = req.getParameter("username");
+        String pass = req.getParameter("password");
         AuthService service = new AuthService();
         User user = service.checkLogin(uname,pass);
-        if(user != null && user.getPassword().equals(pass)) {
+        if(user != null) {
             HttpSession session=req.getSession();
             session.setAttribute("auth", user);
             resp.sendRedirect("index.jsp");
