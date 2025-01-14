@@ -1,16 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <title>Slowly Cake</title>
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link href="/assets/img/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="assets/img/favicon.ico" rel="icon">
     <!--    <link rel="stylesheet" href="../scss/bootstrap.scss">-->
 
 </head>
@@ -28,12 +31,11 @@
         <div class="frame-logo">
             <div class="border-frame-logo">
                 <div class="logo">
-                    <img src="/assets/img/logo_bánh.png" alt="Logo" height="60" width="60" class="logo-img"/>
+                    <img src="assets/img/logo.png" alt="Logo" height="60" width="60" class="logo-img"/>
                     <h1 class="logo-title">SlowlyCake</h1>
                 </div>
             </div>
         </div>
-
 
         <div class="frame-right-header">
             <ul class="icon-function-frame">
@@ -55,13 +57,13 @@
                 <li class="icon-item dropdown">
                     <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <div class="dropdown-menu login-signin">
-                        <a href="/pages/dynamic/auth/signUp.jsp">
+                        <a href="signUp.jsp">
                             <button class="setbutton signin">
                                 <i class="fa-solid fa-person"></i>
                                 <span class="btn-content">Đăng ký </span>
                             </button>
                         </a>
-                        <a href="/pages/dynamic/auth/login.jsp">
+                        <a href="login.jsp">
                             <button class="setbutton login">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 <span class="btn-content">Đăng nhập</span>

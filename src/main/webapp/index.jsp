@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%--<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>--%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
-    <link href="/assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -86,7 +86,7 @@
         <div class="row gx-5">
             <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="/assets/img/about.jpg"
+                    <img class="position-absolute w-100 h-100" src="assets/img/about.jpg"
                          style="object-fit: cover;" alt="">
                 </div>
             </div>
@@ -170,7 +170,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake1.jpg"
+                                    <img class="img-fluid" src="assets/img/cake1.jpg"
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">120k</h4>
                                 </div>
@@ -185,7 +185,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake2.png" alt=""
+                                    <img class="img-fluid" src="assets/img/cake2.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">200k</h4>
                                 </div>
@@ -200,7 +200,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake3.png" alt=""
+                                    <img class="img-fluid" src="assets/img/cake3.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">300k</h4>
                                 </div>
@@ -215,7 +215,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake4.png" alt=""
+                                    <img class="img-fluid" src="assets/img/cake4.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">500k</h4>
                                 </div>
@@ -230,7 +230,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake5.png" alt=""
+                                    <img class="img-fluid" src="assets/img/cake5.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">600k</h4>
                                 </div>
@@ -245,7 +245,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/cake6.png" alt=""
+                                    <img class="img-fluid" src="assets/img/cake6.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">1200k</h4>
                                 </div>
@@ -265,7 +265,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake1.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake1.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">3500k</h4>
                                 </div>
@@ -280,7 +280,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake2.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake2.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">3200k</h4>
                                 </div>
@@ -295,7 +295,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake3.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake3.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">4000k</h4>
                                 </div>
@@ -310,7 +310,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake4.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake4.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -325,7 +325,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake5.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake5.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">4200k</h4>
                                 </div>
@@ -340,7 +340,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/wedding_cake6.png" alt=""
+                                    <img class="img-fluid" src="assets/img/wedding_cake6.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">5000k</h4>
                                 </div>
@@ -360,7 +360,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake1.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake1.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -375,7 +375,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake2.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake2.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -390,7 +390,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake3.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake3.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -405,7 +405,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake4.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake4.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -420,7 +420,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake5.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake5.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -434,7 +434,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex h-100">
                                 <div class="flex-shrink-0">
-                                    <img class="img-fluid" src="/assets/img/custom_cake6.png" alt=""
+                                    <img class="img-fluid" src="assets/img/custom_cake6.png" alt=""
                                          style="width: 150px; height: 85px;">
                                     <h4 class="bg-dark text-primary p-2 m-0">Liên hệ</h4>
                                 </div>
@@ -491,7 +491,7 @@
         </div>
         <div class="testimonial-item bg-dark text-white border-inner p-4">
             <div class="d-flex align-items-center mb-3">
-                <img class="img-fluid flex-shrink-0" src="/assets/img/review1.jpg"
+                <img class="img-fluid flex-shrink-0" src="assets/img/review1.jpg"
                      style="width: 60px; height: 60px;">
                 <div class="ps-3">
                     <h4 class="text-primary text-uppercase mb-1">hatutu8891</h4>
@@ -504,7 +504,7 @@
         </div>
         <div class="testimonial-item bg-dark text-white border-inner p-4">
             <div class="d-flex align-items-center mb-3">
-                <img class="img-fluid flex-shrink-0" src="/assets/img/review2.png"
+                <img class="img-fluid flex-shrink-0" src="assets/img/review2.png"
                      style="width: 60px; height: 60px;">
                 <div class="ps-3">
                     <h4 class="text-primary text-uppercase mb-1">aigoo404</h4>
@@ -517,7 +517,7 @@
         </div>
         <div class="testimonial-item bg-dark text-white border-inner p-4">
             <div class="d-flex align-items-center mb-3">
-                <img class="img-fluid flex-shrink-0" src="/assets/img/review3.png"
+                <img class="img-fluid flex-shrink-0" src="assets/img/review3.png"
                      style="width: 60px; height: 60px;">
                 <div class="ps-3">
                     <h4 class="text-primary text-uppercase mb-1">Tranthanhhai104</h4>
@@ -530,7 +530,7 @@
         </div>
         <div class="testimonial-item bg-dark text-white border-inner p-4">
             <div class="d-flex align-items-center mb-3">
-                <img class="img-fluid flex-shrink-0" src="/assets/img/review4.jpg"
+                <img class="img-fluid flex-shrink-0" src="assets/img/review4.jpg"
                      style="width: 60px; height: 60px;">
                 <div class="ps-3">
                     <h4 class="text-primary text-uppercase mb-1">Th4iTh00ng</h4>
@@ -555,15 +555,15 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/lib/easing/easing.min.js"></script>
-<script src="/assets/lib/waypoints/waypoints.min.js"></script>
-<script src="/assets/lib/counterup/counterup.min.js"></script>
-<script src="/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="assets/lib/easing/easing.min.js"></script>
+<script src="assets/lib/waypoints/waypoints.min.js"></script>
+<script src="assets/lib/counterup/counterup.min.js"></script>
+<script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- Template Javascript -->
-<script src="/assets/js/header.js"></script>
-<script src="/assets/js/loadFooter.js"></script>
-<script src="/assets/js/loadNav.js"></script>
-<script src="/assets/js/main.js"></script>
+<script src="assets/js/header.js"></script>
+<script src="assets/js/loadFooter.js"></script>
+<script src="assets/js/loadNav.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
