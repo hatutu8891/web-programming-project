@@ -24,7 +24,11 @@ public class LoginController extends HttpServlet{
         if(user != null) {
             HttpSession session=req.getSession();
             session.setAttribute("auth", user);
-            resp.sendRedirect("index.jsp");
+            if (user.getRole() == 1) {
+                resp.sendRedirect(req.getContextPath() + "/pages/dynamic/admin/adminDashboard.jsp"); // Chuyển đến trang Admin
+            } else {
+                resp.sendRedirect(req.getContextPath() + "/index.jsp"); // Chuyển đến trang chủ
+            }
         }
         else {
             req.setAttribute("error","Dang nhap khong thanh cong");
