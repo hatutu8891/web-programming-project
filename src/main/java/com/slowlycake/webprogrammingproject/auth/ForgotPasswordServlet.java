@@ -50,10 +50,10 @@ public class ForgotPasswordServlet extends HttpServlet {
     }
 
     private void sendEmail(String to, String subject, String message) throws MessagingException {
-        String from = "haiht1004@gmail.com";  // Địa chỉ email của bạn
-        String host = "smtp.gmail.com";  // SMTP server của Gmail
-        final String username = System.getenv("GMAIL_USERNAME");  // Đọc từ biến môi trường
-        final String password = System.getenv("GMAIL_PASSWORD");  // Đọc từ biến môi trường
+        String from = "haiht1004@gmail.com";
+        String host = "smtp.gmail.com";
+        final String username = "haiht1004@gmail.com";
+        final String password = "zdxm qybk vgss oqed";
 
         // Cấu hình các thuộc tính cho gửi email qua SMTP
         Properties properties = System.getProperties();
@@ -78,6 +78,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 
         // Gửi email
         Transport.send(mimeMessage);
-        System.out.println("Email đã được gửi thành công!");
+        System.out.println("Email đã được gửi thành công!"+to);
     }
+
 }

@@ -35,4 +35,14 @@ public class UserDao {
                         .execute()
         );
     }
+    public void updatePassword(String email, String newPassword) {
+        JDBIConnect.get().withHandle(h ->
+                h.createUpdate("UPDATE users SET password = ? WHERE email = ?")
+                        .bind(0, newPassword)
+                        .bind(1, email)
+                        .execute()
+        );
+    }
+
+
 }

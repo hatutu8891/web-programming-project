@@ -1,0 +1,240 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+}
+
+h1, h4 {
+    font-weight: unset;
+}
+
+/*For id*/
+#header {
+    background-color: #f8f1e9;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#header .container {
+    width: 1200px;
+    /*height: d90px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#header .frame-logo {
+    background-color: #e88f2a;
+    width: 40%;
+    height: 90px;
+    padding: 5px;
+    float:left;
+}
+
+#header .border-frame-logo {
+    margin: 5px;
+    width: calc(100% - 14px);
+    height: 70px;
+    border: solid 2px white;
+}
+
+#header .logo {
+    width: calc(100% - 14px);
+    height: 50px;
+    display: flex;
+    margin-top: 3px;
+    justify-content: center;
+}
+
+#header .logo:hover {
+    cursor: pointer;
+}
+
+#header .logo .logo-img {
+    float: left;
+
+}
+
+#header .logo .logo-title {
+    float: right;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 250%;
+    font-weight: 800;
+
+}
+
+#header .frame-left-header {
+    width: 30%;
+    height: 80px;
+    float: left;
+    padding: 30px 0px 0px 0px;
+}
+
+#header .content-frame-left {
+    height: 50px;
+}
+#header .social-net-name {
+    float: left;
+    margin: 0 15px;
+
+}
+#header .frame-left-header a {
+    text-decoration: none;
+    color: #e88f2a;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+}
+
+#header .frame-left-header a:hover {
+    color: #2b2825;
+}
+
+
+
+#header .frame-right-header {
+    width: 30%;
+    height: auto;
+    float: right;
+    padding: 30px 0px 0px 0px;
+}
+
+#header .frame-right-header ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+
+}
+
+#header .frame-right-header ul li {
+    margin: 0;
+    padding: 0px 25px 0px 25px;
+    list-style-type: none;
+    float: left;
+}
+
+#header .frame-right-header i {
+    color: #e88f2a;
+    font-size: 150%;
+    transition: all 0.3s ease;
+}
+
+
+#header .frame-right-header i:hover {
+    color: #2b2825;
+    cursor: pointer;
+}
+
+#header .frame-right-header ul li:first-child {
+    position: relative;
+}
+
+#header .frame-right-header .search-box {
+    width: 350px;
+    height: 60px;
+    /*margin-left: -120px;*/
+    /*margin-top: 30px;*/
+    background-color: white;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    display: none;
+
+}
+
+
+#header .frame-right-header li:first-child:hover .search-box {
+    display: block;
+}
+
+#header .frame-right-header .search-box input {
+    margin: 6px auto auto 10px;
+    width:60%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    float: left;
+}
+
+#header .frame-right-header .search-box i {
+    color: #2b2825;
+    margin: 10px 30px auto auto;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+#header .frame-right-header .search-box i:hover {
+    color: #e88f2a;
+
+}
+
+#header .frame-right-header ul li:last-child {
+    position: relative;
+}
+
+#header .frame-right-header .login-signin {
+    width: 210px;
+    height: 165px;
+    /*margin-left: -120px;*/
+    /*margin-top: 35px;*/
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    display: none;
+
+}
+
+#header .frame-right-header button.setbutton {
+    width: 180px;
+    height: 60px;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color:#e88f2a ;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+
+}
+#header .frame-right-header button i{
+    font-size: 30px;
+   margin-top: 6px;
+    color: white;
+
+}
+#header .frame-right-header button i:hover{
+    color: white;
+}
+
+#header .frame-right-header button span {
+    font-size: 20px;
+    margin-top: 6px;
+}
+#header .frame-right-header a{
+    text-decoration: none;
+    color: white;
+}
+
+#header .frame-right-header button:hover {
+    background-color: #ec5b00;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+#header .frame-right-header ul li:last-child:hover .login-signin {
+    display: block;
+}
