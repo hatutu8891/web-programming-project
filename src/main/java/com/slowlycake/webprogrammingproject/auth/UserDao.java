@@ -35,6 +35,7 @@ public class UserDao {
                         .execute()
         );
     }
+
     public void updatePassword(String email, String newPassword) {
         JDBIConnect.get().withHandle(h ->
                 h.createUpdate("UPDATE users SET password = ? WHERE email = ?")
@@ -44,5 +45,12 @@ public class UserDao {
         );
     }
 
-
+    public boolean updateEmail(String username, String newEmail) {
+        return JDBIConnect.get().withHandle(h ->
+                h.createUpdate("UPDATE users SET email = ? WHERE username = ?")
+                        .bind(0, newEmail)
+                        .bind(1, username)
+                        .execute() > 0
+        );
+    }
 }
