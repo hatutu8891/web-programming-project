@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -14,11 +16,11 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
   </style>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="<c:url value='/assets/css/style.css'/>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="assets/images/favicon.ico" rel="icon">
+  <link href="<c:url value='/assets/img/favicon.ico'/>" rel="icon">
 </head>
 
 <body>
@@ -34,10 +36,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto mx-lg-auto py-0">
-            <a id="index" href="index.html" class="nav-item nav-link">Trang Chủ</a>
-            <a id="menu" href="menu.html" class="nav-item nav-link">Sản Phẩm</a>
-            <a id="service" href="service.html" class="nav-item nav-link">Dịch vụ</a>
-            <a id="contact" href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+            <a id="index" href="<c:url value='/index.jsp'/>" class="nav-item nav-link">Trang Chủ</a>
+            <a id="menu" href="<c:url value='/menu.jsp'/>" class="nav-item nav-link">Sản Phẩm</a>
+            <a id="service" href="<c:url value='/service.jsp'/>" class="nav-item nav-link">Dịch vụ</a>
+            <a id="contact" href="<c:url value='/contact.jsp'/>" class="nav-item nav-link">Liên Hệ</a>
           </div>
         </div>
       </nav>
