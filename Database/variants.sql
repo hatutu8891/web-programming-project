@@ -1,0 +1,9 @@
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (1, '16 cm', 120000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (2, '20 cm', 180000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (3, '24 cm', 230000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (4, '16 cm', 150000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (5, '20 cm', 200000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (6, '24 cm', 250000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (7, '16 cm', 180000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (8, '20 cm', 240000.00);
+INSERT INTO `variants` (`id`, `size`, `price`) VALUES (9, '24 cm', 320000.00);
