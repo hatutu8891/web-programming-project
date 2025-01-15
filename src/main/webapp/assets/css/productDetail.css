@@ -4,13 +4,16 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
+.plus{
+    background-color: #333;
+    border: #333;
+}
 .bg {
     opacity: 0;
     transition: opacity 1s;
     -webkit-transition: opacity 1s;
 }
-.row{
+.row .img{
     padding: 20px 0px;
 }
 .bg-loaded {
@@ -24,13 +27,6 @@ body {
 
 }
 
-.small-images img {
-    width: 100px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
-}
 
 .price del {
     color: #999;
@@ -41,14 +37,74 @@ body {
     font-weight: bold;
 }
 
-.quantity input {
-    width: 50px;
-    text-align: center;
+/* Container */
+.quantity {
+    display: flex;
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    margin-top: 15px; /* Thêm khoảng cách trên */
 }
 
+/* Nút trừ và cộng */
 .quantity .button {
-    cursor: pointer;
+    font-size: 1.5rem; /* Kích thước chữ cho nút */
+    width: 40px; /* Đặt chiều rộng cố định cho nút */
+    height: 40px; /* Đặt chiều cao cố định cho nút */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Làm cho nút có hình tròn */
+    padding: 0;
+    transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu nền */
 }
+
+/* Nút trừ */
+.quantity .minus {
+    background-color: #e88f2a;
+    border: 1px solid #ddd;
+}
+
+.quantity .minus:hover {
+    background-color: #dc7f15;
+    border-color: #dd7c0d;
+    color: white;
+}
+
+/* Nút cộng */
+.quantity .plus {
+    background-color: #e88f2a;
+    border: 1px solid #ddd;
+}
+
+.quantity .plus:hover {
+    background-color: #e88f2a;
+    border-color: #dd7c0d;
+    color: white;
+}
+
+/* Input số lượng */
+.quantity .input-text {
+    width: 60px; /* Đặt chiều rộng cố định cho input */
+    height: 40px; /* Đặt chiều cao cố định cho input */
+    text-align: center; /* Căn giữa giá trị */
+    border: 1px solid #ddd; /* Đặt đường viền cho input */
+    border-radius: 5px; /* Bo tròn góc của input */
+    font-size: 1.5rem; /* Kích thước chữ */
+    margin: 0 10px; /* Khoảng cách giữa input và các nút */
+}
+
+/* Hiệu ứng focus cho input */
+.quantity .input-text:focus {
+    outline: none;
+    border-color: #e88f2a; /* Đổi màu viền khi input được chọn */
+}
+
+/* Nút button khi ở trạng thái disabled */
+.quantity .button:disabled {
+    background-color: #ccc;
+    border-color: #bbb;
+    cursor: not-allowed; /* Thay đổi con trỏ khi nút bị vô hiệu */
+}
+
 
 .rating .fa-star {
     color: #f39c12;
@@ -94,7 +150,7 @@ body {
     margin-bottom: 10px;
 }
 
-.row {
+.row .img {
     background-color: white;
     margin: auto;
 }
@@ -148,7 +204,6 @@ h5 {
 .rating .fa-star,
 .rating .fa-star-half-alt {
     color: #f1c40f;
-    /* Màu vàng cho ngôi sao */
 }
 
 .rating span {
@@ -157,4 +212,57 @@ h5 {
 
 .ml-3 {
     margin-left: 15px;
+}
+.select-swap {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.select-swap .swatch-element {
+    display: inline-block;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-swap .swatch-element input {
+    display: none;
+}
+
+.select-swap .swatch-element label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    pointer-events: none;
+}
+
+.select-swap .swatch-element:hover {
+    border-color: #666;
+    background-color: #f7f7f7;
+}
+.mt-border .p-3 .mt-3{
+    margin-top: 0;
+}
+.select-swap .swatch-element input:checked + label {
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: #eef6ff;
+    border-radius: 4px;
+}
+.select-swap .swatch-element label {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.select-swap .swatch-element input:checked + label {
+    background-color: #e88f2a;
+    color: white;
+    border-color: #e88f2a;
 }
