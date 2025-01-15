@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trang đăng nhập cho hệ thống quản lý e-commerce">
     <title>Đăng nhập - Slowly Cake</title>
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/login.css">
 </head>
 <body class="d-flex justify-content-center align-items-center">
 <div class="login-container">
-    <img src="<%= request.getContextPath() %>/assets/img/logo_bánh.png" alt="Logo" class="logo">
+    <img src="<%= request.getContextPath() %>/assets/img/logo.png" alt="Logo" class="logo">
     <h2>Đăng Nhập</h2>
     <div id="loginForm">
         <% if(request.getAttribute("error") != null) { %>
