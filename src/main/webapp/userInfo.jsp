@@ -14,7 +14,7 @@
       color: #333;
       background-color: #f8f1e9;
     }
-    .container {
+    .container-info{
       max-width: 900px;
       margin: 50px auto;
       background: #fff;
@@ -41,10 +41,9 @@
   </style>
 </head>
 <body>
-<div id="header"></div>
-
-<div id="nav"></div>
-<div class="container">
+<%@ include file="shared/header.jsp" %>
+<%@ include file="shared/nav.jsp" %>
+<div class="container-info">
   <h1>Thông tin tài khoản: ${sessionScope.auth.username}</h1>
 
   <div class="row">
@@ -104,13 +103,11 @@
     ${error != null ? error : ""}
   </div>
 </div>
-<div id="footer"></div>
+<%@ include file="shared/footer.jsp" %>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="/assets/js/loadHeader.js"></script>
-<script src="/assets/js/loadFooter.js"></script>
-<script src="/assets/js/loadNav.js"></script>
+
 
 </body>
 </html>
