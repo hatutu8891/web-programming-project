@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đăng ký tài khoản</title>
+  <!-- Favicon -->
+  <link href="assets/img/favicon.ico" rel="icon">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body class="d-flex justify-content-center align-items-center">
 <div class="signup-container">
-  <img src="../assets/images/logo_bánh.png" alt="Logo" class="logo">
+  <img src="assets/img/logo.png" alt="Logo" class="logo">
   <h2>Trang Đăng Ký</h2>
   <form action="register" method="POST" id="signupForm">
     <div class="form-group">
@@ -35,8 +37,8 @@
   <div class="text-center mt-3">
     <p>Đã có tài khoản? <a href="login.jsp">Đăng nhập</a></p>
   </div>
-  <a href="index.html" class="back-arrow">
-    <img src="assets/images/arrow-back.svg" alt="Quay về" />
+  <a href="index.jsp" class="back-arrow">
+    <img src="assets/img/arrow-back.svg" alt="Quay về" />
   </a>
 </div>
 

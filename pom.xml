@@ -89,10 +89,11 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>2.0.0</version>
         </dependency>
-
-
-
-
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
     </dependencies>
 
     <build>

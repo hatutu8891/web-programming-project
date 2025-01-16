@@ -19,4 +19,8 @@ public class ProductService {
             return null;
         }
     }
+    public List<Product> getProductsByCakeCode(String cakecode) {
+        return productDao.findProductsByCakeCode(cakecode);
+    }
+
 }
