@@ -44,24 +44,34 @@
                 <h1 class="title-product">${requestScope.product.name}</h1>
                 <h1 class="title-product">${requestScope.product.cakecode}</h1>
 
-
-                <!-- Hiển thị giá -->
-                <div class="price-wrapper">
-                    <p class="price">
-                        <span>Giá: <ins id="price">${requestScope.product.price} đ</ins></span>
-                    </p>
+                <!-- Chọn kích thước bánh -->
+                <div class="size-selection mt-3">
+                    <label for="size">Chọn kích thước:</label>
+                    <select id="size" class="form-control" onchange="updatePrice()">
+                        <c:forEach var="product" items="${requestScope.productsByCakeCode}">
+                            <option value="${product.price}" data-size="${product.size}">
+                                    ${product.size} (${product.price} đ)
+                            </option>
+                        </c:forEach>
+                    </select>
                 </div>
+
                 <div class="variations_form cart">
                     <div class="quantity buttons_added d-flex align-items-center mt-3">
-                        <span>
-                            Số lượng:
-                        </span>
-
-                        <input type="number" class="input-text qty text mx-2" step="1" min="1" max="${requestScope.product.quantityOrdered}" name="quantity" value="1" title="Số lượng">
-
+                        <span>Số lượng:</span>
+                        <input type="number" class="input-text qty text mx-2" step="1" name="quantity" value="1" title="Số lượng" id="quantity" onchange="updatePrice()">
                     </div>
-                    <button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ hàng</button>
-                    <button type="button" class="single_add_to_cart_button btn btn-primary mt-3">Thanh Toán</button>
+                    <div class="price-wrapper">
+                        <p class="price">
+                            <span>Giá: <ins id="price">${requestScope.product.price} đ</ins></span>
+                        </p>
+                    </div>
+                    <!-- Thêm vào giỏ hàng -->
+                    <a href="cart.jsp" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ hàng</a>
+
+                    <!-- Đặt hàng -->
+                    <a href="checkout.jsp" class="single_add_to_cart_button btn btn-primary mt-3">Đặt hàng</a>
+
                 </div>
             </div>
         </div>
@@ -156,6 +166,27 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Hàm thay đổi giá khi người dùng chọn kích thước khác
+    function updatePrice(select) {
+        const selectedPrice = select.value;
+        document.getElementById("price").textContent = `${selectedPrice} đ`;
+    }
+</script>
+<script>
+    function updatePrice() {
+        // Lấy giá của sản phẩm dựa trên kích thước đã chọn
+        var selectedSize = document.getElementById('size').value;
+        var quantity = document.getElementById('quantity').value;
+
+        // Tính tổng giá sau khi thay đổi số lượng và kích thước
+        var totalPrice = selectedSize * quantity;
+
+        // Cập nhật lại giá hiển thị
+        document.getElementById('price').innerText = totalPrice + ' đ';
+    }
+</script>
 
 </body>
 </html>

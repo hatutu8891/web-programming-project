@@ -49,10 +49,14 @@ public class ProductDetailServlet extends HttpServlet {
             // Tính điểm đánh giá trung bình
             double avgRating = reviewService.calculateAverageRating(productId);
 
+            // Lấy danh sách sản phẩm theo cakecode (cùng loại bánh nhưng các kích thước khác nhau)
+            List<Product> productsByCakeCode = productService.getProductsByCakeCode(product.getCakecode());
+
             // Gửi dữ liệu đến JSP
             request.setAttribute("product", product);
             request.setAttribute("reviews", reviews);
             request.setAttribute("avgRating", avgRating);
+            request.setAttribute("productsByCakeCode", productsByCakeCode); // Truyền danh sách sản phẩm có cùng cakecode
 
             // Chuyển hướng đến trang productDetail.jsp
             RequestDispatcher dispatcher = request.getRequestDispatcher("/productDetail.jsp");
