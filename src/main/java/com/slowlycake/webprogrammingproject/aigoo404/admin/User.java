@@ -3,29 +3,22 @@ package com.slowlycake.webprogrammingproject.aigoo404.admin;
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
 public class User {
-    @ColumnName("uID")
-    private int uId;
-    @ColumnName("uHandle")
+    private int uID;
     private String uHandle;
-    @ColumnName("uName")
     private String uName;
-    @ColumnName("uEmail")
     private String uEmail;
-    @ColumnName("uPhoneNum")
     private String uPhoneNum;
-    @ColumnName("uAddress")
     private String uAddress;
-    @ColumnName("uPassword")
     private String uPassword;
-    @ColumnName("uRole")
     private int role;
+
     // Getters and Setters
     public int getUID() {
-        return uId;
+        return uID;
     }
 
     public void setUID(int id) {
-        this.uId = id;
+        this.uID = id;
     }
 
     public String getUHandle() {
@@ -63,19 +56,23 @@ public class User {
     public String getUAddress() {
         return uAddress;
     }
-    public int getRole (){
+
+    public int getRole() {
         return role;
     }
-    public void setRole(int role){
+
+    public void setRole(int role) {
         this.role = role;
     }
 
     public void setUAddress(String uAddress) {
         this.uAddress = uAddress;
     }
+
     public String getUPassword() {
         return uPassword;
     }
+
     public void setUPassword(String uPassword) {
         this.uPassword = uPassword;
     }

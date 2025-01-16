@@ -180,9 +180,9 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="user" items="${users}">
+                                    <c:forEach var="user" items="${listUsers}">
                                         <tr>
-                                            <td>${user.id}</td>
+                                            <td>${user.uID}</td>
                                             <td>${user.uHandle}</td>
                                             <td>${user.uName}</td>
                                             <td>${user.uEmail}</td>
@@ -322,14 +322,6 @@
                 $('body').removeClass('white-content');
             });
         });
-    });
-</script>
-<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-<script>
-    window.TrackJS &&
-    TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
     });
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

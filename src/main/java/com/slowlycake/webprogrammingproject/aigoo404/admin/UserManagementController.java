@@ -13,16 +13,21 @@ public class UserManagementController extends HttpServlet {
     private UserService userService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         Jdbi jdbi = Jdbi.create("jdbc:mariadb://localhost:3306/cakeshopdb", "root", "aigoo404");
         UserDAO userDAO = new UserDAO(jdbi);
         userService = new UserService(userDAO);
     }
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> users = userService.getAllUsers();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("userManagement.jsp").forward(request, response);
+        List<User> listUsers = userService.getAllUsers();
+
+        for (User user : listUsers) {
+            System.out.println(user.getUID() + " - " + user.getUHandle());
+        }
+
+        request.setAttribute("listUsers", listUsers);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("userManagement.jsp");
+        dispatcher.forward(request, response);
     }
 }

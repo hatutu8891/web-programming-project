@@ -19,7 +19,7 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        return userDAO.getAllUsers();
+        return userDAO.selectAllUsers();
     }
 }
 

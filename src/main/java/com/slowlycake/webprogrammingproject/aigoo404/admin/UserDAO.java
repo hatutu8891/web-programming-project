@@ -20,10 +20,19 @@ public class UserDAO {
         });
     }
 
-    public List<User> getAllUsers() {
+    public List<User> selectAllUsers() {
         return jdbi.withHandle(handle -> {
             Query query = handle.createQuery("select uID, uHandle, uName, uEmail, uPhoneNum, uAddress from users");
-            return query.mapToBean(User.class).list();
+            return query.map((rs, ctx) -> {
+                User user = new User();
+                user.setUID(rs.getInt("uID"));
+                user.setUHandle(rs.getString("uHandle"));
+                user.setUName(rs.getString("uName"));
+                user.setUEmail(rs.getString("uEmail"));
+                user.setUPhoneNum(rs.getString("uPhoneNum"));
+                user.setUAddress(rs.getString("uAddress"));
+                return user;
+            }).list();
         });
     }
 }
