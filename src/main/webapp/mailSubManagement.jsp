@@ -42,12 +42,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="orderManagement.jsp">
-                        <i class="tim-icons icon-cart"></i>
-                        <p>Quản lý đơn hàng</p>
-                    </a>
-                </li>
-                <li>
                     <a href="userManagement.jsp">
                         <i class="tim-icons icon-badge"></i>
                         <p>Quản lý người dùng</p>
