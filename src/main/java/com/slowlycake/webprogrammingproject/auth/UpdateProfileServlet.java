@@ -27,11 +27,11 @@ public class UpdateProfileServlet extends HttpServlet {
                 return;
             }
 
-            boolean isUpdated = userDao.updateEmail(user.getUsername(), newEmail);
+            boolean isUpdated = userDao.updateEmail(user.getUHandle(), newEmail);
 
             if (isUpdated) {
                 // Cập nhật email trong session
-                user.setEmail(newEmail);
+                user.setUEmail(newEmail);
                 session.setAttribute("auth", user);
 
                 request.setAttribute("message", "Cập nhật email thành công!");

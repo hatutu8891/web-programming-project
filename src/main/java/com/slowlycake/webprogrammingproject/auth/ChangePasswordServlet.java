@@ -21,32 +21,24 @@ public class ChangePasswordServlet extends HttpServlet {
             String currentPassword = request.getParameter("currentPassword");
             String newPassword = request.getParameter("newPassword");
             String confirmPassword = request.getParameter("confirmPassword");
-            System.out.println(currentPassword);
-            System.out.println(newPassword);
-            System.out.println(confirmPassword);
-            System.out.println(user.getPassword());
-            // Kiểm tra mật khẩu hiện tại
-            if (!user.getPassword().equals(currentPassword)) {
+
+            if (!user.getUPassword().equals(currentPassword)) {
                 request.setAttribute("error", "Mật khẩu hiện tại không chính xác!");
-                System.out.println("2");
+
                 request.getRequestDispatcher("userInfo.jsp").forward(request, response);
                 return;
             }
 
-            // Kiểm tra xác nhận mật khẩu mới
             if (!newPassword.equals(confirmPassword)) {
                 request.setAttribute("error", "Mật khẩu mới không khớp!");
-                System.out.println("3");
                 request.getRequestDispatcher("userInfo.jsp").forward(request, response);
                 return;
             }
 
-            // Cập nhật mật khẩu trong cơ sở dữ liệu
             UserDao userDao = new UserDao();
-            userDao.updatePassword(user.getEmail(), newPassword);
+            userDao.updatePassword(user.getUEmail(), newPassword);
 
-            // Cập nhật mật khẩu trong session
-            user.setPassword(newPassword);
+            user.setUPassword(newPassword);
             session.setAttribute("auth", user);
 
             request.setAttribute("message", "Đổi mật khẩu thành công!");

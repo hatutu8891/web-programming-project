@@ -17,7 +17,11 @@
   <form action="register" method="POST" id="signupForm">
     <div class="form-group">
       <label for="username">Tên đăng nhập:</label>
-      <input type="text" name="username" class="form-control" id="username" required placeholder="Nhập tên">
+      <input type="text" name="username" class="form-control" id="username" required placeholder="Nhập tên tài khoản">
+    </div>
+    <div class="form-group">
+      <label for="uname">Tên đăng nhập:</label>
+      <input type="text" name="uname" class="form-control" id="uname" required placeholder="Nhập tên">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>

@@ -1,46 +1,64 @@
 package com.slowlycake.webprogrammingproject.auth;
-
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private int id;
-    private String username;
-    private String password;
+    private int uID;
+    private String uHandle;
+    private String uName;
+    private String uEmail;
+    private String uPhoneNum;
+    private String uAddress;
+    private String uPassword;
     private int role;
-    private String email;
 
-    public User() {
+    public User(String uHandle, String uEmail, String uPassword,String uName){
+        this.uHandle = uHandle;
+        this.uEmail = uEmail;
+        this.uPassword = uPassword;
+        this.uName = uName;
+    }
+    public int getUID() {
+        return uID;
     }
 
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+    public void setUID(int id) {
+        this.uID = id;
     }
 
-
-    public int getId() {
-        return id;
+    public String getUHandle() {
+        return uHandle;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUHandle(String uHandle) {
+        this.uHandle = uHandle;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUName() {
+        return uName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUName(String uName) {
+        this.uName = uName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUEmail() {
+        return uEmail;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUEmail(String uEmail) {
+        this.uEmail = uEmail;
+    }
+
+    public String getUPhoneNum() {
+        return uPhoneNum;
+    }
+
+    public void setUPhoneNum(String uPhoneNum) {
+        this.uPhoneNum = uPhoneNum;
+    }
+
+    public String getUAddress() {
+        return uAddress;
     }
 
     public int getRole() {
@@ -51,17 +69,16 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    // Getter và setter cho email
-    public String getEmail() {
-        return email;
+    public void setUAddress(String uAddress) {
+        this.uAddress = uAddress;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getUPassword() {
+        return uPassword;
     }
 
-    @Override
-    public String toString() {
-        return id+username+password+role+email;
+    public void setUPassword(String uPassword) {
+        this.uPassword = uPassword;
     }
 }
+

@@ -2,10 +2,10 @@ package com.slowlycake.webprogrammingproject.auth;
 
 public class UserDao {
 
-    // Tìm kiếm người dùng theo tên đăng nhập
+
     public User findUserName(String username) {
         return JDBIConnect.get().withHandle(h ->
-                h.createQuery("SELECT * FROM users WHERE username = ?")
+                h.createQuery("SELECT * FROM users WHERE uHandle = ?")
                         .bind(0, username)
                         .mapToBean(User.class)
                         .findFirst()
@@ -13,10 +13,9 @@ public class UserDao {
         );
     }
 
-    // Tìm kiếm người dùng theo email
     public User findUserEmail(String email) {
         return JDBIConnect.get().withHandle(h ->
-                h.createQuery("SELECT * FROM users WHERE email = ?")
+                h.createQuery("SELECT * FROM users WHERE uEmail = ?")
                         .bind(0, email)
                         .mapToBean(User.class)
                         .findFirst()
@@ -27,18 +26,19 @@ public class UserDao {
     // Lưu người dùng vào cơ sở dữ liệu
     public void saveUser(User user) {
         JDBIConnect.get().withHandle(h ->
-                h.createUpdate("INSERT INTO users (username, email, role, password) VALUES (?, ?, ?, ?)")
-                        .bind(0, user.getUsername())
-                        .bind(1, user.getEmail())
+                h.createUpdate("INSERT INTO users (uHandle, uEmail, uRole, uPassword,uName) VALUES (?,?, ?, ?, ?)")
+                        .bind(0, user.getUHandle())
+                        .bind(1, user.getUEmail())
                         .bind(2, user.getRole())
-                        .bind(3, user.getPassword())
+                        .bind(3, user.getUPassword())
+                        .bind(4, user.getUName())
                         .execute()
         );
     }
 
     public void updatePassword(String email, String newPassword) {
         JDBIConnect.get().withHandle(h ->
-                h.createUpdate("UPDATE users SET password = ? WHERE email = ?")
+                h.createUpdate("UPDATE users SET uPassword = ? WHERE uEmail = ?")
                         .bind(0, newPassword)
                         .bind(1, email)
                         .execute()
@@ -47,7 +47,7 @@ public class UserDao {
 
     public boolean updateEmail(String username, String newEmail) {
         return JDBIConnect.get().withHandle(h ->
-                h.createUpdate("UPDATE users SET email = ? WHERE username = ?")
+                h.createUpdate("UPDATE users SET uEmail = ? WHERE uHandle = ?")
                         .bind(0, newEmail)
                         .bind(1, username)
                         .execute() > 0
