@@ -21,11 +21,13 @@ public class LoginController extends HttpServlet{
         String pass = req.getParameter("password");
         AuthService service = new AuthService();
         User user = service.checkLogin(uname,pass);
+        System.out.println(user);
+
         if(user != null) {
             HttpSession session=req.getSession();
             session.setAttribute("auth", user);
             if (user.getRole() == 1) {
-                resp.sendRedirect(req.getContextPath() + "/success.jsp"); // Chuyển đến trang Admin
+                resp.sendRedirect(req.getContextPath() + "/adminDashboard.jsp"); // Chuyển đến trang Admin
             } else {
                 resp.sendRedirect(req.getContextPath() + "/index.jsp"); // Chuyển đến trang chủ
             }

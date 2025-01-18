@@ -5,7 +5,7 @@ public class UserDao {
 
     public User findUserName(String username) {
         return JDBIConnect.get().withHandle(h ->
-                h.createQuery("SELECT * FROM users WHERE uHandle = ?")
+                h.createQuery("SELECT uID, uHandle, uEmail, uPassword, uName, uRole AS role , uPhoneNum, uAddress FROM users WHERE uHandle = ?")
                         .bind(0, username)
                         .mapToBean(User.class)
                         .findFirst()
@@ -15,7 +15,7 @@ public class UserDao {
 
     public User findUserEmail(String email) {
         return JDBIConnect.get().withHandle(h ->
-                h.createQuery("SELECT * FROM users WHERE uEmail = ?")
+                h.createQuery("SELECT  uID, uHandle, uEmail, uPassword, uName, uRole AS role , uPhoneNum, uAddress FROM users WHERE uEmail = ?")
                         .bind(0, email)
                         .mapToBean(User.class)
                         .findFirst()
@@ -26,7 +26,7 @@ public class UserDao {
     // Lưu người dùng vào cơ sở dữ liệu
     public void saveUser(User user) {
         JDBIConnect.get().withHandle(h ->
-                h.createUpdate("INSERT INTO users (uHandle, uEmail, uRole, uPassword,uName) VALUES (?,?, ?, ?, ?)")
+                h.createUpdate("INSERT INTO users (uHandle, uEmail, uRole, uPassword,uName) VALUES (? , ? , ? , ?, ?)")
                         .bind(0, user.getUHandle())
                         .bind(1, user.getUEmail())
                         .bind(2, user.getRole())

@@ -10,7 +10,7 @@ public class User implements Serializable {
     private String uAddress;
     private String uPassword;
     private int role;
-
+    public User(){}
     public User(String uHandle, String uEmail, String uPassword,String uName){
         this.uHandle = uHandle;
         this.uEmail = uEmail;
@@ -80,5 +80,19 @@ public class User implements Serializable {
     public void setUPassword(String uPassword) {
         this.uPassword = uPassword;
     }
+    @Override
+    public String toString() {
+        return "User{" +
+                "uID=" + uID +
+                ", uHandle='" + uHandle + '\'' +
+                ", uName='" + uName + '\'' +
+                ", uEmail='" + uEmail + '\'' +
+                ", uPhoneNum='" + uPhoneNum + '\'' +
+                ", uAddress='" + uAddress + '\'' +
+                ", uPassword='" + uPassword + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
 }
 
