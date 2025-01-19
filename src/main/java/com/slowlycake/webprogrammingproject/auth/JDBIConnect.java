@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class JDBIConnect {
-    private static Jdbi jdbi;
+    private static final Jdbi jdbi;
 
     static {
         try {

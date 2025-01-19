@@ -11,7 +11,6 @@ import java.io.IOException;
 
 @WebServlet("/changePassword")
 public class ChangePasswordServlet extends HttpServlet {
-    private UserDao userDao = new UserDao();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

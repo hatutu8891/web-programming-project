@@ -24,8 +24,8 @@ public class ForgotPasswordServlet extends HttpServlet {
         String email = req.getParameter("email");
 
         // Kiểm tra email có tồn tại không
-        UserDao userDao = new UserDao();
-        User user = userDao.findUserEmail(email);
+        UserService userService = new UserService();
+        User user = userService.findUserByEmail(email);
 
         if (user == null) {
             req.setAttribute("error", "Email không tồn tại.");

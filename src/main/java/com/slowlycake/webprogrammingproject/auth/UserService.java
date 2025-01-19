@@ -1,50 +1,54 @@
 package com.slowlycake.webprogrammingproject.auth;
 
-
 public class UserService {
 
     private final UserDao userDao;
 
-    // Constructor khởi tạo UserDao
-    public UserService(UserDao userDao) {
-        this.userDao = userDao;
+    public UserService() {
+        this.userDao = new UserDao();
     }
 
-    // Tìm người dùng theo tên người dùng (uHandle)
     public User findUserByUsername(String username) {
         return userDao.findUserName(username);
     }
 
-    // Tìm người dùng theo email
     public User findUserByEmail(String email) {
         return userDao.findUserEmail(email);
     }
 
-    // Lưu người dùng mới vào cơ sở dữ liệu
-    public void registerUser(User user) {
-        // Kiểm tra trước khi lưu người dùng
-        if (userDao.findUserName(user.getUHandle()) != null) {
-            throw new IllegalArgumentException("Username already exists!");
-        }
-        if (userDao.findUserEmail(user.getUEmail()) != null) {
-            throw new IllegalArgumentException("Email already exists!");
+    public boolean registerUser(User user) {
+        if (userDao.findUserName(user.getUHandle()) != null || userDao.findUserEmail(user.getUEmail()) != null) {
+            // Tên đăng nhập hoặc email đã tồn tại
+            return false;
         }
         userDao.saveUser(user);
+        return true;
     }
 
-    // Cập nhật mật khẩu người dùng
-    public void changePassword(String email, String newPassword) {
-        if (userDao.findUserEmail(email) == null) {
-            throw new IllegalArgumentException("User not found!");
+    public boolean updatePassword(String email, String newPassword) {
+        User user = userDao.findUserEmail(email);
+        if (user == null) {
+            // Người dùng không tồn tại
+            return false;
         }
         userDao.updatePassword(email, newPassword);
+        return true;
     }
 
-    // Cập nhật email người dùng
-    public boolean changeEmail(String username, String newEmail) {
-        if (userDao.findUserName(username) == null) {
-            throw new IllegalArgumentException("User not found!");
+    public boolean updateProfile(String uName,String username, String newEmail, String newPhoneNum, String newAddress) {
+        if (userDao.findUserEmail(newEmail) != null) {
+            // Email đã được sử dụng
+            return false;
         }
-        return userDao.updateEmail(username, newEmail);
+        return userDao.updateProfile(uName, username, newEmail, newPhoneNum, newAddress);
+    }
+
+    public boolean login(String username, String password) {
+        User user = userDao.findUserName(username);
+        if (user == null) {
+            // Tên đăng nhập không tồn tại
+            return false;
+        }
+        return user.getUPassword().equals(password);
     }
 }

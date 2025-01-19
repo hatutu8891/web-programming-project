@@ -11,9 +11,6 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginController", value="/login")
 public class LoginController extends HttpServlet{
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,7 +18,6 @@ public class LoginController extends HttpServlet{
         String pass = req.getParameter("password");
         AuthService service = new AuthService();
         User user = service.checkLogin(uname,pass);
-        System.out.println(user);
 
         if(user != null) {
             HttpSession session=req.getSession();

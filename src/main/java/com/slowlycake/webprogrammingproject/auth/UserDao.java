@@ -45,11 +45,14 @@ public class UserDao {
         );
     }
 
-    public boolean updateEmail(String username, String newEmail) {
+    public boolean updateProfile(String uName,String username, String newEmail, String newPhoneNum, String newAddress) {
         return JDBIConnect.get().withHandle(h ->
-                h.createUpdate("UPDATE users SET uEmail = ? WHERE uHandle = ?")
-                        .bind(0, newEmail)
-                        .bind(1, username)
+                h.createUpdate("UPDATE users SET uName=?, uEmail = ?, uPhoneNum = ?, uAddress = ? WHERE uHandle = ?")
+                        .bind(0, uName)
+                        .bind(1, newEmail)
+                        .bind(2, newPhoneNum)
+                        .bind(3, newAddress)
+                        .bind(4, username)
                         .execute() > 0
         );
     }
