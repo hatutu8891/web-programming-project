@@ -45,7 +45,7 @@
 <%@ include file="shared/header.jsp" %>
 <%@ include file="shared/nav.jsp" %>
 <div class="container-info">
-  <h1>Thông tin tài khoản: ${sessionScope.auth.uName}</h1>
+  <h1>Thông tin tài khoản: ${sessionScope.auth.getUHandle()}</h1>
 
   <div class="row">
     <!-- Cập nhật thông tin người dùng -->
@@ -56,31 +56,29 @@
           <form method="POST" action="${pageContext.request.contextPath}/updateProfile">
             <div class="form-group">
               <label for="name">Tên người dùng:</label>
-              <input type="text" id="name" name="name" class="form-control" value="${sessionScope.auth.uName}" required>
+              <input type="text" id="name" name="name" class="form-control" value="${sessionScope.auth.getUName()}" required>
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.uEmail}" required>
+              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.getUEmail()}" required>
             </div>
             <div class="form-group">
               <label for="phone">Số điện thoại:</label>
-              <input type="text" id="phone" name="phone" class="form-control" value="${sessionScope.auth.uPhoneNum}" required>
+              <input type="text" id="phone" name="phone" class="form-control" value="${sessionScope.auth.getUPhoneNum()}" required>
             </div>
             <div class="form-group">
               <label for="address">Địa chỉ:</label>
-              <input type="text" id="address" name="address" class="form-control" value="${sessionScope.auth.uAddress}" required>
+              <input type="text" id="address" name="address" class="form-control" value="${sessionScope.auth.getUAddress()}" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Lưu thay đổi</button>
           </form>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Đổi mật khẩu -->
-  <div class="row mt-3">
+    <!-- Đổi mật khẩu -->
     <div class="col-md-6">
-      <div class="card">
+      <div class="card mt-3">
         <div class="card-body">
           <h2 class="card-title">Đổi mật khẩu</h2>
           <form method="POST" action="${pageContext.request.contextPath}/changePassword">
