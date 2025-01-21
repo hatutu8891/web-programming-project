@@ -5,8 +5,10 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/productDetail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/productDetail.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/shared/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/shared" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/signUp.html" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/userInfo.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/userManagement.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>
     </option>
   </component>

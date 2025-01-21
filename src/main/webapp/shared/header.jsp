@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+sua
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -14,8 +14,6 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link href="assets/img/favicon.ico" rel="icon">
-    <!--    <link rel="stylesheet" href="../scss/bootstrap.scss">-->
-
 </head>
 
 <body>
@@ -53,24 +51,50 @@
                     <i class="fa-solid fa-cart-shopping"></i>
                 </li>
 
-                <!-- Icon for User Login/Register -->
-                <li class="icon-item dropdown">
-                    <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                    <div class="dropdown-menu login-signin">
-                        <a href="signUp.jsp">
-                            <button class="setbutton signin">
-                                <i class="fa-solid fa-person"></i>
-                                <span class="btn-content">Đăng ký </span>
-                            </button>
-                        </a>
-                        <a href="login.jsp">
-                            <button class="setbutton login">
-                                <i class="fa-solid fa-right-to-bracket"></i>
-                                <span class="btn-content">Đăng nhập</span>
-                            </button>
-                        </a>
-                    </div>
-                </li>
+                <!-- Hiển thị giao diện tùy thuộc vào trạng thái đăng nhập -->
+                <c:choose>
+                    <c:when test="${not empty sessionScope.auth}">
+                        <!-- Nếu đã đăng nhập -->
+                        <li class="icon-item dropdown">
+                            <i class="fa-solid fa-user" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <div class="dropdown-menu login-signin">
+                                <a href="${pageContext.request.contextPath}/userInfo.jsp">
+                                    <button class="setbutton login">
+                                        <i class="fa-solid fa-person"></i>
+                                        <span class="btn-content">Trang cá nhân</span>
+                                    </button>
+                                </a>
+                                <a href="${pageContext.request.contextPath}/logout">
+                                    <button class="setbutton sigin">
+                                        <i class="fa-solid fa-right-to-bracket"></i>
+                                        <span class="btn-content">Đăng xuất</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <!-- Nếu chưa đăng nhập -->
+                        <li class="icon-item dropdown">
+                            <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <div class="dropdown-menu login-signin">
+                                <a href="login.jsp">
+                                    <button class="setbutton login">
+                                        <i class="fa-solid fa-right-to-bracket"></i>
+                                        <span class="btn-content">Đăng nhập</span>
+                                    </button>
+                                </a>
+                                <a href="signUp.jsp">
+                                    <button class="setbutton signin">
+                                        <i class="fa-solid fa-person"></i>
+                                        <span class="btn-content">Đăng ký</span>
+                                    </button>
+                                </a>
+
+                            </div>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </div>
     </div>
