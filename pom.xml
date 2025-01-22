@@ -81,6 +81,18 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>2.0.0</version>
         </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.jdbi/jdbi3-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.jdbi</groupId>-->
+<!--            <artifactId>jdbi3-core</artifactId>-->
+<!--            <version>3.47.0</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>6.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>

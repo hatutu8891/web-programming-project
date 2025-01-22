@@ -12,13 +12,19 @@ public class ProductService {
 
     // Lấy sản phẩm theo ID
     public Product getProductById(int productId) {
+    return null;
+    }
+
+    public Product getDetail(String in) {
         try {
-            return productDao.findProductById(productId); // Gọi ProductDao để lấy sản phẩm
+            int id = Integer.parseInt(in);
+            return productDao.findProductById(id);// Gọi ProductDao để lấy sản phẩm
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
+
     public List<Product> getProductsByCakeCode(String cakecode) {
         return productDao.findProductsByCakeCode(cakecode);
     }

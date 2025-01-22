@@ -64,7 +64,7 @@
         </div>
         <div class="tab-class text-center">
             <div class="frame-product-container">
-                <jsp:include page="dynamic/product/frameProduct.jsp" />
+<%--                <jsp:include page="/frameProduct.jsp" />--%>
             </div>
         </div>
     </div>

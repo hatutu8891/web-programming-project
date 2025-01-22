@@ -1,7 +1,7 @@
 package com.slowlycake.webprogrammingproject.dao.cart;
 
 
-import com.slowlycake.webprogrammingproject.dao.model.Product;
+import com.slowlycake.webprogrammingproject.products.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Cart {
-    Map<Integer, CartProduct> data = new HashMap<>();
+    Map<Integer, com.slowlycake.webprogrammingproject.dao.cart.CartProduct> data = new HashMap<>();
 
     public boolean add(Product p) {
         if (data.containsKey(p.getId())) {
@@ -52,7 +52,7 @@ public class Cart {
     }
 
     private CartProduct convert(Product p) {
-        CartProduct re = new CartProduct();
+        com.slowlycake.webprogrammingproject.dao.cart.CartProduct re = new CartProduct();
         re.setId(p.getId());
         re.setTitle(p.getName());
         re.setPrice(p.getPrice());

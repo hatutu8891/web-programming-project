@@ -50,7 +50,7 @@
 
                 <!-- Icon for Cart -->
                 <li class="icon-item">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="<c:url value="shoppingCart.jsp"/>"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
 
                 <!-- Icon for User Login/Register -->
