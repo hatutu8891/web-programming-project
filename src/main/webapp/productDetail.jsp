@@ -155,6 +155,28 @@
                         </div>
                     </div>
                 </div>
+                <!-- Các sản phẩm cùng loại -->
+                <div class="row mt-5">
+                    <h3>Sản phẩm cùng loại</h3>
+                    <div class="col-12">
+                        <div class="row">
+                            <c:forEach var="product" items="${requestScope.productsInSameCategory}">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card">
+                                        <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${product.name}</h5>
+                                            <p class="card-text">${product.cakecode}</p>
+                                            <p class="card-text">${product.price} đ</p>
+                                            <a href="productDetail.jsp?id=${product.id}" class="btn btn-primary">Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
