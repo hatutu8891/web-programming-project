@@ -1,5 +1,6 @@
 package com.slowlycake.webprogrammingproject.aigoo404.admin;
 
+import com.slowlycake.webprogrammingproject.auth.JDBIConnect;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -11,13 +12,6 @@ import java.util.*;
 @WebServlet("/user-management")
 public class UserManagementController extends HttpServlet {
     private UserService userService;
-
-    @Override
-    public void init() {
-        Jdbi jdbi = Jdbi.create("jdbc:mariadb://localhost:3306/cakeshopdb", "root", "aigoo404");
-        UserDAO userDAO = new UserDAO(jdbi);
-        userService = new UserService(userDAO);
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> listUsers = userService.getAllUsers();
