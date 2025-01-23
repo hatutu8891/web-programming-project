@@ -1,19 +1,15 @@
 package com.slowlycake.webprogrammingproject.aigoo404.admin;
 
+import com.slowlycake.webprogrammingproject.auth.JDBIConnect;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.Query;
 
 import java.util.*;
 
 public class UserDAO {
-    private Jdbi jdbi;
-
-    public UserDAO(Jdbi jdbi) {
-        this.jdbi = jdbi;
-    }
 
     public User getUserByUHandle(String uHandle) {
-        return jdbi.withHandle(handle -> {
+        return JDBIConnect.get().withHandle(handle -> {
             Query query = handle.createQuery("select * from users where uHandle = :uHandle");
             query.bind("uHandle", uHandle);
             return query.mapToBean(User.class).findOne().orElse(null);
@@ -21,7 +17,7 @@ public class UserDAO {
     }
 
     public List<User> selectAllUsers() {
-        return jdbi.withHandle(handle -> {
+        return JDBIConnect.get().withHandle(handle -> {
             Query query = handle.createQuery("select uID, uHandle, uName, uEmail, uPhoneNum, uAddress from users");
             return query.map((rs, ctx) -> {
                 User user = new User();

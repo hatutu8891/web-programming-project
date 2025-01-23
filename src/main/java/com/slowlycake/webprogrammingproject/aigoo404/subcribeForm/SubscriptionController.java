@@ -17,7 +17,7 @@ public class SubscriptionController extends HttpServlet {
             Class.forName("org.mariadb.jdbc.Driver");
             Jdbi jdbi = Jdbi.create("jdbc:mariadb://localhost:3306/cakeshopdb",
                     "root",
-                    "aigoo404");
+                    "");
 
             // Initialize DAO and Service
             SubscriptionDAO subscriptionDAO = new SubscriptionDAO(jdbi);

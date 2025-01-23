@@ -12,13 +12,6 @@ public class LoginAdminController extends HttpServlet {
     private UserService userService;
 
     @Override
-    public void init() throws ServletException {
-        Jdbi jdbi = Jdbi.create("jdbc:mariadb://localhost:3306/cakeshopdb", "root", "aigoo404");
-        UserDAO userDAO = new UserDAO(jdbi);
-        userService = new UserService(userDAO);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uHandle = request.getParameter("username");
         String password = request.getParameter("password");
