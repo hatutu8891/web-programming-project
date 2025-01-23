@@ -15,7 +15,7 @@ public class JDBIConnect {
             Properties properties = new Properties();
             InputStream input = JDBIConnect.class.getClassLoader().getResourceAsStream("config.properties");
             if (input == null) {
-                throw new FileNotFoundException("property file 'config.properties' not found in the classpath");
+                throw new FileNotFoundException("Không tìm thấy file 'config.properties' trong thư mục");
             }
             properties.load(input);
 
@@ -28,13 +28,13 @@ public class JDBIConnect {
             try {
                 Class.forName("org.mariadb.jdbc.Driver");
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException("MariaDB Driver not found", e);
+                throw new RuntimeException("Không tìm thấy driver của MariaDB", e);
             }
 
             // Tạo kết nối với cơ sở dữ liệu
             jdbi = Jdbi.create(url, username, password);
         } catch (IOException e) {
-            throw new RuntimeException("Cannot initialize JDBI", e);
+            throw new RuntimeException("Không thể khởi tạo JDBI", e);
         }
     }
 

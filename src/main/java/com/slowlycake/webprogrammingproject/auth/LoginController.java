@@ -14,10 +14,10 @@ public class LoginController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String uname = req.getParameter("username");
+        String name = req.getParameter("username");
         String pass = req.getParameter("password");
         AuthService service = new AuthService();
-        User user = service.checkLogin(uname,pass);
+        User user = service.checkLogin(name,pass);
 
         if(user != null) {
             HttpSession session=req.getSession();
@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet{
             }
         }
         else {
-            req.setAttribute("error","Dang nhap khong thanh cong");
+            req.setAttribute("error","Sai tên đăng nhập hoặc mật khẩu");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }

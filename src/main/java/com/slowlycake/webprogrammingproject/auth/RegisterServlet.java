@@ -13,7 +13,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
-        String uname= req.getParameter("uname");
+        String name= req.getParameter("name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String confirmPassword = req.getParameter("confirmPassword");
@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
             req.getRequestDispatcher("signUp.jsp").forward(req, resp);
             return;
         }
-        User newUser = new User(username, email, password,uname);
+        User newUser = new User(username, email, password,name);
         userService.registerUser(newUser);
 
         resp.sendRedirect("login.jsp");

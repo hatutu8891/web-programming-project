@@ -21,7 +21,7 @@ public class ChangePasswordServlet extends HttpServlet {
             String newPassword = request.getParameter("newPassword");
             String confirmPassword = request.getParameter("confirmPassword");
 
-            if (!user.getUPassword().equals(currentPassword)) {
+            if (!user.getPassword().equals(currentPassword)) {
                 request.setAttribute("error", "Mật khẩu hiện tại không chính xác!");
 
                 request.getRequestDispatcher("userInfo.jsp").forward(request, response);
@@ -35,13 +35,13 @@ public class ChangePasswordServlet extends HttpServlet {
             }
 
             UserDao userDao = new UserDao();
-            userDao.updatePassword(user.getUEmail(), newPassword);
+            userDao.updatePassword(user.getEmail(), newPassword);
 
-            user.setUPassword(newPassword);
+            user.setPassword(newPassword);
             session.setAttribute("auth", user);
 
             request.setAttribute("message", "Đổi mật khẩu thành công!");
-            System.out.println("thanh cong");
+            System.out.println("Thành công");
             request.getRequestDispatcher("userInfo.jsp").forward(request, response);
         } else {
             response.sendRedirect("login.jsp");

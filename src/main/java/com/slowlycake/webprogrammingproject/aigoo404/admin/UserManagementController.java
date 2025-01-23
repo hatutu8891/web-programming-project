@@ -17,7 +17,7 @@ public class UserManagementController extends HttpServlet {
         List<User> listUsers = userService.getAllUsers();
 
         for (User user : listUsers) {
-            System.out.println(user.getUID() + " - " + user.getUHandle());
+            System.out.println(user.getId() + " - " + user.getHandle());
         }
 
         request.setAttribute("listUsers", listUsers);

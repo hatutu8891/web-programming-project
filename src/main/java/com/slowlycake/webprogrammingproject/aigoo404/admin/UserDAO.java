@@ -8,25 +8,25 @@ import java.util.*;
 
 public class UserDAO {
 
-    public User getUserByUHandle(String uHandle) {
-        return JDBIConnect.get().withHandle(handle -> {
-            Query query = handle.createQuery("select * from users where uHandle = :uHandle");
-            query.bind("uHandle", uHandle);
+    public User getUserByUHandle(String handle) {
+        return JDBIConnect.get().withHandle(h -> {
+            Query query = h.createQuery("select * from users where handle = :handle");
+            query.bind("handle", handle);
             return query.mapToBean(User.class).findOne().orElse(null);
         });
     }
 
     public List<User> selectAllUsers() {
-        return JDBIConnect.get().withHandle(handle -> {
-            Query query = handle.createQuery("select uID, uHandle, uName, uEmail, uPhoneNum, uAddress from users");
+        return JDBIConnect.get().withHandle(h -> {
+            Query query = h.createQuery("select id, handle, name, email, phoneNum, address from users");
             return query.map((rs, ctx) -> {
                 User user = new User();
-                user.setUID(rs.getInt("uID"));
-                user.setUHandle(rs.getString("uHandle"));
-                user.setUName(rs.getString("uName"));
-                user.setUEmail(rs.getString("uEmail"));
-                user.setUPhoneNum(rs.getString("uPhoneNum"));
-                user.setUAddress(rs.getString("uAddress"));
+                user.setId(rs.getInt("id"));
+                user.setHandle(rs.getString("Handle"));
+                user.setName(rs.getString("Name"));
+                user.setEmail(rs.getString("Email"));
+                user.setPhoneNum(rs.getString("PhoneNum"));
+                user.setAddress(rs.getString("Address"));
                 return user;
             }).list();
         });

@@ -17,7 +17,7 @@ public class UserService {
     }
 
     public boolean registerUser(User user) {
-        if (userDao.findUserName(user.getUHandle()) != null || userDao.findUserEmail(user.getUEmail()) != null) {
+        if (userDao.findUserName(user.getHandle()) != null || userDao.findUserEmail(user.getEmail()) != null) {
             // Tên đăng nhập hoặc email đã tồn tại
             return false;
         }
@@ -35,12 +35,12 @@ public class UserService {
         return true;
     }
 
-    public boolean updateProfile(String uName,String username, String newEmail, String newPhoneNum, String newAddress) {
+    public boolean updateProfile(String name,String username, String newEmail, String newPhoneNum, String newAddress) {
         if (userDao.findUserEmail(newEmail) != null) {
             // Email đã được sử dụng
             return false;
         }
-        return userDao.updateProfile(uName, username, newEmail, newPhoneNum, newAddress);
+        return userDao.updateProfile(name, username, newEmail, newPhoneNum, newAddress);
     }
 
     public boolean login(String username, String password) {
@@ -49,6 +49,6 @@ public class UserService {
             // Tên đăng nhập không tồn tại
             return false;
         }
-        return user.getUPassword().equals(password);
+        return user.getPassword().equals(password);
     }
 }

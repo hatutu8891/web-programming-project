@@ -12,7 +12,7 @@ public class UserService {
 
     public User login(String uHandle, String password) {
         User user = userDAO.getUserByUHandle(uHandle);
-        if (user != null && user.getUPassword().equals(password)) {
+        if (user != null && user.getPassword().equals(password)) {
             return user;
         }
         return null;
