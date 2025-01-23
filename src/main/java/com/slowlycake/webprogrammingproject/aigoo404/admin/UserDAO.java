@@ -8,7 +8,7 @@ import java.util.*;
 
 public class UserDAO {
 
-    public User getUserByUHandle(String handle) {
+    public User getUserByHandle(String handle) {
         return JDBIConnect.get().withHandle(h -> {
             Query query = h.createQuery("select * from users where handle = :handle");
             query.bind("handle", handle);
@@ -22,11 +22,11 @@ public class UserDAO {
             return query.map((rs, ctx) -> {
                 User user = new User();
                 user.setId(rs.getInt("id"));
-                user.setHandle(rs.getString("Handle"));
-                user.setName(rs.getString("Name"));
-                user.setEmail(rs.getString("Email"));
-                user.setPhoneNum(rs.getString("PhoneNum"));
-                user.setAddress(rs.getString("Address"));
+                user.setHandle(rs.getString("handle"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setPhoneNum(rs.getString("phoneNum"));
+                user.setAddress(rs.getString("address"));
                 return user;
             }).list();
         });

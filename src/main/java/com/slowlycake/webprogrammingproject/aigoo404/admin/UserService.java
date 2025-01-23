@@ -10,8 +10,8 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public User login(String uHandle, String password) {
-        User user = userDAO.getUserByUHandle(uHandle);
+    public User login(String handle, String password) {
+        User user = userDAO.getUserByHandle(handle);
         if (user != null && user.getPassword().equals(password)) {
             return user;
         }

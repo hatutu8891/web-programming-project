@@ -13,9 +13,9 @@ public class LoginAdminController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uHandle = request.getParameter("username");
+        String handle = request.getParameter("handle");
         String password = request.getParameter("password");
-        User user = userService.login(uHandle, password);
+        User user = userService.login(handle, password);
         if (user != null) {
             if (user.getRole() == 1) {
                 response.sendRedirect("adminDashboard.jsp");

@@ -1,8 +1,8 @@
-package com.slowlycake.webprogrammingproject.dao.cart;
+package com.slowlycake.webprogrammingproject.cart;
 
 
 import com.slowlycake.webprogrammingproject.products.Product;
-
+import com.slowlycake.webprogrammingproject.dao.cart.CartProduct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
