@@ -45,7 +45,7 @@
 <%@ include file="shared/header.jsp" %>
 <%@ include file="shared/nav.jsp" %>
 <div class="container-info">
-  <h1>Thông tin tài khoản: ${sessionScope.auth.getUHandle()}</h1>
+  <h1>Thông tin tài khoản: ${sessionScope.auth.getHandle()}</h1>
 
   <div class="row">
     <!-- Cập nhật thông tin người dùng -->
@@ -56,19 +56,19 @@
           <form method="POST" action="${pageContext.request.contextPath}/updateProfile">
             <div class="form-group">
               <label for="name">Tên người dùng:</label>
-              <input type="text" id="name" name="name" class="form-control" value="${sessionScope.auth.getUName()}" required>
+              <input type="text" id="name" name="name" class="form-control" value="${sessionScope.auth.getName()}" required>
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.getUEmail()}" required>
+              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.getEmail()}" required>
             </div>
             <div class="form-group">
               <label for="phone">Số điện thoại:</label>
-              <input type="text" id="phone" name="phone" class="form-control" value="${sessionScope.auth.getUPhoneNum()}" required>
+              <input type="text" id="phone" name="phone" class="form-control" value="${sessionScope.auth.getPhoneNum()}" required>
             </div>
             <div class="form-group">
               <label for="address">Địa chỉ:</label>
-              <input type="text" id="address" name="address" class="form-control" value="${sessionScope.auth.getUAddress()}" required>
+              <input type="text" id="address" name="address" class="form-control" value="${sessionScope.auth.getAddress()}" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Lưu thay đổi</button>
           </form>

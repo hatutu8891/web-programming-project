@@ -112,12 +112,6 @@
                                 <!-- Product ID -->
                                 <input type="hidden" name="productId" value="${requestScope.product.id}">
 
-                                <!-- Reviewer Name -->
-                                <div class="form-group">
-                                    <label for="reviewer-name">Tên của bạn:</label>
-                                    <input type="text" class="form-control" id="reviewer-name" name="reviewer-name" required>
-                                </div>
-
                                 <!-- Review Content -->
                                 <div class="form-group">
                                     <label for="review-content">Bình luận của bạn:</label>

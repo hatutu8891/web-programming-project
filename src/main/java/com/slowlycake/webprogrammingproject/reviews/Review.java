@@ -1,19 +1,20 @@
 package com.slowlycake.webprogrammingproject.reviews;
 
 public class Review {
-
     private int id;
-    private int userId;
-    private int productId;
-    private String comment;
+    private int uID;
+    private int pID;
     private int rating;
-    private String reviewDate;
-
-    // Constructor
-    public Review() {
+    private String comment;
+    public Review() {}
+    public Review(int id, int uID, int pID, byte rating, String comment) {
+        this.id = id;
+        this.uID = uID;
+        this.pID = pID;
+        this.rating = rating;
+        this.comment = comment;
     }
 
-    // Getter và Setter cho id
     public int getId() {
         return id;
     }
@@ -22,34 +23,22 @@ public class Review {
         this.id = id;
     }
 
-    // Getter và Setter cho userId
-    public int getUserId() {
-        return userId;
+    public int getuID() {
+        return uID;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setuID(int uID) {
+        this.uID = uID;
     }
 
-    // Getter và Setter cho productId
-    public int getProductId() {
-        return productId;
+    public int getpID() {
+        return pID;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setpID(int pID) {
+        this.pID = pID;
     }
 
-    // Getter và Setter cho comment
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    // Getter và Setter cho rating
     public int getRating() {
         return rating;
     }
@@ -58,12 +47,22 @@ public class Review {
         this.rating = rating;
     }
 
-    // Getter và Setter cho reviewDate
-    public String getReviewDate() {
-        return reviewDate;
+    public String getComment() {
+        return comment;
     }
 
-    public void setReviewDate(String reviewDate) {
-        this.reviewDate = reviewDate;
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "id=" + id +
+                ", uID=" + uID +
+                ", pID=" + pID +
+                ", rating=" + rating +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 }

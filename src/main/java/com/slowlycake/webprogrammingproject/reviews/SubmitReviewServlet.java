@@ -38,11 +38,10 @@ public class SubmitReviewServlet extends HttpServlet {
 
             // Tạo đối tượng Review và thiết lập các trường
             Review review = new Review();
-            review.setProductId(productId);
-            review.setUserId(userId);
+            review.setpID(productId);
+            review.setuID(userId);
             review.setComment(comment);
             review.setRating(rating);
-            review.setReviewDate(java.time.LocalDate.now().toString());  // Ngày đánh giá
 
             // Thêm đánh giá vào cơ sở dữ liệu thông qua ReviewService
             reviewService.addReview(review);

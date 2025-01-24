@@ -20,12 +20,20 @@
       <input type="text" name="username" class="form-control" id="username" required placeholder="Nhập tên tài khoản">
     </div>
     <div class="form-group">
-      <label for="uname">Tên đăng nhập:</label>
+      <label for="uname">Tên:</label>
       <input type="text" name="uname" class="form-control" id="uname" required placeholder="Nhập tên">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" name="email" class="form-control" id="email" required placeholder="Nhập email">
+    </div>
+    <div class="form-group">
+      <label for="phoneNum">Số điện thoại:</label>
+      <input type="text" name="phoneNum" class="form-control" id="phoneNum" required placeholder="Nhập số điện thoại">
+    </div>
+    <div class="form-group">
+      <label for="address">Địa chỉ:</label>
+      <input type="text" name="address" class="form-control" id="address" required placeholder="Nhập địa chỉ">
     </div>
     <div class="form-group">
       <label for="password">Mật khẩu:</label>
@@ -35,6 +43,7 @@
       <label for="confirmPassword">Xác nhận mật khẩu:</label>
       <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" required placeholder="Nhập lại mật khẩu">
     </div>
+
     <button type="submit" class="btn btn-custom btn-block">Đăng ký</button>
   </form>
   <div id="errorMessage" class="alert alert-danger mt-3" style="display: none;"></div>

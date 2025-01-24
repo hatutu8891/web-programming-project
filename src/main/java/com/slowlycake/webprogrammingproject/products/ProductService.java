@@ -4,59 +4,49 @@ import java.util.List;
 
 public class ProductService {
 
-    private ProductDao productDao;
+    private final ProductDAO productDAO;
 
     public ProductService() {
-        this.productDao = new ProductDao(); // Khởi tạo ProductDao
+        this.productDAO = new ProductDAO(); // Khởi tạo ProductDAO
     }
 
-    // Lấy sản phẩm theo ID
+    // Lấy thông tin chi tiết sản phẩm theo ID
     public Product getProductById(int productId) {
         try {
-            return productDao.findProductById(productId); // Gọi ProductDao để lấy sản phẩm
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    public List<Product> getProductsByCakeCode(String cakecode) {
-        return productDao.findProductsByCakeCode(cakecode);
-    }
-    // Thêm sản phẩm mới
-    public void addProduct(Product product) {
-        try {
-            productDao.addProduct(product); // Gọi phương thức addProduct từ ProductDao
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Cập nhật thông tin sản phẩm
-    public void updateProduct(Product product) {
-        try {
-            productDao.updateProduct(product); // Gọi phương thức updateProduct từ ProductDao
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Xóa sản phẩm theo ID
-    public void deleteProductById(int productId) {
-        try {
-            productDao.deleteProductById(productId); // Gọi phương thức deleteProductById từ ProductDao
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Lấy tất cả sản phẩm
-    public List<Product> getAllProducts() {
-        try {
-            return productDao.getAllProducts(); // Gọi phương thức getAllProducts từ ProductDao
+            return productDAO.getProductById(productId); // Gọi ProductDAO để lấy sản phẩm theo ID
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
+    // Lấy danh sách các biến thể theo mã bánh
+    public List<Variant> getVariantsByCakeCode(String cakeCode) {
+        try {
+            return productDAO.getVariantsByCakeCode(cakeCode); // Gọi ProductDAO để lấy danh sách biến thể
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Lấy danh sách sản phẩm cùng danh mục
+    public List<Product> getProductsInSameCategory(String category) {
+        try {
+            return productDAO.getProductsInSameCategory(category); // Gọi ProductDAO để lấy danh sách sản phẩm cùng danh mục
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Lấy danh sách đánh giá của sản phẩm
+    public List<String> getProductReviews(int productId) {
+        try {
+            return productDAO.getProductReviews(productId); // Gọi ProductDAO để lấy danh sách đánh giá sản phẩm
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

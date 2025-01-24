@@ -41,13 +41,13 @@ public class UpdateProfileServlet extends HttpServlet {
                 return;
             }
 
-            boolean isUpdated = userService.updateProfile(newName,user.getUHandle(), newEmail, newPhoneNum, newAddress);
+            boolean isUpdated = userService.updateProfile(newName,user.getHandle(), newEmail, newPhoneNum, newAddress);
 
             if (isUpdated) {
-                user.setUName(newName);
-                user.setUEmail(newEmail);
-                user.setUPhoneNum(newPhoneNum);
-                user.setUAddress(newAddress);
+                user.setName(newName);
+                user.setEmail(newEmail);
+                user.setPhoneNum(newPhoneNum);
+                user.setAddress(newAddress);
                 session.setAttribute("auth", user);
 
                 request.setAttribute("message", "Cập nhật thông tin cá nhân thành công!");
