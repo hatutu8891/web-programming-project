@@ -1,36 +1,32 @@
 package com.slowlycake.webprogrammingproject.aigoo404.admin;
 
+import com.slowlycake.webprogrammingproject.auth.JDBIConnect;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.Query;
 
 import java.util.*;
 
 public class UserDAO {
-    private Jdbi jdbi;
 
-    public UserDAO(Jdbi jdbi) {
-        this.jdbi = jdbi;
-    }
-
-    public User getUserByUHandle(String uHandle) {
-        return jdbi.withHandle(handle -> {
-            Query query = handle.createQuery("select * from users where uHandle = :uHandle");
-            query.bind("uHandle", uHandle);
+    public User getUserByHandle(String handle) {
+        return JDBIConnect.get().withHandle(h -> {
+            Query query = h.createQuery("select * from users where handle = :handle");
+            query.bind("handle", handle);
             return query.mapToBean(User.class).findOne().orElse(null);
         });
     }
 
     public List<User> selectAllUsers() {
-        return jdbi.withHandle(handle -> {
-            Query query = handle.createQuery("select uID, uHandle, uName, uEmail, uPhoneNum, uAddress from users");
+        return JDBIConnect.get().withHandle(h -> {
+            Query query = h.createQuery("select id, handle, name, email, phoneNum, address from users");
             return query.map((rs, ctx) -> {
                 User user = new User();
-                user.setUID(rs.getInt("uID"));
-                user.setUHandle(rs.getString("uHandle"));
-                user.setUName(rs.getString("uName"));
-                user.setUEmail(rs.getString("uEmail"));
-                user.setUPhoneNum(rs.getString("uPhoneNum"));
-                user.setUAddress(rs.getString("uAddress"));
+                user.setId(rs.getInt("id"));
+                user.setHandle(rs.getString("handle"));
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setPhoneNum(rs.getString("phoneNum"));
+                user.setAddress(rs.getString("address"));
                 return user;
             }).list();
         });

@@ -70,10 +70,10 @@
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                         <h4 class="text-primary text-uppercase mb-4">Thông báo</h4>
                         <p>Đăng ký để nhận được thông báo khi có khuyến mãi</p>
-                        <form action="">
+                        <form id="subscribeForm" action="${pageContext.request.contextPath}/subscribe" method="POST">
                             <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Email của bạn">
-                                <button class="btn btn-primary">Đăng ký</button>
+                                <input type="text" class="form-control border-white p-3" name="sEmail" placeholder="Email của bạn" required>
+                                <button type="submit" class="btn btn-primary">Đăng ký</button>
                             </div>
                         </form>
                     </div>
@@ -89,5 +89,34 @@
     </div>
 </div>
 <!-- Footer End -->
+<script>
+    document.getElementById("subscribeForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const sEmail = document.getElementById("sEmail").value;
+
+        // Validate email before submission
+        if (!sEmail || !/\S+@\S+\.\S+/.test(sEmail)) {
+            alert("Vui lòng nhập email hợp lệ!"); //
+            return;
+        }
+
+        const contextPath = window.location.pathname.split("/")[1];
+        fetch(`/${contextPath}/subscribe`, {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: new URLSearchParams({sEmail})
+        });
+        .then(response => response.text())
+            .then(message => {
+                alert(message);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Có lỗi xảy ra, vui lòng thử lại!");
+            });
+    });
+</script>
+
 </body>
 </html>

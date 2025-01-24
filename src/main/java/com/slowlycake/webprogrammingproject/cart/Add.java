@@ -1,8 +1,8 @@
-package com.slowlycake.webprogrammingproject.controller.cart;
+package com.slowlycake.webprogrammingproject.cart;
 
-import com.slowlycake.webprogrammingproject.dao.cart.Cart;
-import com.slowlycake.webprogrammingproject.dao.model.Product;
-import com.slowlycake.webprogrammingproject.service.ProductService;
+import com.slowlycake.webprogrammingproject.cart.Cart;
+import com.slowlycake.webprogrammingproject.products.Product;
+import com.slowlycake.webprogrammingproject.products.ProductService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

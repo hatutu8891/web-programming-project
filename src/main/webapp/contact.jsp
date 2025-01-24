@@ -79,7 +79,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <form id="contactForm" onsubmit="showConfirmation(event)" action="contact" method="post">
+                <form id="contactForm" onsubmit="showConfirmation(event)" action="${pageContext.request.contextPath}/contact" method="post">
                     <div class="row g-3">
                         <div class="col-sm-6"><input type="text" class="form-control bg-light border-0 px-4"
                                                      placeholder="Tên của bạn" name="name" style="height: 55px;"
@@ -127,7 +127,7 @@
         const formData = new FormData(document.getElementById('contactForm'));
 
         // Send the data using fetch (AJAX)
-        fetch('contact', {
+        fetch('/${contextPath}/contact', {
             method: 'POST',
             body: formData
         })

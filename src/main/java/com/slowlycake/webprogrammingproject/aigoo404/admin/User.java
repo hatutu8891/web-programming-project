@@ -3,58 +3,58 @@ package com.slowlycake.webprogrammingproject.aigoo404.admin;
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
 public class User {
-    private int uID;
-    private String uHandle;
-    private String uName;
-    private String uEmail;
-    private String uPhoneNum;
-    private String uAddress;
-    private String uPassword;
+    private int id;
+    private String handle;
+    private String name;
+    private String email;
+    private String phoneNum;
+    private String address;
+    private String password;
     private int role;
 
     // Getters and Setters
-    public int getUID() {
-        return uID;
+    public int getId() {
+        return id;
     }
 
-    public void setUID(int id) {
-        this.uID = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getUHandle() {
-        return uHandle;
+    public String getHandle() {
+        return handle;
     }
 
-    public void setUHandle(String uHandle) {
-        this.uHandle = uHandle;
+    public void setHandle(String handle) {
+        this.handle = handle;
     }
 
-    public String getUName() {
-        return uName;
+    public String getName() {
+        return name;
     }
 
-    public void setUName(String uName) {
-        this.uName = uName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUEmail() {
-        return uEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUEmail(String uEmail) {
-        this.uEmail = uEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUPhoneNum() {
-        return uPhoneNum;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setUPhoneNum(String uPhoneNum) {
-        this.uPhoneNum = uPhoneNum;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
-    public String getUAddress() {
-        return uAddress;
+    public String getAddress() {
+        return address;
     }
 
     public int getRole() {
@@ -65,16 +65,16 @@ public class User {
         this.role = role;
     }
 
-    public void setUAddress(String uAddress) {
-        this.uAddress = uAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getUPassword() {
-        return uPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUPassword(String uPassword) {
-        this.uPassword = uPassword;
+    public void setPassword(String uPassword) {
+        this.password = password;
     }
 }
 

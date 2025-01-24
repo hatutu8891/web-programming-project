@@ -12,17 +12,10 @@ public class LoginAdminController extends HttpServlet {
     private UserService userService;
 
     @Override
-    public void init() throws ServletException {
-        Jdbi jdbi = Jdbi.create("jdbc:mariadb://localhost:3306/cakeshopdb", "root", "aigoo404");
-        UserDAO userDAO = new UserDAO(jdbi);
-        userService = new UserService(userDAO);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uHandle = request.getParameter("username");
+        String handle = request.getParameter("handle");
         String password = request.getParameter("password");
-        User user = userService.login(uHandle, password);
+        User user = userService.login(handle, password);
         if (user != null) {
             if (user.getRole() == 1) {
                 response.sendRedirect("adminDashboard.jsp");
