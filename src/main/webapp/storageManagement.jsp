@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
   <meta charset="utf-8"/>
@@ -54,7 +54,7 @@
             <p>Quản lý đơn hàng</p>
           </a>
         </li>
-        <li>
+        <li class="active ">
           <a href="storageManagement.jsp">
             <i class="tim-icons icon-app"></i>
             <p>Quản lý kho</p>

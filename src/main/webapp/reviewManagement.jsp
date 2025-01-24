@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
   <meta charset="utf-8"/>
@@ -35,7 +35,7 @@
         </a-->
       </div>
       <ul class="nav">
-        <li class="active ">
+        <li>
           <a href="adminDashboard.jsp">
             <i class="tim-icons icon-chart-pie-36"></i>
             <p>Bảng Điều khiển</p>
@@ -65,7 +65,7 @@
             <p>Quản lý sản phẩm</p>
           </a>
         </li>
-        <li>
+        <li class="active ">
           <a href="reviewManagement.jsp">
             <i class="tim-icons icon-pencil"></i>
             <p>Đánh giá</p>

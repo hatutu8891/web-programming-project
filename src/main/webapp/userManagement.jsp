@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="utf-8"/>
@@ -36,13 +36,13 @@
                 </a-->
             </div>
             <ul class="nav">
-                <li class="active ">
+                <li>
                     <a href="adminDashboard.jsp">
                         <i class="tim-icons icon-chart-pie-36"></i>
                         <p>Bảng Điều khiển</p>
                     </a>
                 </li>
-                <li>
+                <li class="active ">
                     <a href="userManagement.jsp">
                         <i class="tim-icons icon-badge"></i>
                         <p>Quản lý người dùng</p>
