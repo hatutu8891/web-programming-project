@@ -42,7 +42,7 @@
         <div class="col-md-7">
             <div class="buy-section">
                 <h1 class="title-product">${requestScope.product.name}</h1>
-                <h1 class="title-product">${requestScope.product.cakecode}</h1>
+                <h1 class="title-product">${requestScope.product.cakeCode}</h1>
 
                 <!-- Chọn kích thước bánh -->
                 <div class="size-selection mt-3">
@@ -203,6 +203,6 @@
         document.getElementById('price').innerText = totalPrice + ' đ';
     }
 </script>
-
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 </body>
 </html>

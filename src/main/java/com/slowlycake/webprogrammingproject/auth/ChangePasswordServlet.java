@@ -34,7 +34,7 @@ public class ChangePasswordServlet extends HttpServlet {
                 return;
             }
 
-            UserDao userDao = new UserDao();
+            UserService userDao = new UserService();
             userDao.updatePassword(user.getEmail(), newPassword);
 
             user.setPassword(newPassword);
