@@ -1,24 +1,39 @@
 package com.slowlycake.webprogrammingproject.auth;
 
-import java.io.Serializable;
+public class User {
+    private int id; // userID
+    private String handle; // user handle name
+    private String name; // username
+    private String email; // user email
+    private String password; // user password
+    private String phoneNum; // user phone number
+    private String address; // user address
+    private int role; // user role (0=normal, 1=admin)
 
-public class User implements Serializable {
-    private int id;
-    private String username;
-    private String password;
-    private int role;
-    private String email;
-
+    // Constructor mặc định
     public User() {
     }
-
-    public User(String username, String email, String password) {
-        this.username = username;
+    public User(String handle,String email,String password,String name,String phoneNum,String address) {
+        this.handle = handle;
         this.email = email;
         this.password = password;
+        this.name = name;
+        this.phoneNum = phoneNum;
+        this.address = address;
+    }
+    // Constructor đầy đủ tham số
+    public User(int id, String handle, String name, String email, String password, String phoneNum, String address, int role) {
+        this.id = id;
+        this.handle = handle;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phoneNum = phoneNum;
+        this.address = address;
+        this.role = role;
     }
 
-
+    // Getter và Setter
     public int getId() {
         return id;
     }
@@ -27,12 +42,28 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getHandle() {
+        return handle;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setHandle(String handle) {
+        this.handle = handle;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -43,6 +74,22 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public int getRole() {
         return role;
     }
@@ -51,17 +98,18 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    // Getter và setter cho email
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    // Phương thức toString
     @Override
     public String toString() {
-        return id+username+password+role+email;
+        return "User{" +
+                "id=" + id +
+                ", handle='" + handle + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", address='" + address + '\'' +
+                ", role=" + role +
+                '}';
     }
 }
