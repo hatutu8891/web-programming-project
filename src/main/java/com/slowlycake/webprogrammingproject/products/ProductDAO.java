@@ -10,7 +10,7 @@ public class ProductDAO {
     // Lấy thông tin chi tiết sản phẩm theo ID
     public Product getProductById(int productId) {
         return JDBIConnect.get().withHandle(handle ->
-                handle.createQuery("SELECT * FROM product WHERE id = ?")
+                handle.createQuery("SELECT * FROM products WHERE id = ?")
                         .bind(0, productId)
                         .map((rs, ctx) -> new Product(
                                 rs.getInt("id"),
@@ -31,9 +31,9 @@ public class ProductDAO {
     // Lấy danh sách các biến thể (Variant) theo mã bánh (cakeCode)
     public List<Variant> getVariantsByCakeCode(String cakeCode) {
         return JDBIConnect.get().withHandle(handle ->
-                handle.createQuery("SELECT v.* FROM variant v " +
-                                "JOIN product_variant pv ON v.id = pv.vId " +
-                                "JOIN product p ON pv.pId = p.id WHERE p.cakeCode = ?")
+                handle.createQuery("SELECT v.* FROM variants v " +
+                                "JOIN product_variants pv ON v.id = pv.vId " +
+                                "JOIN products p ON pv.pId = p.id WHERE p.cakeCode = ?")
                         .bind(0, cakeCode)
                         .map((rs, ctx) -> new Variant(
                                 rs.getInt("id"),
@@ -47,7 +47,7 @@ public class ProductDAO {
     // Lấy danh sách sản phẩm cùng danh mục
     public List<Product> getProductsInSameCategory(String category) {
         return JDBIConnect.get().withHandle(handle ->
-                handle.createQuery("SELECT * FROM product WHERE category = ?")
+                handle.createQuery("SELECT * FROM products WHERE category = ?")
                         .bind(0, category)
                         .map((rs, ctx) -> new Product(
                                 rs.getInt("id"),

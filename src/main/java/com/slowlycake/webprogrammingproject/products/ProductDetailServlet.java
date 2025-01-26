@@ -1,5 +1,7 @@
 package com.slowlycake.webprogrammingproject.products;
 
+import com.slowlycake.webprogrammingproject.auth.User;
+import com.slowlycake.webprogrammingproject.auth.UserService;
 import com.slowlycake.webprogrammingproject.reviews.Review;
 import com.slowlycake.webprogrammingproject.reviews.ReviewService;
 
@@ -9,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,7 +21,6 @@ public class ProductDetailServlet extends HttpServlet {
 
     private ProductService productService;
     private ReviewService reviewService;
-
     @Override
     public void init() throws ServletException {
         super.init();
@@ -34,29 +36,24 @@ public class ProductDetailServlet extends HttpServlet {
                 return;
             }
 
-            int productId = Integer.parseInt(productIdParam); // Chuyển đổi sang số nguyên
+            int productId = Integer.parseInt(productIdParam);
 
-            // Lấy thông tin sản phẩm từ ProductService
             Product product = productService.getProductById(productId);
             if (product == null) {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Product not found");
                 return;
             }
 
-            // Lấy danh sách đánh giá của sản phẩm
             List<Review> reviews = reviewService.getReviewsByProductId(productId);
 
-            // Tính điểm đánh giá trung bình
-            double avgRating = reviewService.calculateAverageRating(productId);
 
-            // Lấy danh sách sản phẩm theo cakecode (cùng loại bánh nhưng các kích thước khác nhau)
-            List<Variant> productsByCakeCode = productService.getVariantsByCakeCode(product.getCakeCode());
+            List<Variant> productvariants = productService.getVariantsByCakeCode(product.getCakeCode());
 
-            // Gửi dữ liệu đến JSP
+            List<Product> productSame  = productService.getProductsInSameCategory(product.getCategory());
             request.setAttribute("product", product);
             request.setAttribute("reviews", reviews);
-            request.setAttribute("avgRating", avgRating);
-            request.setAttribute("productsByCakeCode", productsByCakeCode); // Truyền danh sách sản phẩm có cùng cakecode
+            request.setAttribute("productvariants", productvariants);
+            request.setAttribute("productSame", productSame);
 
             // Chuyển hướng đến trang productDetail.jsp
             RequestDispatcher dispatcher = request.getRequestDispatcher("/productDetail.jsp");

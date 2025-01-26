@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/productDetail.css">
 </head>
+<style>
+    .equal-height {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; /* Đảm bảo chiều cao bằng nhau */
+    }
+
+    .card-img-top {
+        height: 200px; /* Đặt chiều cao cố định cho hình ảnh */
+        object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    }
+
+    .card-body {
+        flex-grow: 1; /* Phần thân chiếm không gian còn lại */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+</style>
 
 <body>
 <!-- Header -->
@@ -48,9 +70,9 @@
                 <div class="size-selection mt-3">
                     <label for="size">Chọn kích thước:</label>
                     <select id="size" class="form-control" onchange="updatePrice()">
-                        <c:forEach var="product" items="${requestScope.productsByCakeCode}">
-                            <option value="${product.price}" data-size="${product.size}">
-                                    ${product.size} (${product.price} đ)
+                        <c:forEach var="variant" items="${requestScope.productvariants}">
+                            <option value="${variant.price}" data-size="${variant.size}">
+                                    ${variant.size} (${variant.price} đ)
                             </option>
                         </c:forEach>
                     </select>
@@ -61,11 +83,11 @@
                         <span>Số lượng:</span>
                         <input type="number" class="input-text qty text mx-2" step="1" name="quantity" value="1" title="Số lượng" id="quantity" onchange="updatePrice()">
                     </div>
-                    <div class="price-wrapper">
-                        <p class="price">
-                            <span>Giá: <ins id="price">${requestScope.product.price} đ</ins></span>
-                        </p>
-                    </div>
+<%--                    <div class="price-wrapper">--%>
+<%--                        <p class="price">--%>
+<%--                            <span>Giá: <ins id="price">${requestScope.product.price} đ</ins></span>--%>
+<%--                        </p>--%>
+<%--                    </div>--%>
                     <!-- Thêm vào giỏ hàng -->
                     <a href="cart.jsp" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ hàng</a>
 
@@ -92,7 +114,7 @@
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                     <div class="border p-3 mt-3">
                         <h5 class="text-uppercase">Thông tin sản phẩm</h5>
-                        <p>${requestScope.product.description}</p>
+                        <p>${requestScope.product.desc}</p>
                     </div>
                 </div>
 
@@ -101,10 +123,8 @@
                     <div class="border p-3 mt-3">
                         <h5 class="text-uppercase">Đánh giá sản phẩm</h5>
                         <div class="rating ml-3">
-                            <c:forEach var="i" begin="1" end="5">
-                                <span class="fa fa-star ${i <= requestScope.product.favor ? 'checked' : ''}"></span>
-                            </c:forEach>
-                            <span>Đánh giá ${requestScope.product.favor}</span>
+                            <span class="fa fa-star ${i <= requestScope.product.review ? 'checked' : ''}"></span>
+                            <span>Đánh giá ${requestScope.product.review}/5</span>
                         </div>
                         <div class="add-comment mt-4">
                             <h6 class="text-uppercase">Gửi bình luận của bạn</h6>
@@ -139,7 +159,6 @@
                         <div class="reviews">
                             <c:forEach var="review" items="${requestScope.reviews}">
                                 <div class="review">
-                                    <div class="review-date">${review.reviewDate}</div>
                                     <div class="review-content">${review.comment}</div>
                                     <div class="review-rating">
                                         <span class="fa fa-star checked"></span> ${review.rating} / 5
@@ -154,22 +173,24 @@
                     <h3>Sản phẩm cùng loại</h3>
                     <div class="col-12">
                         <div class="row">
-                            <c:forEach var="product" items="${requestScope.productsInSameCategory}">
-                                <div class="col-md-4 mb-4">
-                                    <div class="card">
-                                        <img src="${product.img}" class="card-img-top" alt="${product.name}">
-                                        <div class="card-body">
-                                            <h5 class="card-title">${product.name}</h5>
-                                            <p class="card-text">${product.cakecode}</p>
-                                            <p class="card-text">${product.price} đ</p>
-                                            <a href="productDetail.jsp?id=${product.id}" class="btn btn-primary">Xem chi tiết</a>
+                            <c:forEach var="product" items="${requestScope.productSame}">
+                                <c:if test="${product.cakeCode != requestScope.product.cakeCode}">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card equal-height">
+                                            <img src="${product.img}" class="card-img-top" alt="${product.name}">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${product.name}</h5>
+                                                <p class="card-text">${product.cakeCode}</p>
+                                                <a href="productdetail?id=${product.id}" class="btn btn-primary">Xem chi tiết</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </c:if>
                             </c:forEach>
                         </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -183,26 +204,5 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    // Hàm thay đổi giá khi người dùng chọn kích thước khác
-    function updatePrice(select) {
-        const selectedPrice = select.value;
-        document.getElementById("price").textContent = `${selectedPrice} đ`;
-    }
-</script>
-<script>
-    function updatePrice() {
-        // Lấy giá của sản phẩm dựa trên kích thước đã chọn
-        var selectedSize = document.getElementById('size').value;
-        var quantity = document.getElementById('quantity').value;
-
-        // Tính tổng giá sau khi thay đổi số lượng và kích thước
-        var totalPrice = selectedSize * quantity;
-
-        // Cập nhật lại giá hiển thị
-        document.getElementById('price').innerText = totalPrice + ' đ';
-    }
-</script>
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 </body>
 </html>

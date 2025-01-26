@@ -40,13 +40,5 @@ public class ProductService {
         }
     }
 
-    // Lấy danh sách đánh giá của sản phẩm
-    public List<String> getProductReviews(int productId) {
-        try {
-            return productDAO.getProductReviews(productId); // Gọi ProductDAO để lấy danh sách đánh giá sản phẩm
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 }
