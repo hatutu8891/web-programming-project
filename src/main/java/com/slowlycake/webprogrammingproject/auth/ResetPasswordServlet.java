@@ -42,7 +42,7 @@ public class ResetPasswordServlet extends HttpServlet {
         }
 
         // Cập nhật mật khẩu trong cơ sở dữ liệu
-        UserDao userDao = new UserDao();
+        UserDAO userDao = new UserDAO();
         try {
             userDao.updatePassword(email, password);  // Cập nhật mật khẩu mới cho người dùng
             resp.sendRedirect("success.jsp");  // Chuyển hướng đến trang thành công

@@ -1,3 +1,4 @@
+<%@ page import="com.slowlycake.webprogrammingproject.auth.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -52,24 +53,44 @@
                 <li class="icon-item">
                     <a href="<c:url value="shoppingCart.jsp"/>"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
-
-                <!-- Icon for User Login/Register -->
+                <!--header changed when login-->
                 <li class="icon-item dropdown">
-                    <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <%
+                        User authUser = (User) session.getAttribute("auth");
+                        if (authUser != null) {
+                    %>
+                    <i class="fa-solid fa-user" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <div class="dropdown-menu login-signin">
-                        <a href="signUp.jsp">
-                            <button class="setbutton signin">
+                        <a href="userInfo.jsp">
+                            <button class="setbutton userInfo">
                                 <i class="fa-solid fa-person"></i>
-                                <span class="btn-content">Đăng ký </span>
+                                <span class="btn-content">Tài khoản</span>
                             </button>
                         </a>
+                        <a href="<c:url value='/logout'/>">
+                            <button class="setbutton logout">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span class="btn-content">Đăng xuất</span>
+                            </button>
+                        </a>
+                    </div>
+                    <% } else { %>
+                    <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <div class="dropdown-menu login-signin">
                         <a href="login.jsp">
                             <button class="setbutton login">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 <span class="btn-content">Đăng nhập</span>
                             </button>
                         </a>
+                        <a href="signUp.jsp">
+                            <button class="setbutton signin">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span class="btn-content">Đăng ký</span>
+                            </button>
+                        </a>
                     </div>
+                    <% } %>
                 </li>
             </ul>
         </div>

@@ -8,6 +8,7 @@ public class JDBIConnect {
     static Jdbi jdbi;
     public static Jdbi get() {
         try{
+            Class.forName("org.mariadb.jdbc.Driver");
             if(jdbi==null) makeConnect();
         } catch (Exception e) {
             e.printStackTrace();
@@ -15,7 +16,7 @@ public class JDBIConnect {
         return jdbi;
     }
 
-    private static void makeConnect() {
+    private static void makeConnect(){
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(DBProperties.url());
         config.setUsername(DBProperties.username());
