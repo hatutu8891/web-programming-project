@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,16 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông tin người dùng</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap"
-        rel="stylesheet">
   <style>
     body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
       background-color: #f8f1e9;
     }
-    .container-info{
+    .container-info {
       max-width: 900px;
       margin: 50px auto;
       background: #fff;
@@ -45,18 +45,30 @@
 <%@ include file="shared/header.jsp" %>
 <%@ include file="shared/nav.jsp" %>
 <div class="container-info">
-  <h1>Thông tin tài khoản: ${sessionScope.auth.username}</h1>
+  <h1>Thông tin tài khoản: ${sessionScope.auth.getHandle()}</h1>
 
   <div class="row">
-    <!-- Cập nhật email -->
+    <!-- Cập nhật thông tin người dùng -->
     <div class="col-md-6">
-      <div class="card">
+      <div class="card mt-3">
         <div class="card-body">
-          <h2 class="card-title">Cập nhật email</h2>
+          <h2 class="card-title">Cập nhật thông tin người dùng</h2>
           <form method="POST" action="${pageContext.request.contextPath}/updateProfile">
             <div class="form-group">
+              <label for="name">Tên người dùng:</label>
+              <input type="text" id="name" name="name" class="form-control" value="${sessionScope.auth.getName()}" required>
+            </div>
+            <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.email}" required>
+              <input type="email" id="email" name="email" class="form-control" value="${sessionScope.auth.getEmail()}" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Số điện thoại:</label>
+              <input type="text" id="phone" name="phone" class="form-control" value="${sessionScope.auth.getPhoneNum()}" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Địa chỉ:</label>
+              <input type="text" id="address" name="address" class="form-control" value="${sessionScope.auth.getAddress()}" required>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Lưu thay đổi</button>
           </form>
@@ -66,7 +78,7 @@
 
     <!-- Đổi mật khẩu -->
     <div class="col-md-6">
-      <div class="card">
+      <div class="card mt-3">
         <div class="card-body">
           <h2 class="card-title">Đổi mật khẩu</h2>
           <form method="POST" action="${pageContext.request.contextPath}/changePassword">
@@ -96,19 +108,14 @@
     </form>
   </div>
 
-  <!-- Thông báo -->
   <div class="message">
     ${message != null ? message : ""}
   </div>
   <div class="error">
     ${error != null ? error : ""}
   </div>
+
 </div>
 <%@ include file="shared/footer.jsp" %>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
 </body>
 </html>
