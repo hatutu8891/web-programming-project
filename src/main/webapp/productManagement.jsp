@@ -29,10 +29,9 @@
   <div class="sidebar">
     <div class="sidebar-wrapper">
       <div class="logo">
-        <!--a href="javascript:void(0)" class="simple-text logo-mini">
+        <a href="#" class="simple-text logo-normal">
+          Xin chào <%= session.getAttribute("handle") %>
         </a>
-        <a href="javascript:void(0)" class="simple-text logo-normal">
-        </a-->
       </div>
       <ul class="nav">
         <li>

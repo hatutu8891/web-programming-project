@@ -24,6 +24,7 @@ public class LoginController extends HttpServlet{
         if(user != null) {
             HttpSession session=req.getSession();
             session.setAttribute("auth", user);
+            session.setAttribute("handle", user.getHandle());
             if (user.getRole() == 1) {
                 resp.sendRedirect(req.getContextPath() + "/adminDashboard.jsp"); // Chuyển đến trang Admin
             } else {
