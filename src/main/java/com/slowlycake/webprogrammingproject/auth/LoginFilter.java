@@ -4,9 +4,14 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.*;
 import java.io.IOException;
+import java.util.*;
 
 @WebFilter("/adminDashboard.jsp")
 public class LoginFilter implements Filter {
+    private static final List<String> restrictedPages = Arrays.asList(
+            "/adminDashboard.jsp", "/contactManagement.jsp", "mailSubManagement.jsp", "/orderManagement.jsp",
+            "/userManagement.jsp", "/productManagement.jsp", "/reviewManagement.jsp"
+    );
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

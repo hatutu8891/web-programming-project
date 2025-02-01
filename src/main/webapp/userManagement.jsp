@@ -21,8 +21,6 @@
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="assets/demo/demo.css" rel="stylesheet"/>
 </head>
 
 <body class="">
@@ -30,7 +28,7 @@
     <div class="sidebar">
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="#" class="simple-text logo-normal">
+                <a href="userInfo.jsp" class="simple-text logo-normal">
                     Xin chào <%= session.getAttribute("handle") %>
                 </a>
             </div>
@@ -115,16 +113,19 @@
                                     <img src="assets/img/review2.png" alt="Profile Photo">
                                 </div>
                                 <b class="caret d-none d-lg-block d-xl-block"></b>
-                                <p class="d-lg-none">
-                                    <a href="<c:url value='/logout'/>">Log out</a>
+                                <p class="d-lg-none">Log out
                                 </p>
                             </a>
                             <ul class="dropdown-menu dropdown-navbar">
-                                <li class="nav-link"><a href="javascript:void(0)"
-                                                        class="nav-item dropdown-item">Profile</a></li>
+                                <li class="nav-link">
+                                    <a href="userInfo.jsp" class="nav-item dropdown-item">Profile
+                                    </a>
+                                </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log
-                                    out</a></li>
+                                <li class="nav-link">
+                                    <a href="<c:url value='/logout'/>" class="nav-item dropdown-item">Đăng xuất
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="separator d-lg-none"></li>
@@ -132,19 +133,6 @@
                 </div>
             </div>
         </nav>
-        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Navbar -->
         <div class="content">
             <div class="row">
@@ -180,7 +168,7 @@
     </div>
 </div>
 <!-- Modal để chỉnh sửa thông tin -->
-<div class="modal fade" id="editModal" tabindex="2">
+<div class="modal fade" id="editModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -358,7 +346,7 @@
                 });
 
                 // Handle Edit Click
-                $(".edit-btn").click(function() {
+                $(".edit-btn").click(function () {
                     let userId = $(this).data("id");
                     $("#editId").val(userId);
                     $("#editHandle").val($(this).data("handle"));
@@ -375,13 +363,13 @@
                 });
 
                 // Handle Delete Click
-                $(".delete-btn").click(function() {
+                $(".delete-btn").click(function () {
                     let userId = $(this).data("id");
                     if (confirm("Are you sure you want to delete this user?")) {
                         $.ajax({
                             url: "UserServlet?id=" + userId,
                             type: "DELETE",
-                            success: function(response) {
+                            success: function (response) {
                                 alert(response);
                                 loadUsers(); // Reload after delete
                             }
@@ -390,7 +378,8 @@
                 });
             });
         }
-        $("#editUserForm").submit(function(e) {
+
+        $("#editUserForm").submit(function (e) {
             e.preventDefault();
 
             let userData = {
@@ -403,7 +392,7 @@
                 role: $("#editRoleHidden").val() // Use hidden role value
             };
 
-            $.post("UserServlet", userData, function(response) {
+            $.post("UserServlet", userData, function (response) {
                 alert(response);
                 $("#editModal").modal("hide");
                 loadUsers();
