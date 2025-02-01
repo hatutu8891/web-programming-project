@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +31,10 @@
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/menu.css">
-        <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="shared/header.jsp" />
+<jsp:include page="shared/header.jsp"/>
 <%--<%@ include file="shared/header.jsp" %>--%>
 <%@ include file="shared/nav.jsp" %>
 <%--<%@ include file="shared/header.jsp" %>--%>
@@ -64,12 +64,198 @@
         </div>
         <div class="tab-class text-center">
             <div class="frame-product-container">
-<%--                <jsp:include page="/frameProduct.jsp" />--%>
+                <!-- Shop Start -->
+                <div class="container-fluid pt-5">
+                    <div class="row px-xl-5">
+                                                    <!-- Shop Sidebar Start -->
+                        <div class="col-lg-3 col-md-12">
+                            <!-- Price Start -->
+                            <div class="border-bottom mb-4 pb-4">
+                                <h5 class="font-weight-semi-bold mb-4">Giá</h5>
+                                <form>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" checked id="price-all">
+                                        <label class="custom-control-label" for="price-all">All Price</label>
+                                        <span class="badge border font-weight-normal">1000</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="price-1">
+                                        <label class="custom-control-label" for="price-1">100000-140000</label>
+                                        <span class="badge border font-weight-normal">150</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="price-2">
+                                        <label class="custom-control-label" for="price-2">150000-240000</label>
+                                        <span class="badge border font-weight-normal">295</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="price-3">
+                                        <label class="custom-control-label" for="price-3">250000-340000</label>
+                                        <span class="badge border font-weight-normal">246</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="price-4">
+                                        <label class="custom-control-label" for="price-4">>350000</label>
+                                        <span class="badge border font-weight-normal">145</span>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Price End -->
+
+                            <!-- Color Start -->
+                            <div class="border-bottom mb-4 pb-4">
+                                <h5 class="font-weight-semi-bold mb-4">Loại bánh</h5>
+                                <form>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" checked id="color-all">
+                                        <label class="custom-control-label" for="price-all">Tất cả bánh</label>
+                                        <span class="badge border font-weight-normal">1000</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="color-1">
+                                        <label class="custom-control-label" for="color-1">Gato</label>
+                                        <span class="badge border font-weight-normal">150</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="color-2">
+                                        <label class="custom-control-label" for="color-2">Mousse</label>
+                                        <span class="badge border font-weight-normal">295</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="color-3">
+                                        <label class="custom-control-label" for="color-3">Tiramisu</label>
+                                        <span class="badge border font-weight-normal">246</span>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Category End -->
+
+                            <!-- Size Start -->
+                            <div class="mb-5">
+                                <h5 class="font-weight-semi-bold mb-4">Lọc bởi vị bánh</h5>
+                                <form>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" checked id="size-all">
+                                        <label class="custom-control-label" for="size-all">Tất cả vị</label>
+                                        <span class="badge border font-weight-normal">1000</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="size-1">
+                                        <label class="custom-control-label" for="size-1">Socola</label>
+                                        <span class="badge border font-weight-normal">150</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="size-2">
+                                        <label class="custom-control-label" for="size-2">Trái Cây</label>
+                                        <span class="badge border font-weight-normal">295</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="size-3">
+                                        <label class="custom-control-label" for="size-3">Dâu</label>
+                                        <span class="badge border font-weight-normal">246</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="size-4">
+                                        <label class="custom-control-label" for="size-4">Dứa</label>
+                                        <span class="badge border font-weight-normal">145</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-5">
+                                        <label class="custom-control-label" for="size-5">Dừa</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Size End -->
+                        </div>
+                        <!-- Shop Sidebar End -->
+
+
+                        <!-- Shop Product Start -->
+                        <div class="col-lg-9 col-md-12">
+                            <div class="row pb-3">
+                                <div class="col-12 pb-1">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <form action="">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control"
+                                                       placeholder="Search by name">
+                                                <div class="input-group-append">
+                                                <span class="input-group-text bg-transparent text-primary">
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="dropdown ml-4">
+                                            <button class="btn border dropdown-toggle" type="button" id="triggerId"
+                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                Lọc
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right"
+                                                 aria-labelledby="triggerId">
+                                                <a class="dropdown-item" href="#">Mới nhất</a>
+                                                <a class="dropdown-item" href="#">Phổ biến</a>
+                                                <a class="dropdown-item" href="#">Đắt hàng</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--                                    <!-- Sản phẩm 1 -->--%>
+                        <c:forEach var="p" items="${data}">
+                            <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                                <div class="card product-item border-0 mb-4">
+                                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                        <img class="img-fluid w-100" src=${p.img} alt="">
+                                    </div>
+                                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                        <h6 class="text-truncate mb-3">${p.title}</h6>
+                                        <div class="d-flex justify-content-center">
+                                            <h6>${p.piece}VND</h6>
+                                            <h6 class="text-muted ml-2">
+                                                <del>${p.piece}VND</del>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between bg-light border">
+                                        <a href="" class="btn btn-sm text-dark p-0"><i
+                                                class="fas fa-eye text-primary mr-1"></i>Chi tiết</a>
+                                        <a href="" class="btn btn-sm text-dark p-0"><i
+                                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                        <div class="col-12 pb-1">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center mb-3">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Products End -->
 
 
@@ -77,16 +263,19 @@
 
 <div class="container-fluid text-secondary py-4" style="background: #111111;">
     <div class="container text-center">
-        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved.
+        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All
+            Rights Reserved.
 
             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-            Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
+            Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+        </p>
     </div>
 </div>
 <!-- Footer End -->
 
 <!-- Back to Top -->
-<a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+<a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i
+        class="bi bi-arrow-up"></i></a>
 
 
 <!-- JavaScript Libraries -->
