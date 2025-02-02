@@ -159,6 +159,7 @@
                         <div class="reviews">
                             <c:forEach var="review" items="${requestScope.reviews}">
                                 <div class="review">
+                                    <strong>${review.handle}</strong>
                                     <div class="review-content">${review.comment}</div>
                                     <div class="review-rating">
                                         <span class="fa fa-star checked"></span> ${review.rating} / 5

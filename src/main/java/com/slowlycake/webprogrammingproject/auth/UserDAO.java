@@ -61,4 +61,15 @@ public class UserDAO {
                         .execute() > 0
         );
     }
+
+
+    public String getHandleByUserId(int userId) {
+        return JDBIConnect.get().withHandle(h ->
+                h.createQuery("SELECT handle FROM users WHERE id = ?")
+                        .bind(0, userId)
+                        .mapTo(String.class)
+                        .findFirst()
+                        .orElse(null)
+        );
+    }
 }

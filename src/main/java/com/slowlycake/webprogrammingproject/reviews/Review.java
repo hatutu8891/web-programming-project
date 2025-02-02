@@ -6,13 +6,17 @@ public class Review {
     private int pID;
     private int rating;
     private String comment;
+    private String handle; // Thêm handle để lưu tên người dùng
+
     public Review() {}
-    public Review(int id, int uID, int pID, byte rating, String comment) {
+
+    public Review(int id, int uID, int pID, int rating, String comment, String handle) {
         this.id = id;
         this.uID = uID;
         this.pID = pID;
         this.rating = rating;
         this.comment = comment;
+        this.handle = handle;
     }
 
     public int getId() {
@@ -55,6 +59,14 @@ public class Review {
         this.comment = comment;
     }
 
+    public String getHandle() {
+        return handle;
+    }
+
+    public void setHandle(String handle) {
+        this.handle = handle;
+    }
+
     @Override
     public String toString() {
         return "Review{" +
@@ -63,6 +75,7 @@ public class Review {
                 ", pID=" + pID +
                 ", rating=" + rating +
                 ", comment='" + comment + '\'' +
+                ", handle='" + handle + '\'' +
                 '}';
     }
 }
