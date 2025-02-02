@@ -25,6 +25,7 @@
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/checkout.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid pt-5">
