@@ -83,11 +83,12 @@
                         <span>Số lượng:</span>
                         <input type="number" class="input-text qty text mx-2" step="1" name="quantity" value="1" title="Số lượng" id="quantity" onchange="updatePrice()">
                     </div>
-<%--                    <div class="price-wrapper">--%>
-<%--                        <p class="price">--%>
-<%--                            <span>Giá: <ins id="price">${requestScope.product.price} đ</ins></span>--%>
-<%--                        </p>--%>
-<%--                    </div>--%>
+                    <!-- Price display -->
+                    <div class="price-wrapper">
+                        <p class="price">
+                            <span>Giá: <ins id="price">${products[0].price} đ</ins></span>
+                        </p>
+                    </div>
                     <!-- Thêm vào giỏ hàng -->
                     <a href="cart.jsp" class="single_add_to_cart_button btn btn-primary mt-3">Thêm vào giỏ hàng</a>
 
@@ -204,6 +205,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function updatePrice() {
+        var sizeSelect = document.getElementById('size');
+        var selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+        var price = selectedOption.value;
 
+        // Update the displayed price
+        document.getElementById('price').innerText = price + ' đ';
+    }
+</script>
 </body>
 </html>
