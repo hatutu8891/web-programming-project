@@ -22,5 +22,31 @@ public class ProductDao {
                         .list()
         );
     }
+    public List<Product> findProductsByNamePart(String namePart) {
+        return JDBIConnect.get().withHandle(handle ->
+                handle.createQuery("SELECT * FROM products WHERE name LIKE :namePart")
+                        .bind("namePart", "%" + namePart + "%")  // Thêm % vào trước và sau để tìm kiếm phần tên
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+
+    public List<Product> findProductsByCategory(String category) {
+        return JDBIConnect.get().withHandle(handle ->
+                handle.createQuery("SELECT * FROM products WHERE category = :category")
+                        .bind("category", category)
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+
+//    public List<Product> findProductsByPrice(int minPrice, int maxPrice ) {
+//        return JDBIConnect.get().withHandle(handle ->
+//                handle.createQuery("SELECT * FROM products p JWHERE category = :category")
+//                        .bind("category", category)
+//                        .mapToBean(Product.class)
+//                        .list()
+//        );
+//    }
 
 }
