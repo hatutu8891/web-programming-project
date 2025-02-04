@@ -21,8 +21,6 @@
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="assets/demo/demo.css" rel="stylesheet"/>
 </head>
 
 <body class="">
@@ -30,10 +28,9 @@
     <div class="sidebar">
         <div class="sidebar-wrapper">
             <div class="logo">
-                <!--a href="javascript:void(0)" class="simple-text logo-mini">
+                <a href="userInfo.jsp" class="simple-text logo-normal">
+                    Xin chào <%= session.getAttribute("handle") %>
                 </a>
-                <a href="javascript:void(0)" class="simple-text logo-normal">
-                </a-->
             </div>
             <ul class="nav">
                 <li>
@@ -110,28 +107,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto">
-                        <li class="search-bar input-group">
-                            <button class="btn btn-link" id="search-button" data-toggle="modal"
-                                    data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                <span class="d-lg-none d-md-block">Search</span>
-                            </button>
-                        </li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <div class="photo">
                                     <img src="assets/img/review2.png" alt="Profile Photo">
                                 </div>
                                 <b class="caret d-none d-lg-block d-xl-block"></b>
-                                <p class="d-lg-none">
-                                    Log out
+                                <p class="d-lg-none">Log out
                                 </p>
                             </a>
                             <ul class="dropdown-menu dropdown-navbar">
-                                <li class="nav-link"><a href="javascript:void(0)"
-                                                        class="nav-item dropdown-item">Profile</a></li>
+                                <li class="nav-link">
+                                    <a href="userInfo.jsp" class="nav-item dropdown-item">Profile
+                                    </a>
+                                </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log
-                                    out</a></li>
+                                <li class="nav-link">
+                                    <a href="<c:url value='/logout'/>" class="nav-item dropdown-item">Đăng xuất
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="separator d-lg-none"></li>
@@ -139,19 +133,6 @@
                 </div>
             </div>
         </nav>
-        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Navbar -->
         <div class="content">
             <div class="row">
@@ -171,19 +152,11 @@
                                         <th>Email</th>
                                         <th>SĐT</th>
                                         <th>Địa chỉ</th>
+                                        <th>Loại</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="user" items="${listUsers}">
-                                        <tr>
-                                            <td>${user.uID}</td>
-                                            <td>${user.uHandle}</td>
-                                            <td>${user.uName}</td>
-                                            <td>${user.uEmail}</td>
-                                            <td>${user.uPhoneNum}</td>
-                                            <td>${user.uAddress}</td>
-                                        </tr>
-                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
@@ -194,7 +167,35 @@
         </div>
     </div>
 </div>
-
+<!-- Modal để chỉnh sửa thông tin -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa thông tin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <input type="hidden" id="editId">
+                    <input type="hidden" id="editRoleHidden"> <!-- Hidden input for role -->
+                    <label>Username: <input type="text" id="editHandle" class="form-control" required></label>
+                    <label>Tên: <input type="text" id="editName" class="form-control" required></label>
+                    <label>Email: <input type="email" id="editEmail" class="form-control" required></label>
+                    <label>SĐT: <input type="text" id="editPhoneNum" class="form-control"></label>
+                    <label>Địa chỉ: <input type="text" id="editAddress" class="form-control"></label>
+                    <label>Loại:
+                        <select id="editRole" class="form-select" disabled> <!-- Role is disabled -->
+                            <option value="0">User</option>
+                            <option value="1">Admin</option>
+                        </select>
+                    </label>
+                    <button type="submit" class="btn btn-success mt-2">Lưu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>
@@ -322,7 +323,84 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#usersTable').DataTable({"pageLength": 10});
+        function loadUsers() {
+            $.get("userManagementServlet", function (data) {
+                let table = $('#usersTable').DataTable();
+                table.clear();
+
+                data.forEach(user => {
+                    table.row.add([
+                        user.id,
+                        user.handle,
+                        user.name,
+                        user.email,
+                        user.phoneNum,
+                        user.address,
+                        user.role == 1 ? "Admin" : "User",
+                        `<button class="btn btn-success btn-sm edit-btn" data-id="${user.id}"
+                                data-handle="${user.handle}" data-name="${user.name}"
+                                data-email="${user.email}" data-phone="${user.phoneNum}"
+                                data-address="${user.address}" data-role="${user.role}">Sửa</button>
+                         <button class="btn btn-danger btn-sm delete-btn" data-id="${user.id}">Xóa</button>`
+                    ]).draw();
+                });
+
+                // Handle Edit Click
+                $(".edit-btn").click(function () {
+                    let userId = $(this).data("id");
+                    $("#editId").val(userId);
+                    $("#editHandle").val($(this).data("handle"));
+                    $("#editName").val($(this).data("name"));
+                    $("#editEmail").val($(this).data("email"));
+                    $("#editPhoneNum").val($(this).data("phone"));
+                    $("#editAddress").val($(this).data("address"));
+
+                    let roleValue = $(this).data("role");
+                    $("#editRole").val(roleValue); // Show correct role
+                    $("#editRoleHidden").val(roleValue); // Store role for submission
+
+                    $("#editModal").modal("show");
+                });
+
+                // Handle Delete Click
+                $(".delete-btn").click(function () {
+                    let userId = $(this).data("id");
+                    if (confirm("Are you sure you want to delete this user?")) {
+                        $.ajax({
+                            url: "UserServlet?id=" + userId,
+                            type: "DELETE",
+                            success: function (response) {
+                                alert(response);
+                                loadUsers(); // Reload after delete
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        $("#editUserForm").submit(function (e) {
+            e.preventDefault();
+
+            let userData = {
+                id: $("#editId").val(),
+                handle: $("#editHandle").val(),
+                name: $("#editName").val(),
+                email: $("#editEmail").val(),
+                phoneNum: $("#editPhoneNum").val(),
+                address: $("#editAddress").val(),
+                role: $("#editRoleHidden").val() // Use hidden role value
+            };
+
+            $.post("UserServlet", userData, function (response) {
+                alert(response);
+                $("#editModal").modal("hide");
+                loadUsers();
+            });
+        });
+
+        $('#usersTable').DataTable();
+        loadUsers();
     });
 </script>
 

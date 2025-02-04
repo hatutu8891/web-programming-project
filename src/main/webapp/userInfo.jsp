@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thông tin người dùng</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       color: #333;
@@ -52,7 +53,7 @@
     <div class="col-md-6">
       <div class="card mt-3">
         <div class="card-body">
-          <h2 class="card-title">Cập nhật thông tin người dùng</h2>
+          <h2 class="card-title">Cập nhật thông tin</h2>
           <form method="POST" action="${pageContext.request.contextPath}/updateProfile">
             <div class="form-group">
               <label for="name">Tên người dùng:</label>

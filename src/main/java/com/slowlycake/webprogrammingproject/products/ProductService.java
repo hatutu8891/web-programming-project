@@ -41,4 +41,7 @@ public class ProductService {
     }
 
 
+    public Product getDetail(String pid) {
+        return this.getDetail(pid);
+    }
 }
