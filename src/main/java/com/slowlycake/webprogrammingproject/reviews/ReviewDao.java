@@ -7,7 +7,12 @@ import java.util.List;
 public class ReviewDao {
 
     private static final String INSERT_REVIEW_SQL = "INSERT INTO reviews (uID, pID, rating, comment) VALUES (?, ?, ?, ?)";
-    private static final String SELECT_REVIEWS_BY_PRODUCT_SQL = "SELECT * FROM reviews WHERE pID = ?";
+//    private static final String SELECT_REVIEWS_BY_PRODUCT_SQL = "SELECT * FROM reviews WHERE pID = ?";
+
+    private static final String SELECT_REVIEWS_BY_PRODUCT_SQL =
+            "SELECT r.*, u.handle FROM reviews r " +
+                    "JOIN users u ON r.uID = u.id " +
+                    "WHERE r.pID = ?";
 
     // Phương thức thêm đánh giá mới
     public void addReview(Review review) {
@@ -21,12 +26,30 @@ public class ReviewDao {
         );
     }
 
-    public List<Review> getReviewsByProduct(int productId) {
-        return JDBIConnect.get().withHandle(handle ->
-                handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
-                        .bind(0, productId)
-                        .mapToBean(Review.class)
-                        .list()
-        );
-    }
+//    public List<Review> getReviewsByProduct(int productId) {
+//        return JDBIConnect.get().withHandle(handle ->
+//                handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
+//                        .bind(0, productId)
+//                        .mapToBean(Review.class)
+//                        .list()
+//        );
+//    }
+public List<Review> getReviewsByProduct(int productId) {
+    return JDBIConnect.get().withHandle(handle ->
+            handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
+                    .bind(0, productId)
+                    .map((rs, ctx) -> {
+                        Review review = new Review();
+                        review.setId(rs.getInt("id"));
+                        review.setuID(rs.getInt("uID"));
+                        review.setpID(rs.getInt("pID"));
+                        review.setRating(rs.getInt("rating"));
+                        review.setComment(rs.getString("comment"));
+                        review.setHandle(rs.getString("handle")); // Lấy handle từ kết quả truy vấn
+                        return review;
+                    })
+                    .list()
+    );
+}
+
 }

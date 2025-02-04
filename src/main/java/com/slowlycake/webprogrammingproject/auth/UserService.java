@@ -47,4 +47,7 @@ public class UserService {
         }
         return userDao.updateProfile(name, username, newEmail, newPhoneNum, newAddress);
     }
+    public String getHandleByUserId(int userId) {
+        return userDao.getHandleByUserId(userId);
+    }
 }
