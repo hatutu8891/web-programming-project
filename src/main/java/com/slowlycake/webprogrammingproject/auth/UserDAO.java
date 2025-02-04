@@ -1,5 +1,7 @@
 package com.slowlycake.webprogrammingproject.auth;
 
+import java.util.List;
+
 public class UserDAO {
 
     // Tìm người dùng bằng handle (username)
@@ -69,6 +71,33 @@ public class UserDAO {
                         .mapTo(String.class)
                         .findFirst()
                         .orElse(null)
+        );
+    }
+    public List<User> getAllUsers() {
+        return JDBIConnect.get().withHandle(h ->
+                h.createQuery("SELECT * FROM users")
+                        .mapToBean(User.class)
+                        .list()
+        );
+    }
+    public boolean updateUser(int id, String name, String handle, String email, String phoneNum, String address, int role) {
+        return JDBIConnect.get().withHandle(h ->
+                h.createUpdate("UPDATE users SET name = ?, handle = ?, email = ?, phoneNum = ?, address = ?, role = ? WHERE id = ?")
+                        .bind(0, name)
+                        .bind(1, handle)
+                        .bind(2, email)
+                        .bind(3, phoneNum)
+                        .bind(4, address)
+                        .bind(5, role)
+                        .bind(6, id)
+                        .execute() > 0
+        );
+    }
+    public boolean deleteUser(int id) {
+        return JDBIConnect.get().withHandle(h ->
+                h.createUpdate("DELETE FROM users WHERE id = ?")
+                        .bind(0, id)
+                        .execute() > 0
         );
     }
 }
