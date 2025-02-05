@@ -1,11 +1,17 @@
 package com.slowlycake.webprogrammingproject.reviews;
 
-import com.slowlycake.webprogrammingproject.auth.JDBIConnect;
+import com.slowlycake.webprogrammingproject.auth.JDBIConnect;;
 
 import java.util.List;
 
 public class ReviewDao {
-
+    private static final String SELECT_ALL_REVIEWS_SQL =
+            "select r.id, r.uID, r.pID, r.rating, r.comment, " +
+            "u.handle, " +
+            "p.name as pName " +
+            "from reviews r " +
+            "join users u on r.uID = u.id " +
+            "join products p on r.pID = p.id;";
     private static final String INSERT_REVIEW_SQL = "INSERT INTO reviews (uID, pID, rating, comment) VALUES (?, ?, ?, ?)";
 //    private static final String SELECT_REVIEWS_BY_PRODUCT_SQL = "SELECT * FROM reviews WHERE pID = ?";
 
@@ -26,7 +32,7 @@ public class ReviewDao {
         );
     }
 
-//    public List<Review> getReviewsByProduct(int productId) {
+    //    public List<Review> getReviewsByProduct(int productId) {
 //        return JDBIConnect.get().withHandle(handle ->
 //                handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
 //                        .bind(0, productId)
@@ -34,22 +40,39 @@ public class ReviewDao {
 //                        .list()
 //        );
 //    }
-public List<Review> getReviewsByProduct(int productId) {
-    return JDBIConnect.get().withHandle(handle ->
-            handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
-                    .bind(0, productId)
-                    .map((rs, ctx) -> {
-                        Review review = new Review();
-                        review.setId(rs.getInt("id"));
-                        review.setuID(rs.getInt("uID"));
-                        review.setpID(rs.getInt("pID"));
-                        review.setRating(rs.getInt("rating"));
-                        review.setComment(rs.getString("comment"));
-                        review.setHandle(rs.getString("handle")); // Lấy handle từ kết quả truy vấn
-                        return review;
-                    })
-                    .list()
-    );
-}
+    public List<Review> getReviewsByProduct(int productId) {
+        return JDBIConnect.get().withHandle(handle ->
+                handle.createQuery(SELECT_REVIEWS_BY_PRODUCT_SQL)
+                        .bind(0, productId)
+                        .map((rs, ctx) -> {
+                            Review review = new Review();
+                            review.setId(rs.getInt("id"));
+                            review.setuID(rs.getInt("uID"));
+                            review.setpID(rs.getInt("pID"));
+                            review.setRating(rs.getInt("rating"));
+                            review.setComment(rs.getString("comment"));
+                            review.setHandle(rs.getString("handle")); // Lấy handle từ kết quả truy vấn
+                            return review;
+                        })
+                        .list()
+        );
+    }
 
+    public List<Review> getAllReviews() {
+        return JDBIConnect.get().withHandle(handle ->
+                handle.createQuery(SELECT_ALL_REVIEWS_SQL)
+                        .map((rs, ctx) -> {
+                            Review review = new Review();
+                            review.setId(rs.getInt("id"));
+                            review.setuID(rs.getInt("uID"));
+                            review.setpID(rs.getInt("pID"));
+                            review.setRating(rs.getInt("rating"));
+                            review.setComment(rs.getString("comment"));
+                            review.setHandle(rs.getString("handle"));
+                            review.setPName(rs.getString("pName"));
+                            return review;
+                        })
+                        .list()  // Return the list of reviews
+        );
+    }
 }

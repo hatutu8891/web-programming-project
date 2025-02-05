@@ -26,13 +26,15 @@ public class LoginController extends HttpServlet{
             session.setAttribute("auth", user);
             session.setAttribute("handle", user.getHandle());
             if (user.getRole() == 1) {
+                req.setAttribute("success", "Xin chào " + user.getHandle());
                 resp.sendRedirect(req.getContextPath() + "/adminDashboard.jsp"); // Chuyển đến trang Admin
             } else {
+                req.setAttribute("success", "Đăng nhập thành công");
                 resp.sendRedirect(req.getContextPath() + "/index.jsp"); // Chuyển đến trang chủ
             }
         }
         else {
-            req.setAttribute("error","Dang nhap khong thanh cong");
+            req.setAttribute("error","Sai username hoặc mật khẩu!");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }

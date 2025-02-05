@@ -7,16 +7,17 @@ public class Review {
     private int rating;
     private String comment;
     private String handle; // Thêm handle để lưu tên người dùng
-
+    private String pName; //product name
     public Review() {}
 
-    public Review(int id, int uID, int pID, int rating, String comment, String handle) {
+    public Review(int id, int uID, int pID, int rating, String comment, String handle, String pName) {
         this.id = id;
         this.uID = uID;
         this.pID = pID;
         this.rating = rating;
         this.comment = comment;
         this.handle = handle;
+        this.pName = pName;
     }
 
     public int getId() {
@@ -65,6 +66,11 @@ public class Review {
 
     public void setHandle(String handle) {
         this.handle = handle;
+    }
+
+    public String getpName() {return pName;}
+    public void setPName(String Pname) {
+        this.pName = Pname;
     }
 
     @Override

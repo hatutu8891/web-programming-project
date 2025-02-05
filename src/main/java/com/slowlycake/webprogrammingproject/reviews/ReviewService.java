@@ -30,4 +30,12 @@ public class ReviewService {
         }
     }
 
+    public List<Review> getAllReviews() {
+        try {
+            return reviewDao.getAllReviews();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

@@ -293,7 +293,28 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#reviewsTable').DataTable({"pageLength": 10});
+        function loadReviews() {
+            $.get("reviewManagementServlet", function (data) {
+                let table = $('#reviewsTable').DataTable();
+                table.clear();
+
+                data.forEach(review => {
+                    table.row.add([
+                        review.id, // id (Review ID)
+                        review.handle,  // Tên người dùng (Username from the users table)
+                        review.pName, // Sản phẩm (Product Name from the products table)
+                        review.rating,  // Đánh giá (Rating from the reviews table)
+                        review.comment  // Bình luận (Comment from the reviews table)
+                    ]).draw();
+                });
+            });
+        }
+
+        // Initialize DataTable
+        $('#reviewsTable').DataTable();
+
+        // Load reviews into the table
+        loadReviews();
     });
 </script>
 

@@ -34,7 +34,7 @@ public class userManagementServlet extends HttpServlet {
         response.getWriter().write(success ? "Cập nhật thành công!" : "Cập nhật thất bại!");
     }
 
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
         boolean success = userDAO.deleteUser(id);
