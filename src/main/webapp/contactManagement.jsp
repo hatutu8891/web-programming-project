@@ -293,7 +293,27 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#contactsTable').DataTable({"pageLength": 10});
+        function loadContacts() {
+            $.get("contactManagementServlet", function (data) {
+                let table = $('#contactsTable').DataTable();
+                table.clear();
+
+                data.forEach(contact => {
+                    table.row.add([
+                        contact.id,
+                        contact.name,
+                        contact.email,
+                        contact.subject,
+                        contact.message,
+                    ]).draw();
+                });
+            });
+        }
+
+        // Initialize DataTable
+        $('#contactsTable').DataTable();
+
+        loadContacts();
     });
 </script>
 
