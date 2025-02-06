@@ -291,8 +291,36 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#mailTable').DataTable({"pageLength": 10});
+
+        function fetchMailSubs() {
+            return $.get("mailSubManagementServlet").then(data => {
+                return data.map(mailSub => {
+                    return {
+                        id: mailSub.id,
+                        email: mailSub.email,
+                        startDate: new Date(mailSub.startDate).toLocaleDateString('en-GB') // Format before using
+                    };
+                });
+            });
+        }
+
+        function loadMailSubs() {
+            fetchMailSubs().then(processedData => {
+                let table = $('#mailTable').DataTable();
+                table.clear();
+
+                processedData.forEach(mailSub => {
+                    table.row.add([mailSub.id, mailSub.email, mailSub.startDate]).draw();
+                });
+            });
+        }
+
+        $('#mailTable').DataTable(); // Initialize table
+
+        loadMailSubs(); // Load data
+
     });
 </script>
+
 </body>
 </html>
