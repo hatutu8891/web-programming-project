@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 
 @WebFilter({"/adminDashboard.jsp", "/contactManagement.jsp", "/mailSubManagement.jsp",
-        "/orderManagement.jsp", "/userManagement.jsp", "/productManagement.jsp",
+        "/orderManagement.jsp", "/userManagement.jsp", "/productManagement.jsp", "/storageManagement.jsp",
         "/reviewManagement.jsp"})
 public class LoginFilter implements Filter {
 

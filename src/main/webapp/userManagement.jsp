@@ -138,8 +138,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h4 class="card-title"> Quản lý người dùng</h4>
+                            <button id="addBtn" class="btn btn-success">
+                                <i class="tim-icons icon-simple-add"></i>
+                            </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -337,11 +340,12 @@
                         user.phoneNum,
                         user.address,
                         user.role == 1 ? "Admin" : "User",
-                        `<button class="btn btn-success btn-sm edit-btn" data-id="${user.id}"
-                                data-handle="${user.handle}" data-name="${user.name}"
-                                data-email="${user.email}" data-phone="${user.phoneNum}"
-                                data-address="${user.address}" data-role="${user.role}">Sửa</button>
-                         <button class="btn btn-danger btn-sm delete-btn" data-id="${user.id}">Xóa</button>`
+                        `<button class="btn btn-success btn-sm edit-btn">
+                        <i class="tim-icons icon-pencil"></i>
+                        </button>
+                         <button class="btn btn-danger btn-sm delete-btn">
+                        <i class="tim-icons icon-simple-delete"></i>
+                        </button>`
                     ]).draw();
                 });
 

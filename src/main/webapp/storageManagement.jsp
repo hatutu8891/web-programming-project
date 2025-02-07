@@ -33,7 +33,7 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="active ">
+                <li>
                     <a href="adminDashboard.jsp">
                         <i class="tim-icons icon-chart-pie-36"></i>
                         <p>Bảng Điều khiển</p>
@@ -139,8 +139,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h4 class="card-title"> Quản lý kho</h4>
+                            <button id="addBtn" class="btn btn-success">
+                                <i class="tim-icons icon-simple-add"></i>
+                            </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -151,7 +154,7 @@
                                         <th>Tên nguyên liệu</th>
                                         <th>Số lượng hiện tại</th>
                                         <th>Số lượng tối thiểu</th>
-                                        <th>Đặt hàng</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -293,9 +296,91 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#storageTable').DataTable({"pageLength": 10});
+        function loadIngredient() {
+            $.get("storageManagementServlet", function (data) {
+                let table = $('#storageTable').DataTable();
+                table.clear();
+
+                data.forEach(ingredient => {
+                    let orderClass = ingredient.stockQuantity < ingredient.reqQuantity ? "btn-warning" : "btn-primary";
+
+                    table.row.add([
+                        ingredient.id,
+                        ingredient.name,
+                        ingredient.stockQuantity,
+                        ingredient.reqQuantity,
+                        `<button class="btn btn-success btn-sm edit-btn" data-id="${ingredient.id}" data-name="${ingredient.name}" data-stock="${ingredient.stockQuantity}" data-req="${ingredient.reqQuantity}">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button class="btn ${orderClass} btn-sm order-btn">
+                            <i class="tim-icons icon-cart"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm delete-btn" data-id="${ingredient.id}">
+                            <i class="tim-icons icon-simple-delete"></i>
+                        </button>`
+                    ]).draw();
+                });
+            });
+        }
+
+        // Initialize DataTable
+        $('#storageTable').DataTable();
+
+        // Load initial data
+        loadIngredient();
+
+        // Add ingredient
+        $('#addIngredientForm').submit(function (e) {
+            e.preventDefault();
+            $.post("storageManagementServlet", {
+                action: "add",
+                name: $('#ingredientName').val(),
+                stockQuantity: $('#stockQuantity').val(),
+                reqQuantity: $('#reqQuantity').val()
+            }, function () {
+                $('#addIngredientModal').modal('hide');
+                loadIngredient();
+            });
+        });
+
+        // Edit ingredient
+        $(document).on('click', '.edit-btn', function () {
+            let id = $(this).data('id');
+            $('#editIngredientId').val(id);
+            $('#editIngredientName').val($(this).data('name'));
+            $('#editStockQuantity').val($(this).data('stock'));
+            $('#editReqQuantity').val($(this).data('req'));
+            $('#editIngredientModal').modal('show');
+        });
+
+        $('#editIngredientForm').submit(function (e) {
+            e.preventDefault();
+            $.post("storageManagementServlet", {
+                action: "edit",
+                id: $('#editIngredientId').val(),
+                stockQuantity: $('#editStockQuantity').val(),
+                reqQuantity: $('#editReqQuantity').val()
+            }, function () {
+                $('#editIngredientModal').modal('hide');
+                loadIngredient();
+            });
+        });
+
+        // Delete ingredient
+        $(document).on('click', '.delete-btn', function () {
+            let id = $(this).data('id');
+            if (confirm("Are you sure you want to delete this ingredient?")) {
+                $.post("storageManagementServlet", {
+                    action: "delete",
+                    id: id
+                }, function () {
+                    loadIngredient();
+                });
+            }
+        });
     });
 </script>
+
 
 </body>
 

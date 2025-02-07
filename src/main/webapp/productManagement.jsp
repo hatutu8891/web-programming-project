@@ -139,8 +139,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h4 class="card-title"> Quản lý sản phẩm</h4>
+                            <button id="addBtn" class="btn btn-success">
+                                <i class="tim-icons icon-simple-add"></i>
+                            </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
