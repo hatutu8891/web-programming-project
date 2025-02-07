@@ -14,6 +14,7 @@ public class Product {
     private String category;
     private Date launchDate;
 
+    public Product() {}
     public Product(int id, String name, String cakeCode, int quantitySold, String desc, BigDecimal review, String img, String category, Date launchDate) {
         this.id = id;
         this.name = name;

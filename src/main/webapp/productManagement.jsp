@@ -151,14 +151,12 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Mã sản phẩm</th>
-                                        <th>Tên sản phẩm</th>
-                                        <th>Số lượng bán ra</th>
-                                        <th>Mô tả</th>
+                                        <th>Tên SP</th>
+                                        <th>SL đã bán</th>
                                         <th>Đánh giá</th>
-                                        <th>Hình ảnh</th>
                                         <th>Loại</th>
                                         <th>Ngày thêm</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -300,7 +298,34 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#productsTable').DataTable({"pageLength": 10});
+        function loadProducts() {
+            $.get("productManagementServlet", function (data) {
+                let table = $('#productsTable').DataTable();
+                table.clear();
+
+                data.forEach(product => {
+                    table.row.add([
+                        product.id,
+                        product.name,
+                        product.quantitySold,
+                        product.review,
+                        product.category,
+                        product.launchDate,
+                        `<button class="btn btn-success btn-sm edit-btn">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm delete-btn">
+                            <i class="tim-icons icon-simple-delete"></i>
+                        </button>`
+                    ]).draw();
+                });
+            });
+        }
+
+        // Initialize DataTable
+        $('#productsTable').DataTable();
+
+        loadProducts();
     });
 </script>
 
