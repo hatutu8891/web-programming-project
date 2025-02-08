@@ -21,9 +21,10 @@
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="">
+<body data-bs-theme="dark">
 <div class="wrapper">
     <div class="sidebar">
         <div class="sidebar-wrapper">
@@ -135,7 +136,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content bg-dark text-white">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
@@ -294,6 +295,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function () {
         function loadIngredient() {

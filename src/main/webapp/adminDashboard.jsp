@@ -18,9 +18,10 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="">
+<body data-bs-theme="dark">
 <div class="wrapper">
     <div class="sidebar">
         <div class="sidebar-wrapper">
@@ -132,7 +133,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content bg-dark text-white">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-chart">
@@ -219,6 +220,7 @@
 <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script>
 <!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/demo/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function () {
         $().ready(function () {

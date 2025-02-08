@@ -21,9 +21,10 @@
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="">
+<body data-bs-theme="dark">
 <div class="wrapper">
     <div class="sidebar">
         <div class="sidebar-wrapper">
@@ -135,24 +136,25 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content bg-dark text-black-50">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h4 class="card-title"> Quản lý sản phẩm</h4>
-                            <button id="addBtn" class="btn btn-success">
+                            <button id="addBtn" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Thêm">
                                 <i class="tim-icons icon-simple-add"></i>
                             </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="productsTable" class="display">
+                                <table id="productsTable" class="table table-striped table-dark display">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tên SP</th>
-                                        <th>SL đã bán</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Đã bán</th>
                                         <th>Đánh giá</th>
                                         <th>Loại</th>
                                         <th>Ngày thêm</th>
@@ -296,33 +298,40 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!--script to fetch data-->
 <script>
     $(document).ready(function () {
-        function loadProducts() {
-            $.get("productManagementServlet", function (data) {
-                let table = $('#productsTable').DataTable();
-                table.clear();
 
-                data.forEach(product => {
-                    table.row.add([
+        function fetchProducts() {
+            return $.get("productManagementServlet").then(data => {
+                return data.map(product => {
+                    return [
                         product.id,
                         product.name,
                         product.quantitySold,
                         product.review,
                         product.category,
-                        product.launchDate,
-                        `<button class="btn btn-success btn-sm edit-btn">
-                            <i class="tim-icons icon-pencil"></i>
-                        </button>
-                        <button class="btn btn-danger btn-sm delete-btn">
-                            <i class="tim-icons icon-simple-delete"></i>
-                        </button>`
-                    ]).draw();
+                        new Date(product.launchDate).toLocaleDateString('en-GB'),
+                        `<button class="btn btn-success btn-sm edit-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Chỉnh sửa" data-product-id="{PRODUCT_ID}">
+    <i class="tim-icons icon-pencil"></i>
+</button>
+                        <button class="btn btn-danger btn-sm delete-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Xóa" data-product-id="{PRODUCT_ID}">
+    <i class="tim-icons icon-simple-delete"></i>
+</button>`
+                    ];
                 });
             });
         }
 
-        // Initialize DataTable
+        function loadProducts() {
+            fetchProducts().then(processedData => {
+                let table = $('#productsTable').DataTable();
+                table.clear();
+                table.rows.add(processedData).draw();
+            }).catch(error => console.error("Không thể load sản phẩm", error));
+        }
+
         $('#productsTable').DataTable();
 
         loadProducts();
