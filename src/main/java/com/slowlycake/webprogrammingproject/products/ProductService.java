@@ -4,29 +4,44 @@ import java.util.List;
 
 public class ProductService {
 
-    private ProductDao productDao;
+    private final ProductDAO productDAO;
 
     public ProductService() {
-        this.productDao = new ProductDao(); // Khởi tạo ProductDao
+        this.productDAO = new ProductDAO(); // Khởi tạo ProductDAO
     }
 
-    // Lấy sản phẩm theo ID
+    // Lấy thông tin chi tiết sản phẩm theo ID
     public Product getProductById(int productId) {
-    return null;
-    }
-
-    public Product getDetail(String in) {
         try {
-            int id = Integer.parseInt(in);
-            return productDao.findProductById(id);// Gọi ProductDao để lấy sản phẩm
+            return productDAO.getProductById(productId); // Gọi ProductDAO để lấy sản phẩm theo ID
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public List<Product> getProductsByCakeCode(String cakecode) {
-        return productDao.findProductsByCakeCode(cakecode);
+    // Lấy danh sách các biến thể theo mã bánh
+    public List<Variant> getVariantsByCakeCode(String cakeCode) {
+        try {
+            return productDAO.getVariantsByCakeCode(cakeCode); // Gọi ProductDAO để lấy danh sách biến thể
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
+    // Lấy danh sách sản phẩm cùng danh mục
+    public List<Product> getProductsInSameCategory(String category) {
+        try {
+            return productDAO.getProductsInSameCategory(category); // Gọi ProductDAO để lấy danh sách sản phẩm cùng danh mục
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public Product getDetail(String pid) {
+        return this.getDetail(pid);
+    }
 }

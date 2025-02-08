@@ -17,21 +17,24 @@ public class LoginController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String uname = req.getParameter("username");
+        String name = req.getParameter("username");
         String pass = req.getParameter("password");
         AuthService service = new AuthService();
-        User user = service.checkLogin(uname,pass);
+        User user = service.checkLogin(name,pass);
         if(user != null) {
             HttpSession session=req.getSession();
             session.setAttribute("auth", user);
+            session.setAttribute("handle", user.getHandle());
             if (user.getRole() == 1) {
-                resp.sendRedirect(req.getContextPath() + "/pages/dynamic/admin/adminDashboard.jsp"); // Chuyển đến trang Admin
+                req.setAttribute("success", "Xin chào " + user.getHandle());
+                resp.sendRedirect(req.getContextPath() + "/adminDashboard.jsp"); // Chuyển đến trang Admin
             } else {
+                req.setAttribute("success", "Đăng nhập thành công");
                 resp.sendRedirect(req.getContextPath() + "/index.jsp"); // Chuyển đến trang chủ
             }
         }
         else {
-            req.setAttribute("error","Dang nhap khong thanh cong");
+            req.setAttribute("error","Sai username hoặc mật khẩu!");
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }

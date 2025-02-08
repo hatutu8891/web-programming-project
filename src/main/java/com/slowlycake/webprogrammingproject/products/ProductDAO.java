@@ -1,8 +1,12 @@
 package com.slowlycake.webprogrammingproject.products;
 
+
+
+import com.slowlycake.webprogrammingproject.aigoo404.contact.Contact;
 import com.slowlycake.webprogrammingproject.auth.JDBIConnect;
 
 import java.util.List;
+
 public class ProductDAO {
 
     // Lấy thông tin chi tiết sản phẩm theo ID

@@ -1,3 +1,4 @@
+<%@ page import="com.slowlycake.webprogrammingproject.auth.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -52,7 +53,9 @@
                 <li class="icon-item">
                     <a href="<c:url value="shoppingCart.jsp"/>"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
-<%--                  <!--header changed when login-->
+
+                <!--header changed when login-->
+
                 <li class="icon-item dropdown">
                     <%
                         User authUser = (User) session.getAttribute("auth");
@@ -70,40 +73,29 @@
                             <button class="setbutton logout">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span class="btn-content">Đăng xuất</span>
+
                             </button>
                         </a>
                     </div>
                     <% } else { %>
                     <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <div class="dropdown-menu login-signin">
-                        <c:choose>
-                            <!-- If user is logged in, show logout option -->
-                            <c:when test="${not empty sessionScope.userName}">
-                                <span>Chào, ${sessionScope.userName}</span>
-                                <a href="logout.jsp">
-                                    <button class="setbutton logout">
-                                        <i class="fa-solid fa-right-from-bracket"></i>
-                                        <span class="btn-content">Đăng xuất</span>
-                                    </button>
-                                </a>
-                            </c:when>
-                            <!-- If user is not logged in, show login and signup options -->
-                            <c:otherwise>
-                                <a href="signUp.jsp">
-                                    <button class="setbutton signin">
-                                        <i class="fa-solid fa-person"></i>
-                                        <span class="btn-content">Đăng ký</span>
-                                    </button>
-                                </a>
-                                <a href="login.jsp">
-                                    <button class="setbutton login">
-                                        <i class="fa-solid fa-right-to-bracket"></i>
-                                        <span class="btn-content">Đăng nhập</span>
-                                    </button>
-                                </a>
-                            </c:otherwise>
-                        </c:choose>
+                        <a href="login.jsp">
+                            <button class="setbutton login">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span class="btn-content">Đăng nhập</span>
+
+                            </button>
+                        </a>
+                        <a href="signUp.jsp">
+                            <button class="setbutton signin">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span class="btn-content">Đăng ký</span>
+                            </button>
+                        </a>
                     </div>
+                    <% } %>
+                    
                 </li>
             </ul>
         </div>

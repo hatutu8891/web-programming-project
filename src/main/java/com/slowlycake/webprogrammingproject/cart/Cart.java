@@ -55,7 +55,7 @@ public class Cart {
         com.slowlycake.webprogrammingproject.dao.cart.CartProduct re = new CartProduct();
         re.setId(p.getId());
         re.setTitle(p.getName());
-        re.setPrice(p.getPrice());
+        //re.setPrice(p.getPrice());
         re.setImg(p.getImg());
         re.setQuantity(1);
         return re;

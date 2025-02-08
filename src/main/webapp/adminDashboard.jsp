@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -17,18 +18,17 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
-    <!--link href="assets/demo/demo.css" rel="stylesheet"/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="">
+<body data-bs-theme="dark">
 <div class="wrapper">
     <div class="sidebar">
         <div class="sidebar-wrapper">
             <div class="logo">
-                <!--a href="javascript:void(0)" class="simple-text logo-mini">
+                <a href="userInfo.jsp" class="simple-text logo-normal">
+                    Xin chào <%= session.getAttribute("handle") %>
                 </a>
-                <a href="javascript:void(0)" class="simple-text logo-normal">
-                </a-->
             </div>
             <ul class="nav">
                 <li class="active ">
@@ -105,12 +105,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto">
-                        <li class="search-bar input-group">
-                            <button class="btn btn-link" id="search-button" data-toggle="modal"
-                                    data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                <span class="d-lg-none d-md-block">Search</span>
-                            </button>
-                        </li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <div class="photo">
@@ -122,11 +116,15 @@
                                 </p>
                             </a>
                             <ul class="dropdown-menu dropdown-navbar">
-                                <li class="nav-link"><a href="javascript:void(0)"
-                                                        class="nav-item dropdown-item">Profile</a></li>
+                                <li class="nav-link">
+                                    <a href="userInfo.jsp" class="nav-item dropdown-item">Profile
+                                    </a>
+                                </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log
-                                    out</a></li>
+                                <li class="nav-link">
+                                    <a href="<c:url value='/logout'/>" class="nav-item dropdown-item">Đăng xuất
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="separator d-lg-none"></li>
@@ -134,21 +132,8 @@
                 </div>
             </div>
         </nav>
-        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content bg-dark text-white">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-chart">
@@ -235,6 +220,7 @@
 <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script>
 <!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/demo/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function () {
         $().ready(function () {

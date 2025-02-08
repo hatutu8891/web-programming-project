@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -20,19 +21,17 @@
     <link href="assets/css/nucleo-icons.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet"/>
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="assets/demo/demo.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="">
+<body data-bs-theme="dark">
 <div class="wrapper">
     <div class="sidebar">
         <div class="sidebar-wrapper">
             <div class="logo">
-                <!--a href="javascript:void(0)" class="simple-text logo-mini">
+                <a href="userInfo.jsp" class="simple-text logo-normal">
+                    Xin chào <%= session.getAttribute("handle") %>
                 </a>
-                <a href="javascript:void(0)" class="simple-text logo-normal">
-                </a-->
             </div>
             <ul class="nav">
                 <li>
@@ -109,12 +108,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto">
-                        <li class="search-bar input-group">
-                            <button class="btn btn-link" id="search-button" data-toggle="modal"
-                                    data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                <span class="d-lg-none d-md-block">Search</span>
-                            </button>
-                        </li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <div class="photo">
@@ -126,11 +119,15 @@
                                 </p>
                             </a>
                             <ul class="dropdown-menu dropdown-navbar">
-                                <li class="nav-link"><a href="javascript:void(0)"
-                                                        class="nav-item dropdown-item">Profile</a></li>
+                                <li class="nav-link">
+                                    <a href="userInfo.jsp" class="nav-item dropdown-item">Profile
+                                    </a>
+                                </li>
                                 <li class="dropdown-divider"></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log
-                                    out</a></li>
+                                <li class="nav-link">
+                                    <a href="<c:url value='/logout'/>" class="nav-item dropdown-item">Đăng xuất
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="separator d-lg-none"></li>
@@ -138,26 +135,16 @@
                 </div>
             </div>
         </nav>
-        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Navbar -->
-        <div class="content">
+        <div class="content bg-dark text-white">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card ">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h4 class="card-title"> Quản lý đơn hàng</h4>
+                            <button id="addBtn" class="btn btn-success">
+                                <i class="tim-icons icon-simple-add"></i>
+                            </button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -165,11 +152,11 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Người nhận</th>
+                                        <th>Người đặt</th>
                                         <th>Ngày đặt</th>
                                         <th>Giá</th>
                                         <th>Trạng thái</th>
-                                        <th>Chi tiết</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -197,6 +184,7 @@
 <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script>
 <!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/demo/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     $(document).ready(function () {
         $().ready(function () {
@@ -311,9 +299,35 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#ordersTable').DataTable({"pageLength": 10});
+        function loadOrders() {
+            $.get("orderManagementServlet", function (data) {
+                let table = $('#ordersTable').DataTable();
+                table.clear();
+
+                data.forEach(order => {
+                    table.row.add([
+                        order.id,
+                        order.username,
+                        order.date,
+                        order.price,
+                        order.status == 0 ? "Chờ thanh toán" : order.status == 1 ? "Thất bại" : "Thành công",
+                        `<button class="btn btn-success btn-sm edit-btn">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm delete-btn">
+                            <i class="tim-icons icon-simple-delete"></i>
+                        </button>`
+                    ]).draw();
+                });
+
+            },);
+        }
+
+        $('#ordersTable').DataTable();
+        loadOrders();
     });
 </script>
+
 
 </body>
 

@@ -20,20 +20,6 @@ public class ReviewService {
         }
     }
 
-    // Tính điểm đánh giá trung bình của sản phẩm
-    public double calculateAverageRating(int productId) {
-        List<Review> reviews = getReviewsByProductId(productId);
-        if (reviews == null || reviews.isEmpty()) {
-            return 0;
-        }
-
-        int totalRating = 0;
-        for (Review review : reviews) {
-            totalRating += review.getRating();
-        }
-
-        return (double) totalRating / reviews.size();
-    }
 
     // Thêm một đánh giá mới
     public void addReview(Review review) {
@@ -44,4 +30,12 @@ public class ReviewService {
         }
     }
 
+    public List<Review> getAllReviews() {
+        try {
+            return reviewDao.getAllReviews();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
