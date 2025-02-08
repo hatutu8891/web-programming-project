@@ -20442,4 +20442,14 @@ Copyright (c) 2015 Daniel Eden
   padding-right: 0;
 }
 
+.dataTables_length select {
+  background-color: black;
+  color: white; /* Change the text color to white */
+}
+
+.dataTables_length select option {
+  background-color: black;
+  color: white; /* Change the text color to white */
+}
+
 /*# sourceMappingURL=dashboard-free.css.map */

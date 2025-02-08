@@ -152,11 +152,11 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Người nhận</th>
+                                        <th>Người đặt</th>
                                         <th>Ngày đặt</th>
                                         <th>Giá</th>
                                         <th>Trạng thái</th>
-                                        <th>Chi tiết</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -299,9 +299,35 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#ordersTable').DataTable({"pageLength": 10});
+        function loadOrders() {
+            $.get("orderManagementServlet", function (data) {
+                let table = $('#ordersTable').DataTable();
+                table.clear();
+
+                data.forEach(order => {
+                    table.row.add([
+                        order.id,
+                        order.username,
+                        order.date,
+                        order.price,
+                        order.status == 0 ? "Chờ thanh toán" : order.status == 1 ? "Thất bại" : "Thành công",
+                        `<button class="btn btn-success btn-sm edit-btn">
+                            <i class="tim-icons icon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm delete-btn">
+                            <i class="tim-icons icon-simple-delete"></i>
+                        </button>`
+                    ]).draw();
+                });
+
+            },);
+        }
+
+        $('#ordersTable').DataTable();
+        loadOrders();
     });
 </script>
+
 
 </body>
 
