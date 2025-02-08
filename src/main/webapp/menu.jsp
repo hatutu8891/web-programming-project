@@ -164,6 +164,41 @@
                                         <label class="custom-control-label" for="size-5">Dừa</label>
                                         <span class="badge border font-weight-normal">168</span>
                                     </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-6">
+                                        <label class="custom-control-label" for="size-5">Mâm Xôi</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-7">
+                                        <label class="custom-control-label" for="size-5">Matcha</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-8">
+                                        <label class="custom-control-label" for="size-5">Cam</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-9">
+                                        <label class="custom-control-label" for="size-5">Chanh</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-10">
+                                        <label class="custom-control-label" for="size-5">Cà Phê</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-11">
+                                        <label class="custom-control-label" for="size-5">Caramel</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                                        <input type="checkbox" class="custom-control-input" id="size-12">
+                                        <label class="custom-control-label" for="size-5">Vanilla</label>
+                                        <span class="badge border font-weight-normal">168</span>
+                                    </div>
                                 </form>
                             </div>
                             <!-- Size End -->
