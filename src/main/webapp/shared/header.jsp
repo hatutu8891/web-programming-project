@@ -53,7 +53,9 @@
                 <li class="icon-item">
                     <a href="<c:url value="shoppingCart.jsp"/>"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
+
                 <!--header changed when login-->
+
                 <li class="icon-item dropdown">
                     <%
                         User authUser = (User) session.getAttribute("auth");
@@ -71,6 +73,7 @@
                             <button class="setbutton logout">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span class="btn-content">Đăng xuất</span>
+
                             </button>
                         </a>
                     </div>
@@ -81,6 +84,7 @@
                             <button class="setbutton login">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 <span class="btn-content">Đăng nhập</span>
+
                             </button>
                         </a>
                         <a href="signUp.jsp">
@@ -91,6 +95,7 @@
                         </a>
                     </div>
                     <% } %>
+                    
                 </li>
             </ul>
         </div>
